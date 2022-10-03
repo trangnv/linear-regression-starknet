@@ -1,0 +1,1 @@
+0x071c6ffba4b4394b90edffffb169416007ce242e90740197f6e841cf74c2d5e6:artifacts/abis/contract.json:linear_regression
