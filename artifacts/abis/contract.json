@@ -1,0 +1,35 @@
+[
+    {
+        "inputs": [
+            {
+                "name": "user_address",
+                "type": "felt"
+            }
+        ],
+        "name": "view_user_prediction_output",
+        "outputs": [
+            {
+                "name": "output",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "input",
+                "type": "felt"
+            }
+        ],
+        "name": "predict",
+        "outputs": [
+            {
+                "name": "output",
+                "type": "felt"
+            }
+        ],
+        "type": "function"
+    }
+]

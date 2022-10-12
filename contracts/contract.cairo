@@ -3,45 +3,33 @@
 
 from starkware.cairo.common.cairo_builtins import HashBuiltin
 from starkware.cairo.common.alloc import alloc
+from starkware.starknet.common.syscalls import get_caller_address
+
 
 // struct Prediction
 @storage_var
-func user_prediction_output(user_address: felt, prediction_id: felt) -> (
-    output_array_len: felt, output_array: felt*) {
+func user_prediction_output(user_address: felt) -> (output: felt) {
 }
-// Starts the inference computation.
-// @internal
-func predict{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
-    input_array_len: felt, input_array: felt*, output_array_len: felt, output_array: felt*
-) -> () {
-    alloc_locals;
-    // load the models, hard code for now
-    tempvar coef_ = 9731;
-    tempvar intercept_ = 1;
-
-    if (input_array_len == 0) {
-        return ();
-    }
-    // let squared_item = [array] * [array]
-    // assert [squared_array] = squared_item
-    let output_item = coef_ * [input_array] + intercept_;
-    let output_array_len = input_array_len;
-    assert [output_array] = output_item;
-    return predict(input_array_len - 1, input_array + 1,  output_array_len -1, output_array + 1);
+@view
+func view_user_prediction_output{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_check_ptr}(
+    user_address: felt) -> (
+    output : felt
+){
+    return user_prediction_output.read(user_address);
 }
 
 @external
-func get_prediction{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
-    input_array_len: felt, input_array: felt*
-) -> (
-    output_array_len: felt, output_array: felt*
-){
+func predict{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(input: felt) -> (
+    output: felt
+) {
     alloc_locals;
-    let (local output_array : felt*) = alloc();
-    let output_array_len = input_array_len;
+    let (sender_address) = get_caller_address();
+    // load the models, hard code for now
+    tempvar coef_ = 100;
+    tempvar intercept_ = 23;
 
-    predict(input_array_len, input_array, input_array_len, output_array);
-    return (output_array_len = output_array_len, output_array = output_array);
+    let calculation = coef_ * input + intercept_;
+    user_prediction_output.write(sender_address, calculation);
+    return (output = calculation);
 }
 
-// @vi
