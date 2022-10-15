@@ -1,25 +1,3 @@
-# ML model on StarkNet
-
-- Current status
-
-  - The model: 1 variable linear regression model is solved with results are basically 2 numbers: `intercept_` and `coef_`
-
-  Data and Ml workflow are in `ml_workflow`
-
-  - Publising the model: those 2 numbers are pushed publicly
-
-  - Prediction: call prediction function with input
-
-  - [Contract on Voyager](https://goerli.voyager.online/contract/0x04621fb6734846b7451d4238d80beaa599caa330cd995b91509c3fc657ca9cfa)
-
-
-- Next steps
-
-  - *Hide* the input
-
-  - Standardization of ML models e.g. ONNX 
-
-
 # Publishing machine learning models on StarkNet with commit-reveal scheme
 
 ## The usecase
@@ -40,13 +18,18 @@ Everything on the blockchain is public which is can be a problem for the usecase
 A commitment scheme is a cryptographic primitive that allows one to commit to a chosen value (or chosen statement) while keeping it hidden to others, with the ability to reveal the committed value later - [wikipedia](https://en.wikipedia.org/wiki/Commitment_scheme)
 
 ### Solution
-- User can submit the hash value of the model which is calculated by keccak_hash function with 2 inputs are `intercept_` and `coef_` by calling `commit_hash` method
+- User submit the hash value of the model which is calculated by keccak_hash function with 2 inputs are `intercept_` and `coef_` by calling `commit_hash` method
   - The `view_get_keccak_hash` method is the helper function, user should never use it to generate hash value
   - Instead helper function `utils.py` can be used offline to generate hash value from array of input
-- User after that can reveal the actual model by calling `reveal`
+- User after that can reveal the actual model by calling `reveal` and the model is public onchain
+
+**[Contract on Voyager]**(https://goerli.voyager.online/contract/0x02f11c9d3bf19226233c44ec919a337dd70837699b3e94fb326a5a89e763f628)
 
 ## Next steps
-- 
+- Make the contract available for more ML models. 
+  - Customize model representation by data types
+  - Standardization model representation
+- Implementation other type of hash functions (e.g. Pedersen)
   
 
 
