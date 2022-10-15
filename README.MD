@@ -23,7 +23,7 @@ A commitment scheme is a cryptographic primitive that allows one to commit to a 
   - Instead helper function `utils.py` can be used offline to generate hash value from array of input
 - User after that can reveal the actual model by calling `reveal` and the model is public onchain
 
-**[Contract on Voyager]**(https://goerli.voyager.online/contract/0x02f11c9d3bf19226233c44ec919a337dd70837699b3e94fb326a5a89e763f628)
+**[Contract on Voyager](https://goerli.voyager.online/contract/0x02f11c9d3bf19226233c44ec919a337dd70837699b3e94fb326a5a89e763f628)**
 
 ## Next steps
 - Make the contract available for more ML models. 
