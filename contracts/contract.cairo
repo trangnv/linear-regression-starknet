@@ -73,11 +73,6 @@ func reveal{
         assert is_eq = TRUE;
     }
     solution_storage.write(caller_address, Solution(coef_, intercept_));
-    // caller_address_hash_storage.write(caller_address, Uint256(0, 0));
-    // let (current_number_of_vote) = vote_per_response_storage.read(response);
-    // vote_per_response_storage.write(response, current_number_of_vote + 1);
-
-    // update the solution storage
 
     return ();
 }
