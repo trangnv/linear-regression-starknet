@@ -30,6 +30,10 @@ A commitment scheme is a cryptographic primitive that allows one to commit to a 
   - Customize model representation by data types
   - Standardization model representation
 - Implementation other type of hash functions (e.g. Pedersen)
+
+## References
+- [starknet-commit-reveal](https://github.com/gaetbout/starknet-commit-reveal) by gaetbout
+
   
 
 
