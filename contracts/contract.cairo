@@ -12,8 +12,9 @@ from starkware.cairo.common.bool import TRUE, FALSE
 
 
 struct Solution {
-    coef_: felt,
-    intercept_: felt,
+    number_of_features: felt,
+    coef_s: felt*,
+    intercept_: felt
 }
 
 @storage_var
@@ -24,21 +25,41 @@ func hash_storage(address: felt) -> (hashed_response: Uint256) {
 func solution_storage(address: felt) -> (solution: Solution) {
 }
 
+// Computes the Pedersen hash chain on an array of size `length` starting from `data_ptr`.
+func pedersen_hash_chain{hash_ptr: HashBuiltin*}(data_ptr: felt*, length: felt) -> (result: felt) {
+  alloc_locals;
+
+  if (length == 2) {
+        let (result) = hash2(x=[data_ptr], y=[data_ptr + 1]);
+        return (result=result);
+    } else {
+        let (result_int) = hash2(x=[data_ptr], y=[data_ptr+1]);
+        let (result) = cal_hash(result_int=result_int, data_ptr=data_ptr+2, length=length-2);
+        return (result=result);
+    }
+}
+
+func cal_hash{hash_ptr: HashBuiltin*}(result_int : felt, data_ptr : felt*, length: felt) -> (result : felt) {
+    if(length == 0) {
+        return (result=result_int);
+    } else {
+        let (result_int2) = hash2(x=result_int, y=[data_ptr]);
+        let (result) = cal_hash(result_int=result_int2, data_ptr=data_ptr+1, length=length-1);
+        return (result=result);
+    }
+    
+}
 
 @view
-func view_get_keccak_hash{
+func view_pedersen_hash_chain{
     syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr, bitwise_ptr: BitwiseBuiltin*
-}(coef_: felt, intercept_: felt) -> (hashed_value: Uint256) {
+}(number_of_features: felt, coefs: felt*, intercept_: felt) -> (hashed_value: felt) {
     alloc_locals;
-    let (local keccak_ptr_start) = alloc();
-    let keccak_ptr = keccak_ptr_start;
-    let (local arr: felt*) = alloc();
-    assert arr[0] = coef_;
-    assert arr[1] = intercept_;
-    let (hashed_value) = keccak_felts{keccak_ptr=keccak_ptr}(2, arr);
-    finalize_keccak(keccak_ptr_start=keccak_ptr_start, keccak_ptr_end=keccak_ptr);
-    return (hashed_value,);
+    let (coefs_hashed_value) = pedersen_hash_chain(coefs, number_of_features);
+    hashed_value = hash2(coefs_hashed_value, intercept_);
+    return (hashed_value=hashed_value);
 }
+
 
 @view
 func view_solution{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_check_ptr}(
