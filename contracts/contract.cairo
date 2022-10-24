@@ -37,7 +37,7 @@ func constructor{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr
 }
 
 // Computes the Pedersen hash chain on an array of size `length` starting from `data_ptr`.
-func pedersen_hash_chain{
+func cal_pedersen_hash_chain{
     hash_ptr: HashBuiltin*
 }(data_ptr: felt*, length: felt) -> (result: felt) {
   alloc_locals;
@@ -66,27 +66,15 @@ func cal_hash{
 }
 
 // @view
-func view_pedersen_hash_chain{
-    hash_ptr: HashBuiltin*, 
-    // syscall_ptr: felt*, bitwise_ptr: BitwiseBuiltin*, 
-    // range_check_ptr, 
+func pedersen_hash_chain{
+    hash_ptr: HashBuiltin*,
 }(coefs_len: felt, coefs: felt*, intercept_: felt) -> (hashed_value: felt) {
     alloc_locals;
-    let (coefs_hashed_value) = pedersen_hash_chain(coefs, coefs_len);
+    let (coefs_hashed_value) = cal_pedersen_hash_chain(coefs, coefs_len);
     let (hashed_value) = hash2(coefs_hashed_value, intercept_);
     return (hashed_value=hashed_value);
 }
 
-
-// @view
-// func view_solution{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_check_ptr}(
-//     user_address: felt) -> (
-//     len_array : felt, array:felt*, intercept: felt
-// ){
-    // alloc_locals;
-    // let (output) = solution_storage.read(user_address);
-    // return (output = output);
-// }
 
 @external
 func commit_hash{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(hash: felt) {
@@ -115,18 +103,14 @@ func reveal{
         assert array_len = n;
     }
 
-    
-
-    let (current_hash) = view_pedersen_hash_chain(array_len, array, intercept);
+    let (current_hash) = _pedersen_hash_chain(array_len, array, intercept);
     // let (is_eq) = uint256_eq(current_hash, committed_hash);
 
     with_attr error_message("You are trying to cheat") {
         assert current_hash = committed_hash;
     }
-    // solution_storage.write(caller_address, Solution(coef_, intercept_));
-    // store first coef
-    let (local new_array) = alloc();
-    // assert [coef_0] = [arr];
+
+    let (local new_array) = alloc(); // need to store this some how, maybe cast first coef
     _save_coefs(array=array, new_array=new_array, length=array_len);
     intercept_storage.write(caller_address,intercept);
     return ();
