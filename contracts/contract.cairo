@@ -2,31 +2,44 @@
 %lang starknet
 
 from starkware.cairo.common.cairo_builtins import BitwiseBuiltin, HashBuiltin
-from starkware.cairo.common.cairo_keccak.keccak import keccak_felts, finalize_keccak
+// from starkware.cairo.common.cairo_keccak.keccak import keccak_felts, finalize_keccak
+from starkware.cairo.common.hash import hash2
+
 
 // from starkware.cairo.common.cairo_builtins import HashBuiltin
 from starkware.cairo.common.alloc import alloc
 from starkware.starknet.common.syscalls import get_caller_address
-from starkware.cairo.common.uint256 import Uint256, uint256_eq
+// from starkware.cairo.common.uint256 import Uint256, uint256_eq
 from starkware.cairo.common.bool import TRUE, FALSE
 
+@storage_var
+func number_of_features() -> (res: felt) {
+}
 
-struct Solution {
-    number_of_features: felt,
-    coef_s: felt*,
-    intercept_: felt
+// @storage_var
+// func coef_0_storage(address: felt) -> (coef_0: felt) {
+// }
+
+@storage_var
+func intercept_storage(address: felt) -> (res: felt) {
 }
 
 @storage_var
-func hash_storage(address: felt) -> (hashed_response: Uint256) {
+func hash_storage(address: felt) -> (hashed_response: felt) {
 }
 
-@storage_var
-func solution_storage(address: felt) -> (solution: Solution) {
+@constructor
+func constructor{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+    _number_of_features: felt
+) {
+    number_of_features.write(_number_of_features);
+    return ();
 }
 
 // Computes the Pedersen hash chain on an array of size `length` starting from `data_ptr`.
-func pedersen_hash_chain{hash_ptr: HashBuiltin*}(data_ptr: felt*, length: felt) -> (result: felt) {
+func pedersen_hash_chain{
+    hash_ptr: HashBuiltin*
+}(data_ptr: felt*, length: felt) -> (result: felt) {
   alloc_locals;
 
   if (length == 2) {
@@ -39,7 +52,9 @@ func pedersen_hash_chain{hash_ptr: HashBuiltin*}(data_ptr: felt*, length: felt) 
     }
 }
 
-func cal_hash{hash_ptr: HashBuiltin*}(result_int : felt, data_ptr : felt*, length: felt) -> (result : felt) {
+func cal_hash{
+    hash_ptr: HashBuiltin*
+}(result_int : felt, data_ptr : felt*, length: felt) -> (result : felt) {
     if(length == 0) {
         return (result=result_int);
     } else {
@@ -50,51 +65,81 @@ func cal_hash{hash_ptr: HashBuiltin*}(result_int : felt, data_ptr : felt*, lengt
     
 }
 
-@view
+// @view
 func view_pedersen_hash_chain{
-    syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr, bitwise_ptr: BitwiseBuiltin*
-}(number_of_features: felt, coefs: felt*, intercept_: felt) -> (hashed_value: felt) {
+    hash_ptr: HashBuiltin*, 
+    // syscall_ptr: felt*, bitwise_ptr: BitwiseBuiltin*, 
+    // range_check_ptr, 
+}(coefs_len: felt, coefs: felt*, intercept_: felt) -> (hashed_value: felt) {
     alloc_locals;
-    let (coefs_hashed_value) = pedersen_hash_chain(coefs, number_of_features);
-    hashed_value = hash2(coefs_hashed_value, intercept_);
+    let (coefs_hashed_value) = pedersen_hash_chain(coefs, coefs_len);
+    let (hashed_value) = hash2(coefs_hashed_value, intercept_);
     return (hashed_value=hashed_value);
 }
 
 
-@view
-func view_solution{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_check_ptr}(
-    user_address: felt) -> (
-    output : Solution
-){
-    let (output) = solution_storage.read(user_address);
-    return (output = output);
-}
+// @view
+// func view_solution{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_check_ptr}(
+//     user_address: felt) -> (
+//     len_array : felt, array:felt*, intercept: felt
+// ){
+    // alloc_locals;
+    // let (output) = solution_storage.read(user_address);
+    // return (output = output);
+// }
 
 @external
-func commit_hash{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(hash: Uint256) {
+func commit_hash{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(hash: felt) {
     let (caller_address) = get_caller_address();
     hash_storage.write(caller_address, hash);
     return ();
 }
 
-@external
+// @external
 func reveal{
-    syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr, bitwise_ptr: BitwiseBuiltin*
-}(coef_: felt, intercept_: felt) {
+    syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr, bitwise_ptr: BitwiseBuiltin*,
+    hash_ptr: HashBuiltin*
+}(array_len: felt, array: felt*, intercept: felt) {
     alloc_locals;
     let (caller_address) = get_caller_address();
     let (committed_hash) = hash_storage.read(caller_address);
-    let (is_eq_to_zero) = uint256_eq(committed_hash, Uint256(0, 0));
-    with_attr error_message("You should first commit something") {
-        assert is_eq_to_zero = FALSE;
-    }
-    let (current_hash) = view_get_keccak_hash(coef_, intercept_);
-    let (is_eq) = uint256_eq(current_hash, committed_hash);
-    with_attr error_message("You are trying to cheat") {
-        assert is_eq = TRUE;
-    }
-    solution_storage.write(caller_address, Solution(coef_, intercept_));
 
+    // let (is_eq_to_zero) = uint256_eq(committed_hash, Uint256(0, 0));
+    with_attr error_message("You should first commit something") {
+        assert committed_hash = 0;
+    }
+
+    // check len_arr == number_of_features
+    let (n) = number_of_features.read();
+    with_attr error_message("Wrong number of coefficient") {
+        assert array_len = n;
+    }
+
+    
+
+    let (current_hash) = view_pedersen_hash_chain(array_len, array, intercept);
+    // let (is_eq) = uint256_eq(current_hash, committed_hash);
+
+    with_attr error_message("You are trying to cheat") {
+        assert current_hash = committed_hash;
+    }
+    // solution_storage.write(caller_address, Solution(coef_, intercept_));
+    // store first coef
+    let (local new_array) = alloc();
+    // assert [coef_0] = [arr];
+    _save_coefs(array=array, new_array=new_array, length=array_len);
+    intercept_storage.write(caller_address,intercept);
+    return ();
+}
+
+func _save_coefs{
+    syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr, bitwise_ptr: BitwiseBuiltin*
+}(array: felt*, new_array: felt*, length: felt) {
+    if (length == 0) {
+        return ();
+    }
+    assert [new_array] = [array];
+    _save_coefs(array=array + 1, new_array=new_array + 1, length=length - 1);
     return ();
 }
 
