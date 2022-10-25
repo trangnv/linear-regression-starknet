@@ -1,24 +1,19 @@
-// Declare this file as a StarkNet contract.
 %lang starknet
 
 from starkware.cairo.common.cairo_builtins import BitwiseBuiltin, HashBuiltin
-// from starkware.cairo.common.cairo_keccak.keccak import keccak_felts, finalize_keccak
 from starkware.cairo.common.hash import hash2
-
-
-// from starkware.cairo.common.cairo_builtins import HashBuiltin
 from starkware.cairo.common.alloc import alloc
 from starkware.starknet.common.syscalls import get_caller_address
-// from starkware.cairo.common.uint256 import Uint256, uint256_eq
-from starkware.cairo.common.bool import TRUE, FALSE
+// from starkware.starknet.public.abi import get_storage_var_address
+
 
 @storage_var
 func number_of_features() -> (res: felt) {
 }
 
-// @storage_var
-// func coef_0_storage(address: felt) -> (coef_0: felt) {
-// }
+@storage_var
+func coef_0_storage(address: felt) -> (coef_0: felt) {
+}
 
 @storage_var
 func intercept_storage(address: felt) -> (res: felt) {
@@ -38,40 +33,40 @@ func constructor{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr
 
 // Computes the Pedersen hash chain on an array of size `length` starting from `data_ptr`.
 func cal_pedersen_hash_chain{
-    hash_ptr: HashBuiltin*
+    pedersen_ptr: HashBuiltin*,
 }(data_ptr: felt*, length: felt) -> (result: felt) {
   alloc_locals;
 
   if (length == 2) {
-        let (result) = hash2(x=[data_ptr], y=[data_ptr + 1]);
+        let (result) = hash2{hash_ptr=pedersen_ptr}(x=[data_ptr], y=[data_ptr + 1]);
         return (result=result);
     } else {
-        let (result_int) = hash2(x=[data_ptr], y=[data_ptr+1]);
+        let (result_int) = hash2{hash_ptr=pedersen_ptr}(x=[data_ptr], y=[data_ptr+1]);
         let (result) = cal_hash(result_int=result_int, data_ptr=data_ptr+2, length=length-2);
         return (result=result);
     }
 }
 
 func cal_hash{
-    hash_ptr: HashBuiltin*
+    pedersen_ptr: HashBuiltin*,
 }(result_int : felt, data_ptr : felt*, length: felt) -> (result : felt) {
     if(length == 0) {
         return (result=result_int);
     } else {
-        let (result_int2) = hash2(x=result_int, y=[data_ptr]);
+        let (result_int2) = hash2{hash_ptr=pedersen_ptr}(x=result_int, y=[data_ptr]);
         let (result) = cal_hash(result_int=result_int2, data_ptr=data_ptr+1, length=length-1);
         return (result=result);
     }
     
 }
 
-// @view
-func pedersen_hash_chain{
-    hash_ptr: HashBuiltin*,
+@view
+func pedersen_hash_submission{
+    pedersen_ptr: HashBuiltin*,
 }(coefs_len: felt, coefs: felt*, intercept_: felt) -> (hashed_value: felt) {
     alloc_locals;
     let (coefs_hashed_value) = cal_pedersen_hash_chain(coefs, coefs_len);
-    let (hashed_value) = hash2(coefs_hashed_value, intercept_);
+    let (hashed_value) = hash2{hash_ptr=pedersen_ptr}(coefs_hashed_value, intercept_);
     return (hashed_value=hashed_value);
 }
 
@@ -83,36 +78,37 @@ func commit_hash{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr
     return ();
 }
 
-// @external
+@external
 func reveal{
-    syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr, bitwise_ptr: BitwiseBuiltin*,
-    hash_ptr: HashBuiltin*
+    syscall_ptr: felt*, 
+    pedersen_ptr: HashBuiltin*, 
+    range_check_ptr, bitwise_ptr: BitwiseBuiltin*,
 }(array_len: felt, array: felt*, intercept: felt) {
     alloc_locals;
     let (caller_address) = get_caller_address();
     let (committed_hash) = hash_storage.read(caller_address);
 
-    // let (is_eq_to_zero) = uint256_eq(committed_hash, Uint256(0, 0));
     with_attr error_message("You should first commit something") {
         assert committed_hash = 0;
     }
 
-    // check len_arr == number_of_features
+    // check array_len == number_of_features
     let (n) = number_of_features.read();
     with_attr error_message("Wrong number of coefficient") {
         assert array_len = n;
     }
 
-    let (current_hash) = _pedersen_hash_chain(array_len, array, intercept);
-    // let (is_eq) = uint256_eq(current_hash, committed_hash);
+    let (current_hash) = pedersen_hash_submission(array_len, array, intercept);
 
     with_attr error_message("You are trying to cheat") {
         assert current_hash = committed_hash;
     }
 
-    let (local new_array) = alloc(); // need to store this some how, maybe cast first coef
+    let (local new_array) = alloc();
     _save_coefs(array=array, new_array=new_array, length=array_len);
+
     intercept_storage.write(caller_address,intercept);
+    coef_0_storage.write(caller_address,[new_array]);
     return ();
 }
 

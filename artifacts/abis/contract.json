@@ -13,11 +13,55 @@
     {
         "inputs": [
             {
+                "name": "coefs_len",
+                "type": "felt"
+            },
+            {
+                "name": "coefs",
+                "type": "felt*"
+            },
+            {
+                "name": "intercept_",
+                "type": "felt"
+            }
+        ],
+        "name": "pedersen_hash_submission",
+        "outputs": [
+            {
+                "name": "hashed_value",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
                 "name": "hash",
                 "type": "felt"
             }
         ],
         "name": "commit_hash",
+        "outputs": [],
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "array_len",
+                "type": "felt"
+            },
+            {
+                "name": "array",
+                "type": "felt*"
+            },
+            {
+                "name": "intercept",
+                "type": "felt"
+            }
+        ],
+        "name": "reveal",
         "outputs": [],
         "type": "function"
     }
