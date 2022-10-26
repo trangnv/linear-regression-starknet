@@ -4,8 +4,6 @@ from starkware.cairo.common.cairo_builtins import BitwiseBuiltin, HashBuiltin
 from starkware.cairo.common.hash import hash2
 from starkware.cairo.common.alloc import alloc
 from starkware.starknet.common.syscalls import get_caller_address
-// from starkware.starknet.public.abi import get_storage_var_address
-
 
 @storage_var
 func number_of_features() -> (res: felt) {
@@ -70,7 +68,6 @@ func pedersen_hash_submission{
     return (hashed_value=hashed_value);
 }
 
-
 @external
 func commit_hash{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(hash: felt) {
     let (caller_address) = get_caller_address();
@@ -105,10 +102,11 @@ func reveal{
     }
 
     let (local new_array) = alloc();
-    _save_coefs(array=array, new_array=new_array, length=array_len);
+    _save_coefs(array=array, new_array=new_array, length=array_len); // save coefs to the new_array
+    coef_0_storage.write(caller_address,[new_array]); // coef_0 = [new_array] and the other coefs are followed
 
-    intercept_storage.write(caller_address,intercept);
-    coef_0_storage.write(caller_address,[new_array]);
+    intercept_storage.write(caller_address,intercept); // store intercept
+
     return ();
 }
 
