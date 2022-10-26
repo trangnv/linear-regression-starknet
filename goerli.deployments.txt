@@ -1,0 +1,2 @@
+0x0496a76d18815d56e3986eee357e09e9bc7fae9c290aa97ce7ce1055f83287d8:/Users/nvtrang/code/pyenv/cairo_venv/lib/python3.9/site-packages/nile/artifacts/abis/Account.json:account-0
+0x04aab0c376c49d4862697cd9b96715a4d07caaa07d950eb36c98a240df00e716:artifacts/abis/contract.json
