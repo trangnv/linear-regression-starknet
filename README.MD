@@ -6,12 +6,12 @@
   - They will not reveal it in submission period
   - They will eventually need to reveal the actual model
 
-### Iterations
-- First solution for an one feature linear regression model
-- Second iteration: Multiple linear regression
+## Iterations
+- [First iteration: one feature linear regression model](#first)
+- [Second iteration: Multiple linear regression](#second)
 
 
-## [Solution for one feature linear regression model](https://github.com/trangnv/linear-regression-starknet/tree/simple-linear-regression)
+## [First iteration](https://github.com/trangnv/linear-regression-starknet/tree/simple-linear-regression) <a name="first"></a>
 
 ### Machine learning model
 - For the first version, it's a simple 1 feature linear regression model represented by 2 values: `intercept_` and `coef_`
@@ -31,7 +31,7 @@ A commitment scheme is a cryptographic primitive that allows one to commit to a 
 - **[Contract on Voyager](https://goerli.voyager.online/contract/0x02f11c9d3bf19226233c44ec919a337dd70837699b3e94fb326a5a89e763f628)**
 
 
-## Multiple linear regression model
+## Second iteration: multiple linear regression model <a name="second"></a>
 ### Machine learning model
 - Arbitrary number of features
 - Example [notebook](https://github.com/trangnv/linear-regression-starknet/blob/multiple-linear-regression/ml_workflow/multiple_linear_regression.ipynb)
