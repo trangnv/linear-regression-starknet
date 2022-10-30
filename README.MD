@@ -1,10 +1,16 @@
-# Publishing machine learning models on StarkNet with commit-reveal scheme
+# Linear regression machine learning competition on StarkNet
+First daap for implementation of Private Model, Public Input data science competitions
+For ideas, thesis discussion please haed over to [Notion page](https://snml.notion.site/First-implementation-Private-Model-Public-Input-c556d39ee0b24268a8f2bdb845077d4f)
 
 ## The usecase
-- A machine learning model that need to be developed with data publicly available
-- Anyone can publish their model 
-  - They will not reveal it in submission period
-  - They will eventually need to reveal the actual model
+- Model: linear regressions
+- Dataset 'uploading'
+  - Training + validation dataset
+  - Testing dataset
+- Model submission process: use commit-reveal scheme
+  - Commit hash value of the model during submission period
+  - Reveal real model when submission period end
+
 
 ## Iterations
 - [First iteration: one feature linear regression model](#first)
