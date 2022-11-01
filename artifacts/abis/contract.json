@@ -25,10 +25,31 @@
                 "type": "felt"
             }
         ],
-        "name": "pedersen_hash_submission",
+        "name": "view_pedersen_hash_chain",
         "outputs": [
             {
                 "name": "hashed_value",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "leafs_len",
+                "type": "felt"
+            },
+            {
+                "name": "leafs",
+                "type": "felt*"
+            }
+        ],
+        "name": "view_merkle_root",
+        "outputs": [
+            {
+                "name": "res",
                 "type": "felt"
             }
         ],
@@ -55,27 +76,6 @@
         ],
         "name": "commit_merkle_root",
         "outputs": [],
-        "type": "function"
-    },
-    {
-        "inputs": [
-            {
-                "name": "leafs_len",
-                "type": "felt"
-            },
-            {
-                "name": "leafs",
-                "type": "felt*"
-            }
-        ],
-        "name": "view_merkle_root",
-        "outputs": [
-            {
-                "name": "res",
-                "type": "felt"
-            }
-        ],
-        "stateMutability": "view",
         "type": "function"
     },
     {

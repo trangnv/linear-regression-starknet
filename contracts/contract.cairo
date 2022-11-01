@@ -1,14 +1,16 @@
 %lang starknet
 
 from starkware.cairo.common.cairo_builtins import BitwiseBuiltin, HashBuiltin
-from starkware.cairo.common.hash import hash2
 from starkware.cairo.common.alloc import alloc
-from starkware.cairo.common.bool import TRUE
-from starkware.cairo.common.math import unsigned_div_rem
-from starkware.cairo.common.math_cmp import is_le_felt
+from starkware.cairo.common.hash import hash2
+// from starkware.cairo.common.bool import TRUE
+// from starkware.cairo.common.math_cmp import is_le_felt
 from starkware.starknet.common.syscalls import get_caller_address
 
 from contracts.contract_storage import ContractStorage
+from contracts.crypto.pedersen_hash import cal_pedersen_hash_chain
+from contracts.crypto.merkle_root import cal_merkle_root
+
 
 
 @storage_var
@@ -34,42 +36,23 @@ func constructor{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr
     return ();
 }
 
-// Computes the Pedersen hash chain on an array of size `length` starting from `data_ptr`.
-func cal_pedersen_hash_chain{pedersen_ptr: HashBuiltin*}(data_ptr: felt*, length: felt) -> (
-    result: felt
-) {
-    alloc_locals;
-
-    if (length == 2) {
-        let (result) = hash2{hash_ptr=pedersen_ptr}(x=[data_ptr], y=[data_ptr + 1]);
-        return (result=result);
-    } else {
-        let (result_int) = hash2{hash_ptr=pedersen_ptr}(x=[data_ptr], y=[data_ptr + 1]);
-        let (result) = cal_hash(result_int=result_int, data_ptr=data_ptr + 2, length=length - 2);
-        return (result=result);
-    }
-}
-
-func cal_hash{pedersen_ptr: HashBuiltin*}(result_int: felt, data_ptr: felt*, length: felt) -> (
-    result: felt
-) {
-    if (length == 0) {
-        return (result=result_int);
-    } else {
-        let (result_int2) = hash2{hash_ptr=pedersen_ptr}(x=result_int, y=[data_ptr]);
-        let (result) = cal_hash(result_int=result_int2, data_ptr=data_ptr + 1, length=length - 1);
-        return (result=result);
-    }
-}
-
 @view
-func pedersen_hash_submission{pedersen_ptr: HashBuiltin*}(
+func view_pedersen_hash_chain{pedersen_ptr: HashBuiltin*}(
     coefs_len: felt, coefs: felt*, intercept_: felt
 ) -> (hashed_value: felt) {
     alloc_locals;
     let (coefs_hashed_value) = cal_pedersen_hash_chain(coefs, coefs_len);
     let (hashed_value) = hash2{hash_ptr=pedersen_ptr}(coefs_hashed_value, intercept_);
     return (hashed_value=hashed_value);
+}
+
+@view
+func view_merkle_root{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+    leafs_len: felt, leafs: felt*
+) -> (res: felt) {
+    alloc_locals;
+    let (res) = cal_merkle_root(leafs_len, leafs);
+    return (res=res);
 }
 
 @external
@@ -86,54 +69,6 @@ func commit_merkle_root{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_ch
     let (caller_address) = get_caller_address();
     merkle_root_storage.write(caller_address, root);
     return ();
-}
-@view
-func view_merkle_root{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
-    leafs_len: felt, leafs: felt*
-) -> (res: felt) {
-    alloc_locals;
-    if (leafs_len == 1) {
-        return (res=[leafs]);
-    }
-    let (local new_leafs) = alloc();
-    _merkle_build_body{new_leafs=new_leafs, leafs=leafs, stop=leafs_len}(0);
-
-    let (q, r) = unsigned_div_rem(leafs_len, 2);
-    return view_merkle_root(q + r, new_leafs);
-}
-
-func _merkle_build_body{
-    syscall_ptr: felt*,
-    pedersen_ptr: HashBuiltin*,
-    range_check_ptr,
-    new_leafs: felt*,
-    leafs: felt*,
-    stop: felt,
-}(i: felt) {
-    let stop_loop = is_le_felt(stop, i);
-    if (stop_loop == TRUE) {
-        return ();
-    }
-    if (i == stop - 1) {
-        let (n) = _hash_sorted{hash_ptr=pedersen_ptr}([leafs + i], [leafs + i]);
-        tempvar range_check_ptr = range_check_ptr;
-    } else {
-        let (n) = _hash_sorted{hash_ptr=pedersen_ptr}([leafs + i], [leafs + i + 1]);
-        tempvar range_check_ptr = range_check_ptr;
-    }
-    assert [new_leafs + i / 2] = n;
-    return _merkle_build_body(i + 2);
-}
-
-func _hash_sorted{hash_ptr: HashBuiltin*, range_check_ptr}(a, b) -> (res: felt) {
-    let le = is_le_felt(a, b);
-
-    if (le == 1) {
-        let (n) = hash2{hash_ptr=hash_ptr}(a, b);
-    } else {
-        let (n) = hash2{hash_ptr=hash_ptr}(b, a);
-    }
-    return (res=n);
 }
 
 @external
@@ -154,7 +89,7 @@ func reveal{
         assert array_len = n;
     }
 
-    let (current_hash) = pedersen_hash_submission(array_len, array, intercept);
+    let (current_hash) = view_pedersen_hash_chain(array_len, array, intercept);
 
     with_attr error_message("You are trying to cheat") {
         assert current_hash = committed_hash;
