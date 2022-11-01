@@ -55,7 +55,12 @@ Where `N` is number of features
     - `commit_hash` 
     - `reveal` solution
 
-
+## Third iteration: polynomial regression model <a name="third"></a>
+The original thought for first dapp was having users submit linear model, but that seems to be too simplistic to distingish model
+With polynomial regression, 
+- It gives data scientist more flexibility to tune their models (does it?)
+- 1 more criterial for judging model which is its complexity
+- 
 ## References
 - [starknet-commit-reveal](https://github.com/gaetbout/starknet-commit-reveal) by gaetbout
 

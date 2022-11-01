@@ -22,12 +22,6 @@ func coef_0_storage(address: felt) -> (coef_0: felt) {
 func intercept_storage(address: felt) -> (res: felt) {
 }
 
-// @storage_var
-// func hash_storage(address: felt) -> (hashed_response: felt) {
-// }
-@storage_var
-func merkle_root_storage(address: felt) -> (res: felt) {
-}
 
 @constructor
 func constructor{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
@@ -64,16 +58,16 @@ func commit_model_hash{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_che
 }
 
 @external
-func commit_merkle_root{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+func commit_merkle_root_test_data{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
     root: felt
 ) {
     let (caller_address) = get_caller_address();
-    merkle_root_storage.write(caller_address, root);
+    ContractStorage.merkle_root_test_data_write(caller_address, root);
     return ();
 }
 
 @external
-func reveal{
+func reveal_model{
     syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr, bitwise_ptr: BitwiseBuiltin*
 }(array_len: felt, array: felt*, intercept: felt) {
     alloc_locals;
@@ -97,7 +91,7 @@ func reveal{
     }
 
     let (local new_array) = alloc();
-    _save_coefs(array=array, new_array=new_array, length=array_len);  // save coefs to the new_array
+    _save_model(array=array, new_array=new_array, length=array_len);  // save coefs to the new_array
     coef_0_storage.write(caller_address, [new_array]);  // coef_0 = [new_array] and the other coefs are followed
 
     intercept_storage.write(caller_address, intercept);  // store intercept
@@ -105,14 +99,14 @@ func reveal{
     return ();
 }
 
-func _save_coefs{
+func _save_model{
     syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr, bitwise_ptr: BitwiseBuiltin*
 }(array: felt*, new_array: felt*, length: felt) {
     if (length == 0) {
         return ();
     }
     assert [new_array] = [array];
-    _save_coefs(array=array + 1, new_array=new_array + 1, length=length - 1);
+    _save_model(array=array + 1, new_array=new_array + 1, length=length - 1);
     return ();
 }
 // @external
