@@ -2,7 +2,7 @@
     {
         "inputs": [
             {
-                "name": "_number_of_features",
+                "name": "_number_features",
                 "type": "felt"
             }
         ],

@@ -8,9 +8,8 @@ from starkware.cairo.common.math import unsigned_div_rem
 from starkware.cairo.common.math_cmp import is_le_felt
 from starkware.starknet.common.syscalls import get_caller_address
 
-@storage_var
-func number_of_features() -> (res: felt) {
-}
+from contracts.contract_storage import ContractStorage
+
 
 @storage_var
 func coef_0_storage(address: felt) -> (coef_0: felt) {
@@ -29,9 +28,9 @@ func merkle_root_storage(address: felt) -> (res: felt) {
 
 @constructor
 func constructor{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
-    _number_of_features: felt
+    _number_features: felt
 ) {
-    number_of_features.write(_number_of_features);
+    ContractStorage.number_features_write(_number_features);
     return ();
 }
 
@@ -150,7 +149,7 @@ func reveal{
     }
 
     // check array_len == number_of_features
-    let (n) = number_of_features.read();
+    let (n) = ContractStorage.number_features_read();
     with_attr error_message("Wrong number of coefficient") {
         assert array_len = n;
     }
