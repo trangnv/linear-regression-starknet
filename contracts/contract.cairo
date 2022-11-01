@@ -13,6 +13,7 @@ from contracts.crypto.merkle_root import cal_merkle_root
 
 
 
+
 @storage_var
 func coef_0_storage(address: felt) -> (coef_0: felt) {
 }
@@ -21,9 +22,9 @@ func coef_0_storage(address: felt) -> (coef_0: felt) {
 func intercept_storage(address: felt) -> (res: felt) {
 }
 
-@storage_var
-func hash_storage(address: felt) -> (hashed_response: felt) {
-}
+// @storage_var
+// func hash_storage(address: felt) -> (hashed_response: felt) {
+// }
 @storage_var
 func merkle_root_storage(address: felt) -> (res: felt) {
 }
@@ -56,9 +57,9 @@ func view_merkle_root{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_chec
 }
 
 @external
-func commit_hash{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(hash: felt) {
+func commit_model_hash{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(hash: felt) {
     let (caller_address) = get_caller_address();
-    hash_storage.write(caller_address, hash);
+    ContractStorage.model_hash_write(caller_address, hash);
     return ();
 }
 
@@ -77,7 +78,7 @@ func reveal{
 }(array_len: felt, array: felt*, intercept: felt) {
     alloc_locals;
     let (caller_address) = get_caller_address();
-    let (committed_hash) = hash_storage.read(caller_address);
+    let (committed_hash) = ContractStorage.model_hash_read(caller_address);
 
     with_attr error_message("You should first commit something") {
         assert committed_hash = 0;

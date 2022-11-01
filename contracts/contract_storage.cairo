@@ -6,7 +6,7 @@ func ContractStorage_submission_hash(address: felt) -> (submission_hash: felt) {
 }
 
 @storage_var
-func ContractStorage_submission(address: felt) -> (submission: felt) {
+func ContractStorage_model_hash(address: felt) -> (submission: felt) {
 }
 
 // number of features
@@ -30,6 +30,13 @@ namespace ContractStorage {
         return (n,);
     }
 
+    func model_hash_read{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+        address: felt
+    ) -> (res: felt) {
+        let (res) = ContractStorage_model_hash.read(address);
+        return(res,);
+    }
+
 
     //
     // Writes
@@ -39,5 +46,12 @@ namespace ContractStorage {
     ) {
         ContractStorage_number_features.write(n);
         return ();
+    }
+
+    func model_hash_write{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+        address: felt, hash_value: felt
+    ) {
+        ContractStorage_model_hash.write(address, hash_value);
+        return();
     }
 }

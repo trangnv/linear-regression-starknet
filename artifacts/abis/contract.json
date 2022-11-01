@@ -63,7 +63,7 @@
                 "type": "felt"
             }
         ],
-        "name": "commit_hash",
+        "name": "commit_model_hash",
         "outputs": [],
         "type": "function"
     },
