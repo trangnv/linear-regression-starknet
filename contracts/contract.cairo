@@ -8,19 +8,11 @@ from starkware.cairo.common.hash import hash2
 from starkware.starknet.common.syscalls import get_caller_address
 
 from contracts.contract_storage import ContractStorage
-from contracts.crypto.pedersen_hash import cal_pedersen_hash_chain
+from contracts.crypto.pedersen_hash import compute_hash_struct_array
 from contracts.crypto.merkle_root import cal_merkle_root
 
+from contracts.libraries.types.data_types import DataTypes
 
-
-
-@storage_var
-func coef_0_storage(address: felt) -> (coef_0: felt) {
-}
-
-@storage_var
-func intercept_storage(address: felt) -> (res: felt) {
-}
 
 
 @constructor
@@ -31,13 +23,13 @@ func constructor{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr
     return ();
 }
 
+// return perdersen hash with input is model which is an array of struct
 @view
-func view_pedersen_hash_chain{pedersen_ptr: HashBuiltin*}(
-    coefs_len: felt, coefs: felt*, intercept_: felt
+func view_pedersen_hash_model{pedersen_ptr: HashBuiltin*}(
+    expression_len: felt, expression: DataTypes.Expression5V*,
 ) -> (hashed_value: felt) {
     alloc_locals;
-    let (coefs_hashed_value) = cal_pedersen_hash_chain(coefs, coefs_len);
-    let (hashed_value) = hash2{hash_ptr=pedersen_ptr}(coefs_hashed_value, intercept_);
+    let (hashed_value) = compute_hash_struct_array(expression_len, expression);
     return (hashed_value=hashed_value);
 }
 
@@ -69,7 +61,7 @@ func commit_merkle_root_test_data{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*
 @external
 func reveal_model{
     syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr, bitwise_ptr: BitwiseBuiltin*
-}(array_len: felt, array: felt*, intercept: felt) {
+}(expression_len: felt, expression: DataTypes.Expression5V*) {
     alloc_locals;
     let (caller_address) = get_caller_address();
     let (committed_hash) = ContractStorage.model_hash_read(caller_address);
@@ -78,37 +70,39 @@ func reveal_model{
         assert committed_hash = 0;
     }
 
-    // check array_len == number_of_features
-    let (n) = ContractStorage.number_features_read();
-    with_attr error_message("Wrong number of coefficient") {
-        assert array_len = n;
-    }
-
-    let (current_hash) = view_pedersen_hash_chain(array_len, array, intercept);
+    let (current_hash) = view_pedersen_hash_model(expression_len, expression);
 
     with_attr error_message("You are trying to cheat") {
         assert current_hash = committed_hash;
     }
 
-    let (local new_array) = alloc();
-    _save_model(array=array, new_array=new_array, length=array_len);  // save coefs to the new_array
-    coef_0_storage.write(caller_address, [new_array]);  // coef_0 = [new_array] and the other coefs are followed
+    let (local struct_array_ptr: DataTypes.Expression5V*) = alloc();
+    let (local _expression: DataTypes.Expression5V) = [expression];
 
-    intercept_storage.write(caller_address, intercept);  // store intercept
+
+    // _save_model(expression_len=expression_len, expression=expression, new_array=struct_array_ptr);  // save coefs to the new_array
+    ContractStorage.model_write(caller_address, expression_len, _expression);
 
     return ();
 }
 
-func _save_model{
-    syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr, bitwise_ptr: BitwiseBuiltin*
-}(array: felt*, new_array: felt*, length: felt) {
-    if (length == 0) {
-        return ();
-    }
-    assert [new_array] = [array];
-    _save_model(array=array + 1, new_array=new_array + 1, length=length - 1);
-    return ();
-}
+// func _save_model{
+//     syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr, bitwise_ptr: BitwiseBuiltin*
+// }(
+//     address: felt,
+//     expression_len: felt,
+//     expression: DataTypes.Expression5V*,
+//     new_array: DataTypes.Expression5V*
+// ) {
+//     if (expression_len == 0) {
+//         return ();
+//     }
+//     assert [new_array] = [expression];
+//     //TODO: write ContractStorage
+//     ContractStorage.model_write(
+//     _save_model(expression_len=expression_len - 1, expression=expression + 1, new_array=new_array + 1);
+//     return ();
+// }
 // @external
 // func predict{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(input: felt) -> (
 //     output: felt

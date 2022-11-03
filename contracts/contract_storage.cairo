@@ -14,7 +14,7 @@ func ContractStorage_model_hash(address: felt) -> (model_hash: felt) {
 
 // store the real model
 @storage_var
-func ContractStorage_model(address) -> (model: DataTypes.PolynomialRegressionModel) {
+func ContractStorage_model(address) -> (res:(expression_len: felt, expression: DataTypes.Expression5V)) {
 }
 
 // store root hash of markle root of test data submission
@@ -43,9 +43,9 @@ namespace ContractStorage {
 
     func model_read{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
         address: felt
-    ) -> (model: DataTypes.PolynomialRegressionModel) {
-        let (model) = ContractStorage_model.read(address);
-        return (model,);
+    ) -> (expression_len:felt, expression: DataTypes.Expression5V*) {
+        let (expression_len, expression) = ContractStorage_model.read(address);
+        return (expression_len, expression);
     }
 
     func merkle_root_test_data_read{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
@@ -74,9 +74,9 @@ namespace ContractStorage {
     }
 
     func model_write{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
-        address: felt, model: DataTypes.PolynomialRegressionModel
+        address: felt, expression_len: felt, expression: DataTypes.Expression5V
     ) {
-        ContractStorage_model.write(address, model);
+        ContractStorage_model.write(address, (expression_len, expression));
         return();
     }
 
