@@ -1,5 +1,5 @@
 namespace DataTypes {
-    struct Expression5V {
+    struct Term5V {
         a: felt, // constant
         x1: felt, // power
         x2: felt,

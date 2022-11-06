@@ -26,10 +26,10 @@ func constructor{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr
 // return perdersen hash with input is model which is an array of struct
 @view
 func view_pedersen_hash_model{pedersen_ptr: HashBuiltin*}(
-    expression_len: felt, expression: DataTypes.Expression5V*,
+    term_len: felt, term: DataTypes.Term5V*,
 ) -> (hashed_value: felt) {
     alloc_locals;
-    let (hashed_value) = compute_hash_struct_array(expression_len, expression);
+    let (hashed_value) = compute_hash_struct_array(term_len, term);
     return (hashed_value=hashed_value);
 }
 
@@ -59,9 +59,9 @@ func commit_merkle_root_test_data{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*
 }
 
 @external
-func reveal_model{
-    syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr, bitwise_ptr: BitwiseBuiltin*
-}(expression_len: felt, expression: DataTypes.Expression5V*) {
+func reveal_model{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr, bitwise_ptr: BitwiseBuiltin*}(
+    term_len: felt, term: DataTypes.Term5V*
+) {
     alloc_locals;
     let (caller_address) = get_caller_address();
     let (committed_hash) = ContractStorage.model_hash_read(caller_address);
@@ -70,37 +70,47 @@ func reveal_model{
         assert committed_hash = 0;
     }
 
-    let (current_hash) = view_pedersen_hash_model(expression_len, expression);
+    let (current_hash) = view_pedersen_hash_model(term_len, term);
 
     with_attr error_message("You are trying to cheat") {
         assert current_hash = committed_hash;
     }
 
-    let (local struct_array_ptr: DataTypes.Expression5V*) = alloc();
-    let (local _expression: DataTypes.Expression5V) = [expression];
+    // save model len
+    ContractStorage.model_len_write(caller_address, term_len);
 
-
-    // _save_model(expression_len=expression_len, expression=expression, new_array=struct_array_ptr);  // save coefs to the new_array
-    ContractStorage.model_write(caller_address, expression_len, _expression);
-
+    // save terms
+    save_model(caller_address, term_len, term);
     return ();
 }
+
+func save_model{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr, bitwise_ptr: BitwiseBuiltin*}(
+    address: felt, term_len: felt, term: DataTypes.Term5V*
+) {
+    alloc_locals;
+    if (term_len==0) {
+        return ();
+    }
+    ContractStorage.model_term_write(address, term_len, [term]);
+    return save_model(address, term_len-1, term+1);
+}
+
 
 // func _save_model{
 //     syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr, bitwise_ptr: BitwiseBuiltin*
 // }(
 //     address: felt,
-//     expression_len: felt,
-//     expression: DataTypes.Expression5V*,
-//     new_array: DataTypes.Expression5V*
+//     term_len: felt,
+//     term: DataTypes.Term5V*,
+//     new_array: DataTypes.Term5V*
 // ) {
-//     if (expression_len == 0) {
+//     if (term_len == 0) {
 //         return ();
 //     }
-//     assert [new_array] = [expression];
+//     assert [new_array] = [term];
 //     //TODO: write ContractStorage
 //     ContractStorage.model_write(
-//     _save_model(expression_len=expression_len - 1, expression=expression + 1, new_array=new_array + 1);
+//     _save_model(term_len=term_len - 1, term=term + 1, new_array=new_array + 1);
 //     return ();
 // }
 // @external

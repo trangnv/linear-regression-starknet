@@ -12,10 +12,15 @@ func ContractStorage_number_features() -> (n: felt) {
 func ContractStorage_model_hash(address: felt) -> (model_hash: felt) {
 }
 
-// store the real model
+// store the number of term, real model
 @storage_var
-func ContractStorage_model(address) -> (res:(expression_len: felt, expression: DataTypes.Expression5V)) {
+func ContractStorage_model_len(address: felt) -> (res: felt) {
 }
+
+// store the term
+@storage_var
+func ContractStorage_model_term(address: felt, term_id: felt) -> (term: DataTypes.Term5V) {
+} 
 
 // store root hash of markle root of test data submission
 @storage_var
@@ -41,11 +46,11 @@ namespace ContractStorage {
         return(res,);
     }
 
-    func model_read{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+    func model_len_read{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
         address: felt
-    ) -> (expression_len:felt, expression: DataTypes.Expression5V*) {
-        let (expression_len, expression) = ContractStorage_model.read(address);
-        return (expression_len, expression);
+    ) -> (number_of_term: felt) {
+        let (term_len, term) = ContractStorage_model_len.read(address);
+        return (term_len);
     }
 
     func merkle_root_test_data_read{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
@@ -73,10 +78,17 @@ namespace ContractStorage {
         return();
     }
 
-    func model_write{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
-        address: felt, expression_len: felt, expression: DataTypes.Expression5V
+    func model_term_write{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+        address: felt, term_id: felt, term: DataTypes.Term5V
     ) {
-        ContractStorage_model.write(address, (expression_len, expression));
+        ContractStorage_model_term.write(address, term_id, term);
+        return();
+    }
+
+    func model_len_write{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+        address: felt, len: felt
+    ) {
+        ContractStorage_model_len.write(address, len);
         return();
     }
 

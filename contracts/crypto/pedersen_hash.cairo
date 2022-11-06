@@ -3,7 +3,7 @@ from starkware.cairo.common.hash import hash2
 from contracts.libraries.types.data_types import DataTypes
 
 func compute_hash_struct_array{pedersen_ptr: HashBuiltin*}(
-    struct_len: felt, struct_ptr: DataTypes.Expression5V*
+    struct_len: felt, struct_ptr: DataTypes.Term5V*
 ) -> (res: felt) {
     alloc_locals;
     if (struct_len == 1) {
@@ -18,7 +18,7 @@ func compute_hash_struct_array{pedersen_ptr: HashBuiltin*}(
 }
 // compute pedersen hash of a struct
 func _compute_hash_struct{pedersen_ptr: HashBuiltin*}(
-    struct_ptr:DataTypes.Expression5V*
+    struct_ptr:DataTypes.Term5V*
 ) -> (res: felt) {
     let (res) = _compute_pedersen_hash_chain(struct_ptr, 5);
     return (res=res);
