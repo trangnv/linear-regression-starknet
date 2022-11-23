@@ -95,39 +95,14 @@ func save_model{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr,
     return save_model(address, term_len-1, term+1);
 }
 
-
-// func _save_model{
-//     syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr, bitwise_ptr: BitwiseBuiltin*
-// }(
-//     address: felt,
-//     term_len: felt,
-//     term: DataTypes.Term5V*,
-//     new_array: DataTypes.Term5V*
-// ) {
-//     if (term_len == 0) {
-//         return ();
-//     }
-//     assert [new_array] = [term];
-//     //TODO: write ContractStorage
-//     ContractStorage.model_write(
-//     _save_model(term_len=term_len - 1, term=term + 1, new_array=new_array + 1);
-//     return ();
-// }
 // @external
-// func predict{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(input: felt) -> (
-//     output: felt
+// func reveal_test_data{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+//     // structure of test data
+//     // number of data point
+//     // list data points
+//     // requirement: number of point match
 // ) {
-//     alloc_locals;
-//     let (sender_address) = get_caller_address();
-//     // load the models, hard code for now
-//     tempvar coef_ = 100;
-//     tempvar intercept_ = 23;
-
-// // let calculation = coef_ * input + intercept_;
-//     let _
-//     caller_address_solution.write(sender_address, calculation);
-//     return (output = calculation);
-
-// // the prediction is onchain, anyone can run it, on user solution storage
-//     // what if the prediction is too much for onchain???
+    
 // }
+
+
