@@ -15,18 +15,18 @@ from contracts.libraries.types.data_types import DataTypes
 
 
 
-@constructor
-func constructor{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
-    _number_features: felt
-) {
-    ContractStorage.number_features_write(_number_features);
-    return ();
-}
+// @constructor
+// func constructor{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+//     _number_features: felt
+// ) {
+//     ContractStorage.number_features_write(_number_features);
+//     return ();
+// }
 
-// return perdersen hash with input is model which is an array of struct
+// return perdersen hash with input is model which is an array of felt
 @view
 func view_pedersen_hash_model{pedersen_ptr: HashBuiltin*}(
-    term_len: felt, term: DataTypes.Term5V*,
+    model_len: felt, model: felt*,
 ) -> (hashed_value: felt) {
     alloc_locals;
     let (hashed_value) = compute_hash_struct_array(term_len, term);
