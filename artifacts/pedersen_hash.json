@@ -314,7 +314,7 @@
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 52,
+                        "end_col": 40,
                         "end_line": 6,
                         "input_file": {
                             "filename": "contracts/crypto/pedersen_hash.cairo"
@@ -522,7 +522,7 @@
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 52,
+                        "end_col": 40,
                         "end_line": 6,
                         "input_file": {
                             "filename": "contracts/crypto/pedersen_hash.cairo"
@@ -626,7 +626,7 @@
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 33,
+                        "end_col": 21,
                         "end_line": 21,
                         "input_file": {
                             "filename": "contracts/crypto/pedersen_hash.cairo"
@@ -1262,10 +1262,6 @@
         },
         "hints": {},
         "identifiers": {
-            "__main__.DataTypes": {
-                "destination": "contracts.libraries.types.data_types.DataTypes",
-                "type": "alias"
-            },
             "__main__.HashBuiltin": {
                 "destination": "starkware.cairo.common.cairo_builtins.HashBuiltin",
                 "type": "alias"
@@ -1322,7 +1318,7 @@
                 "full_name": "__main__._compute_hash_struct.Args",
                 "members": {
                     "struct_ptr": {
-                        "cairo_type": "contracts.libraries.types.data_types.DataTypes.Term5V*",
+                        "cairo_type": "felt*",
                         "offset": 0
                     }
                 },
@@ -1400,7 +1396,7 @@
                         "offset": 0
                     },
                     "struct_ptr": {
-                        "cairo_type": "contracts.libraries.types.data_types.DataTypes.Term5V*",
+                        "cairo_type": "felt*",
                         "offset": 1
                     }
                 },
@@ -1429,60 +1425,6 @@
             "__main__.hash2": {
                 "destination": "starkware.cairo.common.hash.hash2",
                 "type": "alias"
-            },
-            "contracts.libraries.types.data_types.DataTypes": {
-                "type": "namespace"
-            },
-            "contracts.libraries.types.data_types.DataTypes.Args": {
-                "full_name": "contracts.libraries.types.data_types.DataTypes.Args",
-                "members": {},
-                "size": 0,
-                "type": "struct"
-            },
-            "contracts.libraries.types.data_types.DataTypes.ImplicitArgs": {
-                "full_name": "contracts.libraries.types.data_types.DataTypes.ImplicitArgs",
-                "members": {},
-                "size": 0,
-                "type": "struct"
-            },
-            "contracts.libraries.types.data_types.DataTypes.Return": {
-                "cairo_type": "()",
-                "type": "type_definition"
-            },
-            "contracts.libraries.types.data_types.DataTypes.SIZEOF_LOCALS": {
-                "type": "const",
-                "value": 0
-            },
-            "contracts.libraries.types.data_types.DataTypes.Term5V": {
-                "full_name": "contracts.libraries.types.data_types.DataTypes.Term5V",
-                "members": {
-                    "a": {
-                        "cairo_type": "felt",
-                        "offset": 0
-                    },
-                    "x1": {
-                        "cairo_type": "felt",
-                        "offset": 1
-                    },
-                    "x2": {
-                        "cairo_type": "felt",
-                        "offset": 2
-                    },
-                    "x3": {
-                        "cairo_type": "felt",
-                        "offset": 3
-                    },
-                    "x4": {
-                        "cairo_type": "felt",
-                        "offset": 4
-                    },
-                    "x5": {
-                        "cairo_type": "felt",
-                        "offset": 5
-                    }
-                },
-                "size": 6,
-                "type": "struct"
             },
             "starkware.cairo.common.bool.FALSE": {
                 "type": "const",

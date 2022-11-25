@@ -10,8 +10,13 @@ func ContractStorage_model_hash(address: felt) -> (model_hash: felt) {
 
 // store the number of term, real model
 @storage_var
-func ContractStorage_model_degree(address: felt) -> (res: felt) {
+func ContractStorage_polynomial_len(address: felt) -> (res: felt) {
 }
+
+@storage_var
+func ContractStorage_monomial(address, exponent) -> (res: felt) {
+}
+
 
 // store root hash of markle root of test data submission
 @storage_var
@@ -32,10 +37,10 @@ namespace ContractStorage {
         return(res,);
     }
 
-    func model_degree_read{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+    func polynomial_len_read{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
         address: felt
     ) -> (number_of_term: felt) {
-        let (term_len, term) = ContractStorage_model_degree.read(address);
+        let (term_len, term) = ContractStorage_polynomial_len.read(address);
         return (term_len);
     }
 
@@ -59,10 +64,17 @@ namespace ContractStorage {
     }
 
 
-    func model_degree_write{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+    func polynomial_len_write{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
         address: felt, len: felt
     ) {
-        ContractStorage_model_degree.write(address, len);
+        ContractStorage_polynomial_len.write(address, len);
+        return();
+    }
+
+    func mononomial_write{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+        address: felt, exponent: felt, res: felt
+    ) {
+        ContractStorage_monomial.write(address, exponent, res);
         return();
     }
 

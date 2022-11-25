@@ -72,22 +72,28 @@ func reveal_model{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_pt
     }
 
     // save model len
-    ContractStorage.model_degree_write(caller_address, model_len);
+    ContractStorage.polynomial_len_write(caller_address, model_len);
 
-    // save terms
+    // save model
     save_model(caller_address, model_len, model);
     return ();
 }
 
 func save_model{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr, bitwise_ptr: BitwiseBuiltin*}(
-    address: felt, model_len: felt, model: felt*
+    // address: felt, model_len: felt, model: felt*
+    address: felt, polynomial_len: felt, weight: felt*
 ) {
     alloc_locals;
-    if (term_len==0) {
+    if (polynomial_len==0) {
         return ();
     }
-    ContractStorage.model_term_write(address, term_len, [term]);
-    return save_model(address, term_len-1, term+1);
+    // ContractStorage.mononomial_write(address, model_len, [model]);
+    ContractStorage.mononomial_write(address, polynomial_len, [weight]);
+
+
+    // return save_model(address, model_len-1, model+1);
+    return save_model(address, polynomial_len-1, weight+1);
+
 }
 
 // @external
