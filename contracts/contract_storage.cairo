@@ -14,7 +14,7 @@ func ContractStorage_polynomial_len(address: felt) -> (res: felt) {
 }
 
 @storage_var
-func ContractStorage_monomial(address, exponent) -> (res: felt) {
+func ContractStorage_mononomial(address, exponent) -> (res: felt) {
 }
 
 
@@ -22,6 +22,19 @@ func ContractStorage_monomial(address, exponent) -> (res: felt) {
 @storage_var
 func ContractStorage_merkle_root_test_data(address: felt) -> (root: felt) {
 }
+
+@storage_var
+func ContractStorage_test_data_len() -> (res: felt) {
+}
+@storage_var
+func ContractStorage_x(i: felt) -> (res: felt) {
+}
+@storage_var
+func ContractStorage_y(i: felt) -> (res: felt) {
+}
+
+
+
 
 
 
@@ -51,6 +64,21 @@ namespace ContractStorage {
         return(root,);
     }
 
+    func test_data_len_read{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}() -> (
+         res: felt
+    ){
+        let (res) = ContractStorage_test_data_len.read();
+        return(res=res);
+    }
+
+    func test_data_read{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+        i: felt
+    ) -> (x_i: felt, y_i: felt) {
+        let (x_i) = ContractStorage_x.read(i);
+        let (y_i) = ContractStorage_y.read(i);
+        return (x_i=x_i, y_i=y_i);
+    }
+
 
     //
     // Writes
@@ -74,7 +102,7 @@ namespace ContractStorage {
     func mononomial_write{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
         address: felt, exponent: felt, res: felt
     ) {
-        ContractStorage_monomial.write(address, exponent, res);
+        ContractStorage_mononomial.write(address, exponent, res);
         return();
     }
 
@@ -84,4 +112,27 @@ namespace ContractStorage {
         ContractStorage_merkle_root_test_data.write(address, root);
         return();
     }
+
+    func test_data_write{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+        i: felt, x: felt, y: felt
+    ) {
+        ContractStorage_x.write(i,x);
+        ContractStorage_y.write(i,y);
+        return();
+    }
+
+    func test_data_len_write{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+        test_data_len: felt
+    ) {
+        ContractStorage_test_data_len.write(test_data_len);
+        return();
+    }
+    
+
+    // func y_write{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+    //     i: felt, res: felt
+    // ) {
+    //     ContractStorage_y.write(i,res);
+    //     return();
+    // }
 }

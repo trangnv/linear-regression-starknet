@@ -2,15 +2,15 @@
     {
         "inputs": [
             {
-                "name": "model_len",
+                "name": "mononomial_len",
                 "type": "felt"
             },
             {
-                "name": "model",
+                "name": "mononomial",
                 "type": "felt*"
             }
         ],
-        "name": "view_pedersen_hash_model",
+        "name": "view_pedersen_hash",
         "outputs": [
             {
                 "name": "hashed_value",
@@ -31,10 +31,43 @@
                 "type": "felt*"
             }
         ],
-        "name": "view_merkle_root_test_data",
+        "name": "view_merkle_root",
         "outputs": [
             {
                 "name": "res",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "view_test_data_len",
+        "outputs": [
+            {
+                "name": "res",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "i",
+                "type": "felt"
+            }
+        ],
+        "name": "view_test_data",
+        "outputs": [
+            {
+                "name": "x_i",
+                "type": "felt"
+            },
+            {
+                "name": "y_i",
                 "type": "felt"
             }
         ],
@@ -66,15 +99,38 @@
     {
         "inputs": [
             {
-                "name": "model_len",
+                "name": "mononomial_len",
                 "type": "felt"
             },
             {
-                "name": "model",
+                "name": "mononomial",
                 "type": "felt*"
             }
         ],
         "name": "reveal_model",
+        "outputs": [],
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "x_len",
+                "type": "felt"
+            },
+            {
+                "name": "x",
+                "type": "felt*"
+            },
+            {
+                "name": "y_len",
+                "type": "felt"
+            },
+            {
+                "name": "y",
+                "type": "felt*"
+            }
+        ],
+        "name": "reveal_test_data",
         "outputs": [],
         "type": "function"
     }

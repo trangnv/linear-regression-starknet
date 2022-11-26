@@ -23,9 +23,14 @@ async def test_increase_balance():
     )
 
     # Invoke increase_balance() twice.
-    await contract.increase_balance(amount=10).invoke()
-    await contract.increase_balance(amount=20).invoke()
+    # await contract.increase_balance(amount=10).invoke()
+    await contract.reveal_test_data([1, 2, 3, 4, 5], [4, 5, 6, 7, 8]).execute()
 
     # Check the result of get_balance().
-    execution_info = await contract.get_balance().call()
-    assert execution_info.result == (30,)
+    execution_info = await contract.view_test_data_len().call()
+    # assert execution_info.result == (30,)
+    print(execution_info.result)
+
+    for i in range(5):
+        execution_info = await contract.view_test_data(i).call()
+        print(execution_info.result)
