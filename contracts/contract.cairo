@@ -21,7 +21,7 @@ func _is_lt_felt{range_check_ptr}(a: felt, b: felt) -> felt {
 
 // return perdersen hash with input is model which is an array of felt
 @view
-func view_pedersen_hash{pedersen_ptr: HashBuiltin*}(
+func view_pedersen_hash_chain{pedersen_ptr: HashBuiltin*}(
     mononomial_len: felt, mononomial: felt*,
 ) -> (hashed_value: felt) {
     alloc_locals;
@@ -91,7 +91,7 @@ func reveal_model{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_pt
         assert committed_hash = 0;
     }
 
-    let (current_hash) = view_pedersen_hash(mononomial_len, mononomial);
+    let (current_hash) = view_pedersen_hash_chain(mononomial_len, mononomial);
 
     with_attr error_message("You are trying to cheat") {
         assert current_hash = committed_hash;
@@ -106,35 +106,22 @@ func reveal_model{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_pt
 }
 
 func save_model{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr, bitwise_ptr: BitwiseBuiltin*}(
-    // address: felt, model_len: felt, model: felt*
     address: felt, mononomial_len: felt, mononomial: felt*
 ) {
     alloc_locals;
     if (mononomial_len==0) {
         return ();
     }
-    // ContractStorage.mononomial_write(address, model_len, [model]);
     ContractStorage.mononomial_write(address, mononomial_len, [mononomial]);
 
-
-    // return save_model(address, model_len-1, model+1);
     return save_model(address, mononomial_len-1, mononomial+1);
 
 }
 
 @external
 func reveal_test_data{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
-    // structure of test data
-    // number of data point
-    // list data points
-    // requirement: number of point match
     x_len: felt, x: felt*, y_len: felt, y: felt*
 ) {
-    // check x_len == y_len
-    // save test_data_len
-    // save array (x_len, x)
-    // save array (y_len, y)
-    // alloc_locals;
     with_attr error_message("X and Y array need to have same size") {
         assert x_len = y_len;
     }
@@ -154,14 +141,3 @@ func save_test_data{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_
     return save_test_data(array_len-1, x, y);
 
 }
-
-// func contains(haystack : felt*, haystack_len : felt) -> (result : felt){
-//     if (haystack_len == 0) {
-//         return (result=0);
-//     }
-//     if (1 == [haystack]){
-//         return (result=1);
-//     }
-//     let (next) = contains(haystack + 1, haystack_len -1);
-//     return (result=next);
-// }

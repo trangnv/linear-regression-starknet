@@ -1314,31 +1314,38 @@
             "0x0",
             "0x48127ffa7fff8000",
             "0x208b7fff7fff7ffe",
-            "0x482680017ffb8000",
-            "0x800000000000011000000000000000000000000000000000000000000000000",
-            "0x20680017fff7fff",
-            "0xc",
+            "0x20780017fff7ffb",
+            "0xb",
             "0x480a7ff87fff8000",
             "0x480a7ff97fff8000",
             "0x480a7ffa7fff8000",
-            "0x480680017fff8000",
-            "0x0",
+            "0x480a7ffb7fff8000",
             "0x480280007ffc8000",
             "0x480280007ffd8000",
             "0x1104800180018000",
-            "0x800000000000010fffffffffffffffffffffffffffffffffffffffffffffdbb",
+            "0x800000000000010fffffffffffffffffffffffffffffffffffffffffffffdbe",
             "0x208b7fff7fff7ffe",
+            "0x482680017ffb8000",
+            "0x800000000000011000000000000000000000000000000000000000000000000",
+            "0x48327fff7ffc8000",
+            "0x482680017ffb8000",
+            "0x800000000000011000000000000000000000000000000000000000000000000",
+            "0x48327fff7ffd8000",
             "0x480a7ff87fff8000",
             "0x480a7ff97fff8000",
             "0x480a7ffa7fff8000",
             "0x482680017ffb8000",
             "0x800000000000011000000000000000000000000000000000000000000000000",
-            "0x482680017ffc8000",
-            "0x1",
-            "0x482680017ffd8000",
-            "0x1",
+            "0x480080007ff98000",
+            "0x480080007ffa8000",
             "0x1104800180018000",
-            "0x800000000000010ffffffffffffffffffffffffffffffffffffffffffffffea",
+            "0x800000000000010fffffffffffffffffffffffffffffffffffffffffffffdae",
+            "0x482680017ffb8000",
+            "0x800000000000011000000000000000000000000000000000000000000000000",
+            "0x480a7ffc7fff8000",
+            "0x480a7ffd7fff8000",
+            "0x1104800180018000",
+            "0x800000000000010ffffffffffffffffffffffffffffffffffffffffffffffe3",
             "0x208b7fff7fff7ffe"
         ],
         "debug_info": {
@@ -29722,33 +29729,16 @@
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 21,
-                        "end_line": 154,
-                        "input_file": {
-                            "filename": "contracts/contract.cairo"
-                        },
-                        "start_col": 9,
-                        "start_line": 154
-                    }
-                },
-                "1060": {
-                    "accessible_scopes": [
-                        "__main__",
-                        "__main__.save_test_data"
-                    ],
-                    "flow_tracking_data": null,
-                    "hints": [],
-                    "inst": {
                         "end_col": 7,
-                        "end_line": 154,
+                        "end_line": 149,
                         "input_file": {
                             "filename": "contracts/contract.cairo"
                         },
                         "start_col": 5,
-                        "start_line": 154
+                        "start_line": 149
                     }
                 },
-                "1062": {
+                "1060": {
                     "accessible_scopes": [
                         "__main__",
                         "__main__.save_test_data"
@@ -29770,13 +29760,13 @@
                                 },
                                 "parent_location": [
                                     {
-                                        "end_col": 53,
-                                        "end_line": 155,
+                                        "end_col": 63,
+                                        "end_line": 150,
                                         "input_file": {
                                             "filename": "contracts/contract.cairo"
                                         },
                                         "start_col": 9,
-                                        "start_line": 155
+                                        "start_line": 150
                                     },
                                     "While trying to retrieve the implicit argument 'syscall_ptr' in:"
                                 ],
@@ -29789,7 +29779,7 @@
                         "start_line": 146
                     }
                 },
-                "1063": {
+                "1061": {
                     "accessible_scopes": [
                         "__main__",
                         "__main__.save_test_data"
@@ -29811,13 +29801,13 @@
                                 },
                                 "parent_location": [
                                     {
-                                        "end_col": 53,
-                                        "end_line": 155,
+                                        "end_col": 63,
+                                        "end_line": 150,
                                         "input_file": {
                                             "filename": "contracts/contract.cairo"
                                         },
                                         "start_col": 9,
-                                        "start_line": 155
+                                        "start_line": 150
                                     },
                                     "While trying to retrieve the implicit argument 'pedersen_ptr' in:"
                                 ],
@@ -29830,7 +29820,7 @@
                         "start_line": 146
                     }
                 },
-                "1064": {
+                "1062": {
                     "accessible_scopes": [
                         "__main__",
                         "__main__.save_test_data"
@@ -29852,13 +29842,13 @@
                                 },
                                 "parent_location": [
                                     {
-                                        "end_col": 53,
-                                        "end_line": 155,
+                                        "end_col": 63,
+                                        "end_line": 150,
                                         "input_file": {
                                             "filename": "contracts/contract.cairo"
                                         },
                                         "start_col": 9,
-                                        "start_line": 155
+                                        "start_line": 150
                                     },
                                     "While trying to retrieve the implicit argument 'range_check_ptr' in:"
                                 ],
@@ -29871,6 +29861,52 @@
                         "start_line": 146
                     }
                 },
+                "1063": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__.save_test_data"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 20,
+                        "end_line": 147,
+                        "input_file": {
+                            "filename": "contracts/contract.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 50,
+                                "end_line": 150,
+                                "input_file": {
+                                    "filename": "contracts/contract.cairo"
+                                },
+                                "start_col": 41,
+                                "start_line": 150
+                            },
+                            "While expanding the reference 'array_len' in:"
+                        ],
+                        "start_col": 5,
+                        "start_line": 147
+                    }
+                },
+                "1064": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__.save_test_data"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 56,
+                        "end_line": 150,
+                        "input_file": {
+                            "filename": "contracts/contract.cairo"
+                        },
+                        "start_col": 52,
+                        "start_line": 150
+                    }
+                },
                 "1065": {
                     "accessible_scopes": [
                         "__main__",
@@ -29879,16 +29915,16 @@
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 42,
-                        "end_line": 155,
+                        "end_col": 62,
+                        "end_line": 150,
                         "input_file": {
                             "filename": "contracts/contract.cairo"
                         },
-                        "start_col": 41,
-                        "start_line": 155
+                        "start_col": 58,
+                        "start_line": 150
                     }
                 },
-                "1067": {
+                "1066": {
                     "accessible_scopes": [
                         "__main__",
                         "__main__.save_test_data"
@@ -29896,13 +29932,13 @@
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 47,
-                        "end_line": 155,
+                        "end_col": 63,
+                        "end_line": 150,
                         "input_file": {
                             "filename": "contracts/contract.cairo"
                         },
-                        "start_col": 44,
-                        "start_line": 155
+                        "start_col": 9,
+                        "start_line": 150
                     }
                 },
                 "1068": {
@@ -29913,13 +29949,13 @@
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 52,
-                        "end_line": 155,
+                        "end_col": 19,
+                        "end_line": 151,
                         "input_file": {
                             "filename": "contracts/contract.cairo"
                         },
-                        "start_col": 49,
-                        "start_line": 155
+                        "start_col": 9,
+                        "start_line": 151
                     }
                 },
                 "1069": {
@@ -29930,13 +29966,13 @@
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 53,
-                        "end_line": 155,
+                        "end_col": 63,
+                        "end_line": 153,
                         "input_file": {
                             "filename": "contracts/contract.cairo"
                         },
-                        "start_col": 9,
-                        "start_line": 155
+                        "start_col": 52,
+                        "start_line": 153
                     }
                 },
                 "1071": {
@@ -29947,16 +29983,50 @@
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 19,
-                        "end_line": 156,
+                        "end_col": 64,
+                        "end_line": 153,
                         "input_file": {
                             "filename": "contracts/contract.cairo"
                         },
-                        "start_col": 9,
-                        "start_line": 156
+                        "start_col": 50,
+                        "start_line": 153
                     }
                 },
                 "1072": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__.save_test_data"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 79,
+                        "end_line": 153,
+                        "input_file": {
+                            "filename": "contracts/contract.cairo"
+                        },
+                        "start_col": 68,
+                        "start_line": 153
+                    }
+                },
+                "1074": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__.save_test_data"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 80,
+                        "end_line": 153,
+                        "input_file": {
+                            "filename": "contracts/contract.cairo"
+                        },
+                        "start_col": 66,
+                        "start_line": 153
+                    }
+                },
+                "1075": {
                     "accessible_scopes": [
                         "__main__",
                         "__main__.save_test_data"
@@ -29971,25 +30041,25 @@
                         },
                         "parent_location": [
                             {
-                                "end_col": 39,
-                                "end_line": 146,
+                                "end_col": 44,
+                                "end_line": 116,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
                                 "parent_location": [
                                     {
-                                        "end_col": 49,
-                                        "end_line": 162,
+                                        "end_col": 81,
+                                        "end_line": 153,
                                         "input_file": {
                                             "filename": "contracts/contract.cairo"
                                         },
-                                        "start_col": 12,
-                                        "start_line": 162
+                                        "start_col": 5,
+                                        "start_line": 153
                                     },
                                     "While trying to retrieve the implicit argument 'syscall_ptr' in:"
                                 ],
-                                "start_col": 21,
-                                "start_line": 146
+                                "start_col": 26,
+                                "start_line": 116
                             },
                             "While expanding the reference 'syscall_ptr' in:"
                         ],
@@ -29997,7 +30067,7 @@
                         "start_line": 146
                     }
                 },
-                "1073": {
+                "1076": {
                     "accessible_scopes": [
                         "__main__",
                         "__main__.save_test_data"
@@ -30012,25 +30082,25 @@
                         },
                         "parent_location": [
                             {
-                                "end_col": 67,
-                                "end_line": 146,
+                                "end_col": 72,
+                                "end_line": 116,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
                                 "parent_location": [
                                     {
-                                        "end_col": 49,
-                                        "end_line": 162,
+                                        "end_col": 81,
+                                        "end_line": 153,
                                         "input_file": {
                                             "filename": "contracts/contract.cairo"
                                         },
-                                        "start_col": 12,
-                                        "start_line": 162
+                                        "start_col": 5,
+                                        "start_line": 153
                                     },
                                     "While trying to retrieve the implicit argument 'pedersen_ptr' in:"
                                 ],
-                                "start_col": 41,
-                                "start_line": 146
+                                "start_col": 46,
+                                "start_line": 116
                             },
                             "While expanding the reference 'pedersen_ptr' in:"
                         ],
@@ -30038,7 +30108,7 @@
                         "start_line": 146
                     }
                 },
-                "1074": {
+                "1077": {
                     "accessible_scopes": [
                         "__main__",
                         "__main__.save_test_data"
@@ -30053,25 +30123,25 @@
                         },
                         "parent_location": [
                             {
-                                "end_col": 84,
-                                "end_line": 146,
+                                "end_col": 89,
+                                "end_line": 116,
                                 "input_file": {
-                                    "filename": "contracts/contract.cairo"
+                                    "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
                                 "parent_location": [
                                     {
-                                        "end_col": 49,
-                                        "end_line": 162,
+                                        "end_col": 81,
+                                        "end_line": 153,
                                         "input_file": {
                                             "filename": "contracts/contract.cairo"
                                         },
-                                        "start_col": 12,
-                                        "start_line": 162
+                                        "start_col": 5,
+                                        "start_line": 153
                                     },
                                     "While trying to retrieve the implicit argument 'range_check_ptr' in:"
                                 ],
-                                "start_col": 69,
-                                "start_line": 146
+                                "start_col": 74,
+                                "start_line": 116
                             },
                             "While expanding the reference 'range_check_ptr' in:"
                         ],
@@ -30079,41 +30149,7 @@
                         "start_line": 146
                     }
                 },
-                "1075": {
-                    "accessible_scopes": [
-                        "__main__",
-                        "__main__.save_test_data"
-                    ],
-                    "flow_tracking_data": null,
-                    "hints": [],
-                    "inst": {
-                        "end_col": 38,
-                        "end_line": 162,
-                        "input_file": {
-                            "filename": "contracts/contract.cairo"
-                        },
-                        "start_col": 27,
-                        "start_line": 162
-                    }
-                },
-                "1077": {
-                    "accessible_scopes": [
-                        "__main__",
-                        "__main__.save_test_data"
-                    ],
-                    "flow_tracking_data": null,
-                    "hints": [],
-                    "inst": {
-                        "end_col": 43,
-                        "end_line": 162,
-                        "input_file": {
-                            "filename": "contracts/contract.cairo"
-                        },
-                        "start_col": 40,
-                        "start_line": 162
-                    }
-                },
-                "1079": {
+                "1078": {
                     "accessible_scopes": [
                         "__main__",
                         "__main__.save_test_data"
@@ -30122,12 +30158,29 @@
                     "hints": [],
                     "inst": {
                         "end_col": 48,
-                        "end_line": 162,
+                        "end_line": 153,
                         "input_file": {
                             "filename": "contracts/contract.cairo"
                         },
-                        "start_col": 45,
-                        "start_line": 162
+                        "start_col": 37,
+                        "start_line": 153
+                    }
+                },
+                "1080": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__.save_test_data"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 64,
+                        "end_line": 153,
+                        "input_file": {
+                            "filename": "contracts/contract.cairo"
+                        },
+                        "start_col": 50,
+                        "start_line": 153
                     }
                 },
                 "1081": {
@@ -30138,16 +30191,16 @@
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 49,
-                        "end_line": 162,
+                        "end_col": 80,
+                        "end_line": 153,
                         "input_file": {
                             "filename": "contracts/contract.cairo"
                         },
-                        "start_col": 12,
-                        "start_line": 162
+                        "start_col": 66,
+                        "start_line": 153
                     }
                 },
-                "1083": {
+                "1082": {
                     "accessible_scopes": [
                         "__main__",
                         "__main__.save_test_data"
@@ -30155,13 +30208,122 @@
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 50,
-                        "end_line": 162,
+                        "end_col": 81,
+                        "end_line": 153,
                         "input_file": {
                             "filename": "contracts/contract.cairo"
                         },
                         "start_col": 5,
-                        "start_line": 162
+                        "start_line": 153
+                    }
+                },
+                "1084": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__.save_test_data"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 38,
+                        "end_line": 154,
+                        "input_file": {
+                            "filename": "contracts/contract.cairo"
+                        },
+                        "start_col": 27,
+                        "start_line": 154
+                    }
+                },
+                "1086": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__.save_test_data"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 30,
+                        "end_line": 147,
+                        "input_file": {
+                            "filename": "contracts/contract.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 41,
+                                "end_line": 154,
+                                "input_file": {
+                                    "filename": "contracts/contract.cairo"
+                                },
+                                "start_col": 40,
+                                "start_line": 154
+                            },
+                            "While expanding the reference 'x' in:"
+                        ],
+                        "start_col": 22,
+                        "start_line": 147
+                    }
+                },
+                "1087": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__.save_test_data"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 40,
+                        "end_line": 147,
+                        "input_file": {
+                            "filename": "contracts/contract.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 44,
+                                "end_line": 154,
+                                "input_file": {
+                                    "filename": "contracts/contract.cairo"
+                                },
+                                "start_col": 43,
+                                "start_line": 154
+                            },
+                            "While expanding the reference 'y' in:"
+                        ],
+                        "start_col": 32,
+                        "start_line": 147
+                    }
+                },
+                "1088": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__.save_test_data"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 45,
+                        "end_line": 154,
+                        "input_file": {
+                            "filename": "contracts/contract.cairo"
+                        },
+                        "start_col": 12,
+                        "start_line": 154
+                    }
+                },
+                "1090": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__.save_test_data"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 46,
+                        "end_line": 154,
+                        "input_file": {
+                            "filename": "contracts/contract.cairo"
+                        },
+                        "start_col": 5,
+                        "start_line": 154
                     }
                 }
             }
