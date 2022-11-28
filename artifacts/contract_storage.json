@@ -41,6 +41,92 @@
                 "type": "const",
                 "value": 0
             },
+            "__main__.ContractStorage_competitors_count": {
+                "type": "namespace"
+            },
+            "__main__.ContractStorage_competitors_count.Args": {
+                "full_name": "__main__.ContractStorage_competitors_count.Args",
+                "members": {},
+                "size": 0,
+                "type": "struct"
+            },
+            "__main__.ContractStorage_competitors_count.HashBuiltin": {
+                "destination": "starkware.cairo.common.cairo_builtins.HashBuiltin",
+                "type": "alias"
+            },
+            "__main__.ContractStorage_competitors_count.ImplicitArgs": {
+                "full_name": "__main__.ContractStorage_competitors_count.ImplicitArgs",
+                "members": {},
+                "size": 0,
+                "type": "struct"
+            },
+            "__main__.ContractStorage_competitors_count.Return": {
+                "cairo_type": "()",
+                "type": "type_definition"
+            },
+            "__main__.ContractStorage_competitors_count.SIZEOF_LOCALS": {
+                "type": "const",
+                "value": 0
+            },
+            "__main__.ContractStorage_competitors_count.hash2": {
+                "destination": "starkware.cairo.common.hash.hash2",
+                "type": "alias"
+            },
+            "__main__.ContractStorage_competitors_count.normalize_address": {
+                "destination": "starkware.starknet.common.storage.normalize_address",
+                "type": "alias"
+            },
+            "__main__.ContractStorage_competitors_count.storage_read": {
+                "destination": "starkware.starknet.common.syscalls.storage_read",
+                "type": "alias"
+            },
+            "__main__.ContractStorage_competitors_count.storage_write": {
+                "destination": "starkware.starknet.common.syscalls.storage_write",
+                "type": "alias"
+            },
+            "__main__.ContractStorage_competitors_list": {
+                "type": "namespace"
+            },
+            "__main__.ContractStorage_competitors_list.Args": {
+                "full_name": "__main__.ContractStorage_competitors_list.Args",
+                "members": {},
+                "size": 0,
+                "type": "struct"
+            },
+            "__main__.ContractStorage_competitors_list.HashBuiltin": {
+                "destination": "starkware.cairo.common.cairo_builtins.HashBuiltin",
+                "type": "alias"
+            },
+            "__main__.ContractStorage_competitors_list.ImplicitArgs": {
+                "full_name": "__main__.ContractStorage_competitors_list.ImplicitArgs",
+                "members": {},
+                "size": 0,
+                "type": "struct"
+            },
+            "__main__.ContractStorage_competitors_list.Return": {
+                "cairo_type": "()",
+                "type": "type_definition"
+            },
+            "__main__.ContractStorage_competitors_list.SIZEOF_LOCALS": {
+                "type": "const",
+                "value": 0
+            },
+            "__main__.ContractStorage_competitors_list.hash2": {
+                "destination": "starkware.cairo.common.hash.hash2",
+                "type": "alias"
+            },
+            "__main__.ContractStorage_competitors_list.normalize_address": {
+                "destination": "starkware.starknet.common.storage.normalize_address",
+                "type": "alias"
+            },
+            "__main__.ContractStorage_competitors_list.storage_read": {
+                "destination": "starkware.starknet.common.syscalls.storage_read",
+                "type": "alias"
+            },
+            "__main__.ContractStorage_competitors_list.storage_write": {
+                "destination": "starkware.starknet.common.syscalls.storage_write",
+                "type": "alias"
+            },
             "__main__.ContractStorage_merkle_root_test_data": {
                 "type": "namespace"
             },

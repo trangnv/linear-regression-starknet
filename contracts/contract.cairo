@@ -142,3 +142,18 @@ func save_test_data{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_
     return save_test_data(array_len-1, x, y);
 
 }
+
+func evaluation{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(){
+    // 
+    // _evaluation(address)
+    // so need a competitors storage to store all competitors Storage_competitor(i) -> address
+    // address = competitor(i)
+    // ContractStorage_polynomial_len(address)
+    // e = ContractStorage_mononomial(address, exponent)
+    // x = X[]
+    // PREDICTION[] = sum(e * x^exponent)
+    // evaluation(address) = f(Y, PREDICTION)
+
+
+    return();
+}

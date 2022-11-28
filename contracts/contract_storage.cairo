@@ -16,7 +16,6 @@ func ContractStorage_polynomial_len(address: felt) -> (res: felt) {
 func ContractStorage_mononomial(address, exponent) -> (res: felt) {
 }
 
-
 // store root hash of markle root of test data submission
 @storage_var
 func ContractStorage_merkle_root_test_data(address: felt) -> (root: felt) {
@@ -31,6 +30,16 @@ func ContractStorage_x(i: felt) -> (res: felt) {
 @storage_var
 func ContractStorage_y(i: felt) -> (res: felt) {
 }
+
+@storage_var
+func ContractStorage_competitors_count() -> (count: felt) {
+}
+
+@storage_var
+func ContractStorage_competitors_list(competitor_id) -> (address: felt) {
+}
+
+
 
 
 namespace ContractStorage {
@@ -72,6 +81,13 @@ namespace ContractStorage {
         let (x_i) = ContractStorage_x.read(i);
         let (y_i) = ContractStorage_y.read(i);
         return (x_i=x_i, y_i=y_i);
+    }
+
+    func competitors_count_read{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}() -> (
+        count: felt
+    ){
+        let (count) = ContractStorage_competitors_count.read();
+        return (count=count);
     }
 
 
@@ -121,6 +137,12 @@ namespace ContractStorage {
     ) {
         ContractStorage_test_data_len.write(test_data_len);
         return();
+    }
+
+    func competitors_count_write{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+        count: felt
+    ) {
+        ContractStorage_competitors_count.write(count);
     }
     
 

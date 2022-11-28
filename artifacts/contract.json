@@ -1398,6 +1398,10 @@
             "0x480a7ffd7fff8000",
             "0x1104800180018000",
             "0x800000000000010ffffffffffffffffffffffffffffffffffffffffffffffe3",
+            "0x208b7fff7fff7ffe",
+            "0x480a7ffb7fff8000",
+            "0x480a7ffc7fff8000",
+            "0x480a7ffd7fff8000",
             "0x208b7fff7fff7ffe"
         ],
         "debug_info": {
@@ -11003,7 +11007,7 @@
                     "hints": [],
                     "inst": {
                         "end_col": 44,
-                        "end_line": 41,
+                        "end_line": 50,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
@@ -11017,12 +11021,12 @@
                                 "parent_location": [
                                     {
                                         "end_col": 61,
-                                        "end_line": 44,
+                                        "end_line": 53,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
                                         "start_col": 21,
-                                        "start_line": 44
+                                        "start_line": 53
                                     },
                                     "While trying to retrieve the implicit argument 'syscall_ptr' in:"
                                 ],
@@ -11032,7 +11036,7 @@
                             "While expanding the reference 'syscall_ptr' in:"
                         ],
                         "start_col": 26,
-                        "start_line": 41
+                        "start_line": 50
                     }
                 },
                 "418": {
@@ -11045,7 +11049,7 @@
                     "hints": [],
                     "inst": {
                         "end_col": 72,
-                        "end_line": 41,
+                        "end_line": 50,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
@@ -11059,12 +11063,12 @@
                                 "parent_location": [
                                     {
                                         "end_col": 61,
-                                        "end_line": 44,
+                                        "end_line": 53,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
                                         "start_col": 21,
-                                        "start_line": 44
+                                        "start_line": 53
                                     },
                                     "While trying to retrieve the implicit argument 'pedersen_ptr' in:"
                                 ],
@@ -11074,7 +11078,7 @@
                             "While expanding the reference 'pedersen_ptr' in:"
                         ],
                         "start_col": 46,
-                        "start_line": 41
+                        "start_line": 50
                     }
                 },
                 "419": {
@@ -11087,7 +11091,7 @@
                     "hints": [],
                     "inst": {
                         "end_col": 89,
-                        "end_line": 41,
+                        "end_line": 50,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
@@ -11101,12 +11105,12 @@
                                 "parent_location": [
                                     {
                                         "end_col": 61,
-                                        "end_line": 44,
+                                        "end_line": 53,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
                                         "start_col": 21,
-                                        "start_line": 44
+                                        "start_line": 53
                                     },
                                     "While trying to retrieve the implicit argument 'range_check_ptr' in:"
                                 ],
@@ -11116,7 +11120,7 @@
                             "While expanding the reference 'range_check_ptr' in:"
                         ],
                         "start_col": 74,
-                        "start_line": 41
+                        "start_line": 50
                     }
                 },
                 "420": {
@@ -11129,24 +11133,24 @@
                     "hints": [],
                     "inst": {
                         "end_col": 22,
-                        "end_line": 42,
+                        "end_line": 51,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
                         "parent_location": [
                             {
                                 "end_col": 60,
-                                "end_line": 44,
+                                "end_line": 53,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
                                 "start_col": 53,
-                                "start_line": 44
+                                "start_line": 53
                             },
                             "While expanding the reference 'address' in:"
                         ],
                         "start_col": 9,
-                        "start_line": 42
+                        "start_line": 51
                     }
                 },
                 "421": {
@@ -11159,12 +11163,12 @@
                     "hints": [],
                     "inst": {
                         "end_col": 61,
-                        "end_line": 44,
+                        "end_line": 53,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
                         "start_col": 21,
-                        "start_line": 44
+                        "start_line": 53
                     }
                 },
                 "423": {
@@ -11177,12 +11181,12 @@
                     "hints": [],
                     "inst": {
                         "end_col": 22,
-                        "end_line": 45,
+                        "end_line": 54,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
                         "start_col": 9,
-                        "start_line": 45
+                        "start_line": 54
                     }
                 },
                 "424": {
@@ -11195,7 +11199,7 @@
                     "hints": [],
                     "inst": {
                         "end_col": 55,
-                        "end_line": 55,
+                        "end_line": 64,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
@@ -11209,12 +11213,12 @@
                                 "parent_location": [
                                     {
                                         "end_col": 73,
-                                        "end_line": 58,
+                                        "end_line": 67,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
                                         "start_col": 22,
-                                        "start_line": 58
+                                        "start_line": 67
                                     },
                                     "While trying to retrieve the implicit argument 'syscall_ptr' in:"
                                 ],
@@ -11224,7 +11228,7 @@
                             "While expanding the reference 'syscall_ptr' in:"
                         ],
                         "start_col": 37,
-                        "start_line": 55
+                        "start_line": 64
                     }
                 },
                 "425": {
@@ -11237,7 +11241,7 @@
                     "hints": [],
                     "inst": {
                         "end_col": 83,
-                        "end_line": 55,
+                        "end_line": 64,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
@@ -11251,12 +11255,12 @@
                                 "parent_location": [
                                     {
                                         "end_col": 73,
-                                        "end_line": 58,
+                                        "end_line": 67,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
                                         "start_col": 22,
-                                        "start_line": 58
+                                        "start_line": 67
                                     },
                                     "While trying to retrieve the implicit argument 'pedersen_ptr' in:"
                                 ],
@@ -11266,7 +11270,7 @@
                             "While expanding the reference 'pedersen_ptr' in:"
                         ],
                         "start_col": 57,
-                        "start_line": 55
+                        "start_line": 64
                     }
                 },
                 "426": {
@@ -11279,7 +11283,7 @@
                     "hints": [],
                     "inst": {
                         "end_col": 100,
-                        "end_line": 55,
+                        "end_line": 64,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
@@ -11293,12 +11297,12 @@
                                 "parent_location": [
                                     {
                                         "end_col": 73,
-                                        "end_line": 58,
+                                        "end_line": 67,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
                                         "start_col": 22,
-                                        "start_line": 58
+                                        "start_line": 67
                                     },
                                     "While trying to retrieve the implicit argument 'range_check_ptr' in:"
                                 ],
@@ -11308,7 +11312,7 @@
                             "While expanding the reference 'range_check_ptr' in:"
                         ],
                         "start_col": 85,
-                        "start_line": 55
+                        "start_line": 64
                     }
                 },
                 "427": {
@@ -11321,24 +11325,24 @@
                     "hints": [],
                     "inst": {
                         "end_col": 22,
-                        "end_line": 56,
+                        "end_line": 65,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
                         "parent_location": [
                             {
                                 "end_col": 72,
-                                "end_line": 58,
+                                "end_line": 67,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
                                 "start_col": 65,
-                                "start_line": 58
+                                "start_line": 67
                             },
                             "While expanding the reference 'address' in:"
                         ],
                         "start_col": 9,
-                        "start_line": 56
+                        "start_line": 65
                     }
                 },
                 "428": {
@@ -11351,12 +11355,12 @@
                     "hints": [],
                     "inst": {
                         "end_col": 73,
-                        "end_line": 58,
+                        "end_line": 67,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
                         "start_col": 22,
-                        "start_line": 58
+                        "start_line": 67
                     }
                 },
                 "430": {
@@ -11369,12 +11373,12 @@
                     "hints": [],
                     "inst": {
                         "end_col": 23,
-                        "end_line": 59,
+                        "end_line": 68,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
                         "start_col": 9,
-                        "start_line": 59
+                        "start_line": 68
                     }
                 },
                 "431": {
@@ -11387,7 +11391,7 @@
                     "hints": [],
                     "inst": {
                         "end_col": 47,
-                        "end_line": 62,
+                        "end_line": 71,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
@@ -11401,12 +11405,12 @@
                                 "parent_location": [
                                     {
                                         "end_col": 57,
-                                        "end_line": 65,
+                                        "end_line": 74,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
                                         "start_col": 21,
-                                        "start_line": 65
+                                        "start_line": 74
                                     },
                                     "While trying to retrieve the implicit argument 'syscall_ptr' in:"
                                 ],
@@ -11416,7 +11420,7 @@
                             "While expanding the reference 'syscall_ptr' in:"
                         ],
                         "start_col": 29,
-                        "start_line": 62
+                        "start_line": 71
                     }
                 },
                 "432": {
@@ -11429,7 +11433,7 @@
                     "hints": [],
                     "inst": {
                         "end_col": 75,
-                        "end_line": 62,
+                        "end_line": 71,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
@@ -11443,12 +11447,12 @@
                                 "parent_location": [
                                     {
                                         "end_col": 57,
-                                        "end_line": 65,
+                                        "end_line": 74,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
                                         "start_col": 21,
-                                        "start_line": 65
+                                        "start_line": 74
                                     },
                                     "While trying to retrieve the implicit argument 'pedersen_ptr' in:"
                                 ],
@@ -11458,7 +11462,7 @@
                             "While expanding the reference 'pedersen_ptr' in:"
                         ],
                         "start_col": 49,
-                        "start_line": 62
+                        "start_line": 71
                     }
                 },
                 "433": {
@@ -11471,7 +11475,7 @@
                     "hints": [],
                     "inst": {
                         "end_col": 92,
-                        "end_line": 62,
+                        "end_line": 71,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
@@ -11485,12 +11489,12 @@
                                 "parent_location": [
                                     {
                                         "end_col": 57,
-                                        "end_line": 65,
+                                        "end_line": 74,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
                                         "start_col": 21,
-                                        "start_line": 65
+                                        "start_line": 74
                                     },
                                     "While trying to retrieve the implicit argument 'range_check_ptr' in:"
                                 ],
@@ -11500,7 +11504,7 @@
                             "While expanding the reference 'range_check_ptr' in:"
                         ],
                         "start_col": 77,
-                        "start_line": 62
+                        "start_line": 71
                     }
                 },
                 "434": {
@@ -11513,12 +11517,12 @@
                     "hints": [],
                     "inst": {
                         "end_col": 57,
-                        "end_line": 65,
+                        "end_line": 74,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
                         "start_col": 21,
-                        "start_line": 65
+                        "start_line": 74
                     }
                 },
                 "436": {
@@ -11531,12 +11535,12 @@
                     "hints": [],
                     "inst": {
                         "end_col": 25,
-                        "end_line": 66,
+                        "end_line": 75,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
                         "start_col": 9,
-                        "start_line": 66
+                        "start_line": 75
                     }
                 },
                 "437": {
@@ -11549,7 +11553,7 @@
                     "hints": [],
                     "inst": {
                         "end_col": 43,
-                        "end_line": 69,
+                        "end_line": 78,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
@@ -11563,12 +11567,12 @@
                                 "parent_location": [
                                     {
                                         "end_col": 46,
-                                        "end_line": 72,
+                                        "end_line": 81,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
                                         "start_col": 21,
-                                        "start_line": 72
+                                        "start_line": 81
                                     },
                                     "While trying to retrieve the implicit argument 'syscall_ptr' in:"
                                 ],
@@ -11578,7 +11582,7 @@
                             "While expanding the reference 'syscall_ptr' in:"
                         ],
                         "start_col": 25,
-                        "start_line": 69
+                        "start_line": 78
                     }
                 },
                 "438": {
@@ -11591,7 +11595,7 @@
                     "hints": [],
                     "inst": {
                         "end_col": 71,
-                        "end_line": 69,
+                        "end_line": 78,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
@@ -11605,12 +11609,12 @@
                                 "parent_location": [
                                     {
                                         "end_col": 46,
-                                        "end_line": 72,
+                                        "end_line": 81,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
                                         "start_col": 21,
-                                        "start_line": 72
+                                        "start_line": 81
                                     },
                                     "While trying to retrieve the implicit argument 'pedersen_ptr' in:"
                                 ],
@@ -11620,7 +11624,7 @@
                             "While expanding the reference 'pedersen_ptr' in:"
                         ],
                         "start_col": 45,
-                        "start_line": 69
+                        "start_line": 78
                     }
                 },
                 "439": {
@@ -11633,7 +11637,7 @@
                     "hints": [],
                     "inst": {
                         "end_col": 88,
-                        "end_line": 69,
+                        "end_line": 78,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
@@ -11647,12 +11651,12 @@
                                 "parent_location": [
                                     {
                                         "end_col": 46,
-                                        "end_line": 72,
+                                        "end_line": 81,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
                                         "start_col": 21,
-                                        "start_line": 72
+                                        "start_line": 81
                                     },
                                     "While trying to retrieve the implicit argument 'range_check_ptr' in:"
                                 ],
@@ -11662,7 +11666,7 @@
                             "While expanding the reference 'range_check_ptr' in:"
                         ],
                         "start_col": 73,
-                        "start_line": 69
+                        "start_line": 78
                     }
                 },
                 "440": {
@@ -11675,24 +11679,24 @@
                     "hints": [],
                     "inst": {
                         "end_col": 16,
-                        "end_line": 70,
+                        "end_line": 79,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
                         "parent_location": [
                             {
                                 "end_col": 45,
-                                "end_line": 72,
+                                "end_line": 81,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
                                 "start_col": 44,
-                                "start_line": 72
+                                "start_line": 81
                             },
                             "While expanding the reference 'i' in:"
                         ],
                         "start_col": 9,
-                        "start_line": 70
+                        "start_line": 79
                     }
                 },
                 "441": {
@@ -11705,12 +11709,12 @@
                     "hints": [],
                     "inst": {
                         "end_col": 46,
-                        "end_line": 72,
+                        "end_line": 81,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
                         "start_col": 21,
-                        "start_line": 72
+                        "start_line": 81
                     }
                 },
                 "443": {
@@ -11730,7 +11734,7 @@
                         "parent_location": [
                             {
                                 "end_col": 46,
-                                "end_line": 72,
+                                "end_line": 81,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
@@ -11744,12 +11748,12 @@
                                         "parent_location": [
                                             {
                                                 "end_col": 46,
-                                                "end_line": 73,
+                                                "end_line": 82,
                                                 "input_file": {
                                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                                 },
                                                 "start_col": 21,
-                                                "start_line": 73
+                                                "start_line": 82
                                             },
                                             "While trying to retrieve the implicit argument 'syscall_ptr' in:"
                                         ],
@@ -11759,7 +11763,7 @@
                                     "While expanding the reference 'syscall_ptr' in:"
                                 ],
                                 "start_col": 21,
-                                "start_line": 72
+                                "start_line": 81
                             },
                             "While trying to update the implicit return value 'syscall_ptr' in:"
                         ],
@@ -11784,7 +11788,7 @@
                         "parent_location": [
                             {
                                 "end_col": 46,
-                                "end_line": 72,
+                                "end_line": 81,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
@@ -11798,12 +11802,12 @@
                                         "parent_location": [
                                             {
                                                 "end_col": 46,
-                                                "end_line": 73,
+                                                "end_line": 82,
                                                 "input_file": {
                                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                                 },
                                                 "start_col": 21,
-                                                "start_line": 73
+                                                "start_line": 82
                                             },
                                             "While trying to retrieve the implicit argument 'pedersen_ptr' in:"
                                         ],
@@ -11813,7 +11817,7 @@
                                     "While expanding the reference 'pedersen_ptr' in:"
                                 ],
                                 "start_col": 21,
-                                "start_line": 72
+                                "start_line": 81
                             },
                             "While trying to update the implicit return value 'pedersen_ptr' in:"
                         ],
@@ -11838,7 +11842,7 @@
                         "parent_location": [
                             {
                                 "end_col": 46,
-                                "end_line": 72,
+                                "end_line": 81,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
@@ -11852,12 +11856,12 @@
                                         "parent_location": [
                                             {
                                                 "end_col": 46,
-                                                "end_line": 73,
+                                                "end_line": 82,
                                                 "input_file": {
                                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                                 },
                                                 "start_col": 21,
-                                                "start_line": 73
+                                                "start_line": 82
                                             },
                                             "While trying to retrieve the implicit argument 'range_check_ptr' in:"
                                         ],
@@ -11867,7 +11871,7 @@
                                     "While expanding the reference 'range_check_ptr' in:"
                                 ],
                                 "start_col": 21,
-                                "start_line": 72
+                                "start_line": 81
                             },
                             "While trying to update the implicit return value 'range_check_ptr' in:"
                         ],
@@ -11885,24 +11889,24 @@
                     "hints": [],
                     "inst": {
                         "end_col": 16,
-                        "end_line": 70,
+                        "end_line": 79,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
                         "parent_location": [
                             {
                                 "end_col": 45,
-                                "end_line": 73,
+                                "end_line": 82,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
                                 "start_col": 44,
-                                "start_line": 73
+                                "start_line": 82
                             },
                             "While expanding the reference 'i' in:"
                         ],
                         "start_col": 9,
-                        "start_line": 70
+                        "start_line": 79
                     }
                 },
                 "447": {
@@ -11915,12 +11919,12 @@
                     "hints": [],
                     "inst": {
                         "end_col": 46,
-                        "end_line": 73,
+                        "end_line": 82,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
                         "start_col": 21,
-                        "start_line": 73
+                        "start_line": 82
                     }
                 },
                 "449": {
@@ -11940,36 +11944,36 @@
                         "parent_location": [
                             {
                                 "end_col": 46,
-                                "end_line": 73,
+                                "end_line": 82,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
                                 "parent_location": [
                                     {
                                         "end_col": 43,
-                                        "end_line": 69,
+                                        "end_line": 78,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
                                         "parent_location": [
                                             {
                                                 "end_col": 35,
-                                                "end_line": 74,
+                                                "end_line": 83,
                                                 "input_file": {
                                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                                 },
                                                 "start_col": 9,
-                                                "start_line": 74
+                                                "start_line": 83
                                             },
                                             "While trying to retrieve the implicit argument 'syscall_ptr' in:"
                                         ],
                                         "start_col": 25,
-                                        "start_line": 69
+                                        "start_line": 78
                                     },
                                     "While expanding the reference 'syscall_ptr' in:"
                                 ],
                                 "start_col": 21,
-                                "start_line": 73
+                                "start_line": 82
                             },
                             "While trying to update the implicit return value 'syscall_ptr' in:"
                         ],
@@ -11994,36 +11998,36 @@
                         "parent_location": [
                             {
                                 "end_col": 46,
-                                "end_line": 73,
+                                "end_line": 82,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
                                 "parent_location": [
                                     {
                                         "end_col": 71,
-                                        "end_line": 69,
+                                        "end_line": 78,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
                                         "parent_location": [
                                             {
                                                 "end_col": 35,
-                                                "end_line": 74,
+                                                "end_line": 83,
                                                 "input_file": {
                                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                                 },
                                                 "start_col": 9,
-                                                "start_line": 74
+                                                "start_line": 83
                                             },
                                             "While trying to retrieve the implicit argument 'pedersen_ptr' in:"
                                         ],
                                         "start_col": 45,
-                                        "start_line": 69
+                                        "start_line": 78
                                     },
                                     "While expanding the reference 'pedersen_ptr' in:"
                                 ],
                                 "start_col": 21,
-                                "start_line": 73
+                                "start_line": 82
                             },
                             "While trying to update the implicit return value 'pedersen_ptr' in:"
                         ],
@@ -12048,36 +12052,36 @@
                         "parent_location": [
                             {
                                 "end_col": 46,
-                                "end_line": 73,
+                                "end_line": 82,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
                                 "parent_location": [
                                     {
                                         "end_col": 88,
-                                        "end_line": 69,
+                                        "end_line": 78,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
                                         "parent_location": [
                                             {
                                                 "end_col": 35,
-                                                "end_line": 74,
+                                                "end_line": 83,
                                                 "input_file": {
                                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                                 },
                                                 "start_col": 9,
-                                                "start_line": 74
+                                                "start_line": 83
                                             },
                                             "While trying to retrieve the implicit argument 'range_check_ptr' in:"
                                         ],
                                         "start_col": 73,
-                                        "start_line": 69
+                                        "start_line": 78
                                     },
                                     "While expanding the reference 'range_check_ptr' in:"
                                 ],
                                 "start_col": 21,
-                                "start_line": 73
+                                "start_line": 82
                             },
                             "While trying to update the implicit return value 'range_check_ptr' in:"
                         ],
@@ -12095,24 +12099,24 @@
                     "hints": [],
                     "inst": {
                         "end_col": 17,
-                        "end_line": 72,
+                        "end_line": 81,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
                         "parent_location": [
                             {
                                 "end_col": 24,
-                                "end_line": 74,
+                                "end_line": 83,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
                                 "start_col": 21,
-                                "start_line": 74
+                                "start_line": 83
                             },
                             "While expanding the reference 'x_i' in:"
                         ],
                         "start_col": 14,
-                        "start_line": 72
+                        "start_line": 81
                     }
                 },
                 "453": {
@@ -12125,24 +12129,24 @@
                     "hints": [],
                     "inst": {
                         "end_col": 17,
-                        "end_line": 73,
+                        "end_line": 82,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
                         "parent_location": [
                             {
                                 "end_col": 33,
-                                "end_line": 74,
+                                "end_line": 83,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
                                 "start_col": 30,
-                                "start_line": 74
+                                "start_line": 83
                             },
                             "While expanding the reference 'y_i' in:"
                         ],
                         "start_col": 14,
-                        "start_line": 73
+                        "start_line": 82
                     }
                 },
                 "454": {
@@ -12155,12 +12159,12 @@
                     "hints": [],
                     "inst": {
                         "end_col": 35,
-                        "end_line": 74,
+                        "end_line": 83,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
                         "start_col": 9,
-                        "start_line": 74
+                        "start_line": 83
                     }
                 },
                 "455": {
@@ -12173,7 +12177,7 @@
                     "hints": [],
                     "inst": {
                         "end_col": 45,
-                        "end_line": 82,
+                        "end_line": 98,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
@@ -12187,12 +12191,12 @@
                                 "parent_location": [
                                     {
                                         "end_col": 62,
-                                        "end_line": 85,
+                                        "end_line": 101,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
                                         "start_col": 9,
-                                        "start_line": 85
+                                        "start_line": 101
                                     },
                                     "While trying to retrieve the implicit argument 'syscall_ptr' in:"
                                 ],
@@ -12202,7 +12206,7 @@
                             "While expanding the reference 'syscall_ptr' in:"
                         ],
                         "start_col": 27,
-                        "start_line": 82
+                        "start_line": 98
                     }
                 },
                 "456": {
@@ -12215,7 +12219,7 @@
                     "hints": [],
                     "inst": {
                         "end_col": 73,
-                        "end_line": 82,
+                        "end_line": 98,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
@@ -12229,12 +12233,12 @@
                                 "parent_location": [
                                     {
                                         "end_col": 62,
-                                        "end_line": 85,
+                                        "end_line": 101,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
                                         "start_col": 9,
-                                        "start_line": 85
+                                        "start_line": 101
                                     },
                                     "While trying to retrieve the implicit argument 'pedersen_ptr' in:"
                                 ],
@@ -12244,7 +12248,7 @@
                             "While expanding the reference 'pedersen_ptr' in:"
                         ],
                         "start_col": 47,
-                        "start_line": 82
+                        "start_line": 98
                     }
                 },
                 "457": {
@@ -12257,7 +12261,7 @@
                     "hints": [],
                     "inst": {
                         "end_col": 90,
-                        "end_line": 82,
+                        "end_line": 98,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
@@ -12271,12 +12275,12 @@
                                 "parent_location": [
                                     {
                                         "end_col": 62,
-                                        "end_line": 85,
+                                        "end_line": 101,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
                                         "start_col": 9,
-                                        "start_line": 85
+                                        "start_line": 101
                                     },
                                     "While trying to retrieve the implicit argument 'range_check_ptr' in:"
                                 ],
@@ -12286,7 +12290,7 @@
                             "While expanding the reference 'range_check_ptr' in:"
                         ],
                         "start_col": 75,
-                        "start_line": 82
+                        "start_line": 98
                     }
                 },
                 "458": {
@@ -12299,24 +12303,24 @@
                     "hints": [],
                     "inst": {
                         "end_col": 22,
-                        "end_line": 83,
+                        "end_line": 99,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
                         "parent_location": [
                             {
                                 "end_col": 49,
-                                "end_line": 85,
+                                "end_line": 101,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
                                 "start_col": 42,
-                                "start_line": 85
+                                "start_line": 101
                             },
                             "While expanding the reference 'address' in:"
                         ],
                         "start_col": 9,
-                        "start_line": 83
+                        "start_line": 99
                     }
                 },
                 "459": {
@@ -12329,24 +12333,24 @@
                     "hints": [],
                     "inst": {
                         "end_col": 40,
-                        "end_line": 83,
+                        "end_line": 99,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
                         "parent_location": [
                             {
                                 "end_col": 61,
-                                "end_line": 85,
+                                "end_line": 101,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
                                 "start_col": 51,
-                                "start_line": 85
+                                "start_line": 101
                             },
                             "While expanding the reference 'hash_value' in:"
                         ],
                         "start_col": 24,
-                        "start_line": 83
+                        "start_line": 99
                     }
                 },
                 "460": {
@@ -12359,12 +12363,12 @@
                     "hints": [],
                     "inst": {
                         "end_col": 62,
-                        "end_line": 85,
+                        "end_line": 101,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
                         "start_col": 9,
-                        "start_line": 85
+                        "start_line": 101
                     }
                 },
                 "462": {
@@ -12377,12 +12381,12 @@
                     "hints": [],
                     "inst": {
                         "end_col": 18,
-                        "end_line": 86,
+                        "end_line": 102,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
                         "start_col": 9,
-                        "start_line": 86
+                        "start_line": 102
                     }
                 },
                 "463": {
@@ -12395,7 +12399,7 @@
                     "hints": [],
                     "inst": {
                         "end_col": 49,
-                        "end_line": 90,
+                        "end_line": 106,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
@@ -12409,12 +12413,12 @@
                                 "parent_location": [
                                     {
                                         "end_col": 59,
-                                        "end_line": 93,
+                                        "end_line": 109,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
                                         "start_col": 9,
-                                        "start_line": 93
+                                        "start_line": 109
                                     },
                                     "While trying to retrieve the implicit argument 'syscall_ptr' in:"
                                 ],
@@ -12424,7 +12428,7 @@
                             "While expanding the reference 'syscall_ptr' in:"
                         ],
                         "start_col": 31,
-                        "start_line": 90
+                        "start_line": 106
                     }
                 },
                 "464": {
@@ -12437,7 +12441,7 @@
                     "hints": [],
                     "inst": {
                         "end_col": 77,
-                        "end_line": 90,
+                        "end_line": 106,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
@@ -12451,12 +12455,12 @@
                                 "parent_location": [
                                     {
                                         "end_col": 59,
-                                        "end_line": 93,
+                                        "end_line": 109,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
                                         "start_col": 9,
-                                        "start_line": 93
+                                        "start_line": 109
                                     },
                                     "While trying to retrieve the implicit argument 'pedersen_ptr' in:"
                                 ],
@@ -12466,7 +12470,7 @@
                             "While expanding the reference 'pedersen_ptr' in:"
                         ],
                         "start_col": 51,
-                        "start_line": 90
+                        "start_line": 106
                     }
                 },
                 "465": {
@@ -12479,7 +12483,7 @@
                     "hints": [],
                     "inst": {
                         "end_col": 94,
-                        "end_line": 90,
+                        "end_line": 106,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
@@ -12493,12 +12497,12 @@
                                 "parent_location": [
                                     {
                                         "end_col": 59,
-                                        "end_line": 93,
+                                        "end_line": 109,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
                                         "start_col": 9,
-                                        "start_line": 93
+                                        "start_line": 109
                                     },
                                     "While trying to retrieve the implicit argument 'range_check_ptr' in:"
                                 ],
@@ -12508,7 +12512,7 @@
                             "While expanding the reference 'range_check_ptr' in:"
                         ],
                         "start_col": 79,
-                        "start_line": 90
+                        "start_line": 106
                     }
                 },
                 "466": {
@@ -12521,24 +12525,24 @@
                     "hints": [],
                     "inst": {
                         "end_col": 22,
-                        "end_line": 91,
+                        "end_line": 107,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
                         "parent_location": [
                             {
                                 "end_col": 53,
-                                "end_line": 93,
+                                "end_line": 109,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
                                 "start_col": 46,
-                                "start_line": 93
+                                "start_line": 109
                             },
                             "While expanding the reference 'address' in:"
                         ],
                         "start_col": 9,
-                        "start_line": 91
+                        "start_line": 107
                     }
                 },
                 "467": {
@@ -12551,24 +12555,24 @@
                     "hints": [],
                     "inst": {
                         "end_col": 33,
-                        "end_line": 91,
+                        "end_line": 107,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
                         "parent_location": [
                             {
                                 "end_col": 58,
-                                "end_line": 93,
+                                "end_line": 109,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
                                 "start_col": 55,
-                                "start_line": 93
+                                "start_line": 109
                             },
                             "While expanding the reference 'len' in:"
                         ],
                         "start_col": 24,
-                        "start_line": 91
+                        "start_line": 107
                     }
                 },
                 "468": {
@@ -12581,12 +12585,12 @@
                     "hints": [],
                     "inst": {
                         "end_col": 59,
-                        "end_line": 93,
+                        "end_line": 109,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
                         "start_col": 9,
-                        "start_line": 93
+                        "start_line": 109
                     }
                 },
                 "470": {
@@ -12599,12 +12603,12 @@
                     "hints": [],
                     "inst": {
                         "end_col": 18,
-                        "end_line": 94,
+                        "end_line": 110,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
                         "start_col": 9,
-                        "start_line": 94
+                        "start_line": 110
                     }
                 },
                 "471": {
@@ -12617,7 +12621,7 @@
                     "hints": [],
                     "inst": {
                         "end_col": 45,
-                        "end_line": 97,
+                        "end_line": 113,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
@@ -12631,12 +12635,12 @@
                                 "parent_location": [
                                     {
                                         "end_col": 65,
-                                        "end_line": 100,
+                                        "end_line": 116,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
                                         "start_col": 9,
-                                        "start_line": 100
+                                        "start_line": 116
                                     },
                                     "While trying to retrieve the implicit argument 'syscall_ptr' in:"
                                 ],
@@ -12646,7 +12650,7 @@
                             "While expanding the reference 'syscall_ptr' in:"
                         ],
                         "start_col": 27,
-                        "start_line": 97
+                        "start_line": 113
                     }
                 },
                 "472": {
@@ -12659,7 +12663,7 @@
                     "hints": [],
                     "inst": {
                         "end_col": 73,
-                        "end_line": 97,
+                        "end_line": 113,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
@@ -12673,12 +12677,12 @@
                                 "parent_location": [
                                     {
                                         "end_col": 65,
-                                        "end_line": 100,
+                                        "end_line": 116,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
                                         "start_col": 9,
-                                        "start_line": 100
+                                        "start_line": 116
                                     },
                                     "While trying to retrieve the implicit argument 'pedersen_ptr' in:"
                                 ],
@@ -12688,7 +12692,7 @@
                             "While expanding the reference 'pedersen_ptr' in:"
                         ],
                         "start_col": 47,
-                        "start_line": 97
+                        "start_line": 113
                     }
                 },
                 "473": {
@@ -12701,7 +12705,7 @@
                     "hints": [],
                     "inst": {
                         "end_col": 90,
-                        "end_line": 97,
+                        "end_line": 113,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
@@ -12715,12 +12719,12 @@
                                 "parent_location": [
                                     {
                                         "end_col": 65,
-                                        "end_line": 100,
+                                        "end_line": 116,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
                                         "start_col": 9,
-                                        "start_line": 100
+                                        "start_line": 116
                                     },
                                     "While trying to retrieve the implicit argument 'range_check_ptr' in:"
                                 ],
@@ -12730,7 +12734,7 @@
                             "While expanding the reference 'range_check_ptr' in:"
                         ],
                         "start_col": 75,
-                        "start_line": 97
+                        "start_line": 113
                     }
                 },
                 "474": {
@@ -12743,24 +12747,24 @@
                     "hints": [],
                     "inst": {
                         "end_col": 22,
-                        "end_line": 98,
+                        "end_line": 114,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
                         "parent_location": [
                             {
                                 "end_col": 49,
-                                "end_line": 100,
+                                "end_line": 116,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
                                 "start_col": 42,
-                                "start_line": 100
+                                "start_line": 116
                             },
                             "While expanding the reference 'address' in:"
                         ],
                         "start_col": 9,
-                        "start_line": 98
+                        "start_line": 114
                     }
                 },
                 "475": {
@@ -12773,24 +12777,24 @@
                     "hints": [],
                     "inst": {
                         "end_col": 38,
-                        "end_line": 98,
+                        "end_line": 114,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
                         "parent_location": [
                             {
                                 "end_col": 59,
-                                "end_line": 100,
+                                "end_line": 116,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
                                 "start_col": 51,
-                                "start_line": 100
+                                "start_line": 116
                             },
                             "While expanding the reference 'exponent' in:"
                         ],
                         "start_col": 24,
-                        "start_line": 98
+                        "start_line": 114
                     }
                 },
                 "476": {
@@ -12803,24 +12807,24 @@
                     "hints": [],
                     "inst": {
                         "end_col": 49,
-                        "end_line": 98,
+                        "end_line": 114,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
                         "parent_location": [
                             {
                                 "end_col": 64,
-                                "end_line": 100,
+                                "end_line": 116,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
                                 "start_col": 61,
-                                "start_line": 100
+                                "start_line": 116
                             },
                             "While expanding the reference 'res' in:"
                         ],
                         "start_col": 40,
-                        "start_line": 98
+                        "start_line": 114
                     }
                 },
                 "477": {
@@ -12833,12 +12837,12 @@
                     "hints": [],
                     "inst": {
                         "end_col": 65,
-                        "end_line": 100,
+                        "end_line": 116,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
                         "start_col": 9,
-                        "start_line": 100
+                        "start_line": 116
                     }
                 },
                 "479": {
@@ -12851,12 +12855,12 @@
                     "hints": [],
                     "inst": {
                         "end_col": 18,
-                        "end_line": 101,
+                        "end_line": 117,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
                         "start_col": 9,
-                        "start_line": 101
+                        "start_line": 117
                     }
                 },
                 "480": {
@@ -12869,7 +12873,7 @@
                     "hints": [],
                     "inst": {
                         "end_col": 56,
-                        "end_line": 104,
+                        "end_line": 120,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
@@ -12883,12 +12887,12 @@
                                 "parent_location": [
                                     {
                                         "end_col": 67,
-                                        "end_line": 107,
+                                        "end_line": 123,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
                                         "start_col": 9,
-                                        "start_line": 107
+                                        "start_line": 123
                                     },
                                     "While trying to retrieve the implicit argument 'syscall_ptr' in:"
                                 ],
@@ -12898,7 +12902,7 @@
                             "While expanding the reference 'syscall_ptr' in:"
                         ],
                         "start_col": 38,
-                        "start_line": 104
+                        "start_line": 120
                     }
                 },
                 "481": {
@@ -12911,7 +12915,7 @@
                     "hints": [],
                     "inst": {
                         "end_col": 84,
-                        "end_line": 104,
+                        "end_line": 120,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
@@ -12925,12 +12929,12 @@
                                 "parent_location": [
                                     {
                                         "end_col": 67,
-                                        "end_line": 107,
+                                        "end_line": 123,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
                                         "start_col": 9,
-                                        "start_line": 107
+                                        "start_line": 123
                                     },
                                     "While trying to retrieve the implicit argument 'pedersen_ptr' in:"
                                 ],
@@ -12940,7 +12944,7 @@
                             "While expanding the reference 'pedersen_ptr' in:"
                         ],
                         "start_col": 58,
-                        "start_line": 104
+                        "start_line": 120
                     }
                 },
                 "482": {
@@ -12953,7 +12957,7 @@
                     "hints": [],
                     "inst": {
                         "end_col": 101,
-                        "end_line": 104,
+                        "end_line": 120,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
@@ -12967,12 +12971,12 @@
                                 "parent_location": [
                                     {
                                         "end_col": 67,
-                                        "end_line": 107,
+                                        "end_line": 123,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
                                         "start_col": 9,
-                                        "start_line": 107
+                                        "start_line": 123
                                     },
                                     "While trying to retrieve the implicit argument 'range_check_ptr' in:"
                                 ],
@@ -12982,7 +12986,7 @@
                             "While expanding the reference 'range_check_ptr' in:"
                         ],
                         "start_col": 86,
-                        "start_line": 104
+                        "start_line": 120
                     }
                 },
                 "483": {
@@ -12995,24 +12999,24 @@
                     "hints": [],
                     "inst": {
                         "end_col": 22,
-                        "end_line": 105,
+                        "end_line": 121,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
                         "parent_location": [
                             {
                                 "end_col": 60,
-                                "end_line": 107,
+                                "end_line": 123,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
                                 "start_col": 53,
-                                "start_line": 107
+                                "start_line": 123
                             },
                             "While expanding the reference 'address' in:"
                         ],
                         "start_col": 9,
-                        "start_line": 105
+                        "start_line": 121
                     }
                 },
                 "484": {
@@ -13025,24 +13029,24 @@
                     "hints": [],
                     "inst": {
                         "end_col": 34,
-                        "end_line": 105,
+                        "end_line": 121,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
                         "parent_location": [
                             {
                                 "end_col": 66,
-                                "end_line": 107,
+                                "end_line": 123,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
                                 "start_col": 62,
-                                "start_line": 107
+                                "start_line": 123
                             },
                             "While expanding the reference 'root' in:"
                         ],
                         "start_col": 24,
-                        "start_line": 105
+                        "start_line": 121
                     }
                 },
                 "485": {
@@ -13055,12 +13059,12 @@
                     "hints": [],
                     "inst": {
                         "end_col": 67,
-                        "end_line": 107,
+                        "end_line": 123,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
                         "start_col": 9,
-                        "start_line": 107
+                        "start_line": 123
                     }
                 },
                 "487": {
@@ -13073,12 +13077,12 @@
                     "hints": [],
                     "inst": {
                         "end_col": 18,
-                        "end_line": 108,
+                        "end_line": 124,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
                         "start_col": 9,
-                        "start_line": 108
+                        "start_line": 124
                     }
                 },
                 "488": {
@@ -13091,7 +13095,7 @@
                     "hints": [],
                     "inst": {
                         "end_col": 44,
-                        "end_line": 111,
+                        "end_line": 127,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
@@ -13105,12 +13109,12 @@
                                 "parent_location": [
                                     {
                                         "end_col": 37,
-                                        "end_line": 114,
+                                        "end_line": 130,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
                                         "start_col": 9,
-                                        "start_line": 114
+                                        "start_line": 130
                                     },
                                     "While trying to retrieve the implicit argument 'syscall_ptr' in:"
                                 ],
@@ -13120,7 +13124,7 @@
                             "While expanding the reference 'syscall_ptr' in:"
                         ],
                         "start_col": 26,
-                        "start_line": 111
+                        "start_line": 127
                     }
                 },
                 "489": {
@@ -13133,7 +13137,7 @@
                     "hints": [],
                     "inst": {
                         "end_col": 72,
-                        "end_line": 111,
+                        "end_line": 127,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
@@ -13147,12 +13151,12 @@
                                 "parent_location": [
                                     {
                                         "end_col": 37,
-                                        "end_line": 114,
+                                        "end_line": 130,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
                                         "start_col": 9,
-                                        "start_line": 114
+                                        "start_line": 130
                                     },
                                     "While trying to retrieve the implicit argument 'pedersen_ptr' in:"
                                 ],
@@ -13162,7 +13166,7 @@
                             "While expanding the reference 'pedersen_ptr' in:"
                         ],
                         "start_col": 46,
-                        "start_line": 111
+                        "start_line": 127
                     }
                 },
                 "490": {
@@ -13175,7 +13179,7 @@
                     "hints": [],
                     "inst": {
                         "end_col": 89,
-                        "end_line": 111,
+                        "end_line": 127,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
@@ -13189,12 +13193,12 @@
                                 "parent_location": [
                                     {
                                         "end_col": 37,
-                                        "end_line": 114,
+                                        "end_line": 130,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
                                         "start_col": 9,
-                                        "start_line": 114
+                                        "start_line": 130
                                     },
                                     "While trying to retrieve the implicit argument 'range_check_ptr' in:"
                                 ],
@@ -13204,7 +13208,7 @@
                             "While expanding the reference 'range_check_ptr' in:"
                         ],
                         "start_col": 74,
-                        "start_line": 111
+                        "start_line": 127
                     }
                 },
                 "491": {
@@ -13217,24 +13221,24 @@
                     "hints": [],
                     "inst": {
                         "end_col": 16,
-                        "end_line": 112,
+                        "end_line": 128,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
                         "parent_location": [
                             {
                                 "end_col": 34,
-                                "end_line": 114,
+                                "end_line": 130,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
                                 "start_col": 33,
-                                "start_line": 114
+                                "start_line": 130
                             },
                             "While expanding the reference 'i' in:"
                         ],
                         "start_col": 9,
-                        "start_line": 112
+                        "start_line": 128
                     }
                 },
                 "492": {
@@ -13247,24 +13251,24 @@
                     "hints": [],
                     "inst": {
                         "end_col": 25,
-                        "end_line": 112,
+                        "end_line": 128,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
                         "parent_location": [
                             {
                                 "end_col": 36,
-                                "end_line": 114,
+                                "end_line": 130,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
                                 "start_col": 35,
-                                "start_line": 114
+                                "start_line": 130
                             },
                             "While expanding the reference 'x' in:"
                         ],
                         "start_col": 18,
-                        "start_line": 112
+                        "start_line": 128
                     }
                 },
                 "493": {
@@ -13277,12 +13281,12 @@
                     "hints": [],
                     "inst": {
                         "end_col": 37,
-                        "end_line": 114,
+                        "end_line": 130,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
                         "start_col": 9,
-                        "start_line": 114
+                        "start_line": 130
                     }
                 },
                 "495": {
@@ -13295,24 +13299,24 @@
                     "hints": [],
                     "inst": {
                         "end_col": 16,
-                        "end_line": 112,
+                        "end_line": 128,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
                         "parent_location": [
                             {
                                 "end_col": 34,
-                                "end_line": 115,
+                                "end_line": 131,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
                                 "start_col": 33,
-                                "start_line": 115
+                                "start_line": 131
                             },
                             "While expanding the reference 'i' in:"
                         ],
                         "start_col": 9,
-                        "start_line": 112
+                        "start_line": 128
                     }
                 },
                 "496": {
@@ -13325,24 +13329,24 @@
                     "hints": [],
                     "inst": {
                         "end_col": 34,
-                        "end_line": 112,
+                        "end_line": 128,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
                         "parent_location": [
                             {
                                 "end_col": 36,
-                                "end_line": 115,
+                                "end_line": 131,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
                                 "start_col": 35,
-                                "start_line": 115
+                                "start_line": 131
                             },
                             "While expanding the reference 'y' in:"
                         ],
                         "start_col": 27,
-                        "start_line": 112
+                        "start_line": 128
                     }
                 },
                 "497": {
@@ -13355,12 +13359,12 @@
                     "hints": [],
                     "inst": {
                         "end_col": 37,
-                        "end_line": 115,
+                        "end_line": 131,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
                         "start_col": 9,
-                        "start_line": 115
+                        "start_line": 131
                     }
                 },
                 "499": {
@@ -13373,12 +13377,12 @@
                     "hints": [],
                     "inst": {
                         "end_col": 18,
-                        "end_line": 116,
+                        "end_line": 132,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
                         "start_col": 9,
-                        "start_line": 116
+                        "start_line": 132
                     }
                 },
                 "500": {
@@ -13391,7 +13395,7 @@
                     "hints": [],
                     "inst": {
                         "end_col": 48,
-                        "end_line": 119,
+                        "end_line": 135,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
@@ -13405,12 +13409,12 @@
                                 "parent_location": [
                                     {
                                         "end_col": 59,
-                                        "end_line": 122,
+                                        "end_line": 138,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
                                         "start_col": 9,
-                                        "start_line": 122
+                                        "start_line": 138
                                     },
                                     "While trying to retrieve the implicit argument 'syscall_ptr' in:"
                                 ],
@@ -13420,7 +13424,7 @@
                             "While expanding the reference 'syscall_ptr' in:"
                         ],
                         "start_col": 30,
-                        "start_line": 119
+                        "start_line": 135
                     }
                 },
                 "501": {
@@ -13433,7 +13437,7 @@
                     "hints": [],
                     "inst": {
                         "end_col": 76,
-                        "end_line": 119,
+                        "end_line": 135,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
@@ -13447,12 +13451,12 @@
                                 "parent_location": [
                                     {
                                         "end_col": 59,
-                                        "end_line": 122,
+                                        "end_line": 138,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
                                         "start_col": 9,
-                                        "start_line": 122
+                                        "start_line": 138
                                     },
                                     "While trying to retrieve the implicit argument 'pedersen_ptr' in:"
                                 ],
@@ -13462,7 +13466,7 @@
                             "While expanding the reference 'pedersen_ptr' in:"
                         ],
                         "start_col": 50,
-                        "start_line": 119
+                        "start_line": 135
                     }
                 },
                 "502": {
@@ -13475,7 +13479,7 @@
                     "hints": [],
                     "inst": {
                         "end_col": 93,
-                        "end_line": 119,
+                        "end_line": 135,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
@@ -13489,12 +13493,12 @@
                                 "parent_location": [
                                     {
                                         "end_col": 59,
-                                        "end_line": 122,
+                                        "end_line": 138,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
                                         "start_col": 9,
-                                        "start_line": 122
+                                        "start_line": 138
                                     },
                                     "While trying to retrieve the implicit argument 'range_check_ptr' in:"
                                 ],
@@ -13504,7 +13508,7 @@
                             "While expanding the reference 'range_check_ptr' in:"
                         ],
                         "start_col": 78,
-                        "start_line": 119
+                        "start_line": 135
                     }
                 },
                 "503": {
@@ -13517,24 +13521,24 @@
                     "hints": [],
                     "inst": {
                         "end_col": 28,
-                        "end_line": 120,
+                        "end_line": 136,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
                         "parent_location": [
                             {
                                 "end_col": 58,
-                                "end_line": 122,
+                                "end_line": 138,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
                                 "start_col": 45,
-                                "start_line": 122
+                                "start_line": 138
                             },
                             "While expanding the reference 'test_data_len' in:"
                         ],
                         "start_col": 9,
-                        "start_line": 120
+                        "start_line": 136
                     }
                 },
                 "504": {
@@ -13547,12 +13551,12 @@
                     "hints": [],
                     "inst": {
                         "end_col": 59,
-                        "end_line": 122,
+                        "end_line": 138,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
                         "start_col": 9,
-                        "start_line": 122
+                        "start_line": 138
                     }
                 },
                 "506": {
@@ -13565,12 +13569,12 @@
                     "hints": [],
                     "inst": {
                         "end_col": 18,
-                        "end_line": 123,
+                        "end_line": 139,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
                         "start_col": 9,
-                        "start_line": 123
+                        "start_line": 139
                     }
                 },
                 "507": {
@@ -20604,7 +20608,7 @@
                         "parent_location": [
                             {
                                 "end_col": 47,
-                                "end_line": 62,
+                                "end_line": 71,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
@@ -20621,7 +20625,7 @@
                                     "While trying to retrieve the implicit argument 'syscall_ptr' in:"
                                 ],
                                 "start_col": 29,
-                                "start_line": 62
+                                "start_line": 71
                             },
                             "While expanding the reference 'syscall_ptr' in:"
                         ],
@@ -20646,7 +20650,7 @@
                         "parent_location": [
                             {
                                 "end_col": 75,
-                                "end_line": 62,
+                                "end_line": 71,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
@@ -20663,7 +20667,7 @@
                                     "While trying to retrieve the implicit argument 'pedersen_ptr' in:"
                                 ],
                                 "start_col": 49,
-                                "start_line": 62
+                                "start_line": 71
                             },
                             "While expanding the reference 'pedersen_ptr' in:"
                         ],
@@ -20688,7 +20692,7 @@
                         "parent_location": [
                             {
                                 "end_col": 92,
-                                "end_line": 62,
+                                "end_line": 71,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
@@ -20705,7 +20709,7 @@
                                     "While trying to retrieve the implicit argument 'range_check_ptr' in:"
                                 ],
                                 "start_col": 77,
-                                "start_line": 62
+                                "start_line": 71
                             },
                             "While expanding the reference 'range_check_ptr' in:"
                         ],
@@ -21760,7 +21764,7 @@
                         "parent_location": [
                             {
                                 "end_col": 47,
-                                "end_line": 62,
+                                "end_line": 71,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
@@ -21777,7 +21781,7 @@
                                     "While trying to retrieve the implicit argument 'syscall_ptr' in:"
                                 ],
                                 "start_col": 29,
-                                "start_line": 62
+                                "start_line": 71
                             },
                             "While expanding the reference 'syscall_ptr' in:"
                         ],
@@ -21802,7 +21806,7 @@
                         "parent_location": [
                             {
                                 "end_col": 75,
-                                "end_line": 62,
+                                "end_line": 71,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
@@ -21819,7 +21823,7 @@
                                     "While trying to retrieve the implicit argument 'pedersen_ptr' in:"
                                 ],
                                 "start_col": 49,
-                                "start_line": 62
+                                "start_line": 71
                             },
                             "While expanding the reference 'pedersen_ptr' in:"
                         ],
@@ -21844,7 +21848,7 @@
                         "parent_location": [
                             {
                                 "end_col": 92,
-                                "end_line": 62,
+                                "end_line": 71,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
@@ -21861,7 +21865,7 @@
                                     "While trying to retrieve the implicit argument 'range_check_ptr' in:"
                                 ],
                                 "start_col": 77,
-                                "start_line": 62
+                                "start_line": 71
                             },
                             "While expanding the reference 'range_check_ptr' in:"
                         ],
@@ -21897,7 +21901,7 @@
                     "hints": [],
                     "inst": {
                         "end_col": 47,
-                        "end_line": 62,
+                        "end_line": 71,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
@@ -21911,7 +21915,7 @@
                                 "parent_location": [
                                     {
                                         "end_col": 47,
-                                        "end_line": 62,
+                                        "end_line": 71,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
@@ -21928,7 +21932,7 @@
                                             "While trying to update the implicit return value 'syscall_ptr' in:"
                                         ],
                                         "start_col": 29,
-                                        "start_line": 62
+                                        "start_line": 71
                                     },
                                     "While auto generating local variable for 'syscall_ptr'."
                                 ],
@@ -21938,7 +21942,7 @@
                             "While trying to update the implicit return value 'syscall_ptr' in:"
                         ],
                         "start_col": 29,
-                        "start_line": 62
+                        "start_line": 71
                     }
                 },
                 "832": {
@@ -21951,7 +21955,7 @@
                     "hints": [],
                     "inst": {
                         "end_col": 75,
-                        "end_line": 62,
+                        "end_line": 71,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
@@ -21965,7 +21969,7 @@
                                 "parent_location": [
                                     {
                                         "end_col": 75,
-                                        "end_line": 62,
+                                        "end_line": 71,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
@@ -21982,7 +21986,7 @@
                                             "While trying to update the implicit return value 'pedersen_ptr' in:"
                                         ],
                                         "start_col": 49,
-                                        "start_line": 62
+                                        "start_line": 71
                                     },
                                     "While auto generating local variable for 'pedersen_ptr'."
                                 ],
@@ -21992,7 +21996,7 @@
                             "While trying to update the implicit return value 'pedersen_ptr' in:"
                         ],
                         "start_col": 49,
-                        "start_line": 62
+                        "start_line": 71
                     }
                 },
                 "833": {
@@ -22005,7 +22009,7 @@
                     "hints": [],
                     "inst": {
                         "end_col": 92,
-                        "end_line": 62,
+                        "end_line": 71,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
@@ -22046,7 +22050,7 @@
                             "While trying to update the implicit return value 'range_check_ptr' in:"
                         ],
                         "start_col": 77,
-                        "start_line": 62
+                        "start_line": 71
                     }
                 },
                 "834": {
@@ -22155,7 +22159,7 @@
                     "hints": [],
                     "inst": {
                         "end_col": 47,
-                        "end_line": 62,
+                        "end_line": 71,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
@@ -22169,7 +22173,7 @@
                                 "parent_location": [
                                     {
                                         "end_col": 47,
-                                        "end_line": 62,
+                                        "end_line": 71,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
@@ -22183,7 +22187,7 @@
                                                 "parent_location": [
                                                     {
                                                         "end_col": 43,
-                                                        "end_line": 69,
+                                                        "end_line": 78,
                                                         "input_file": {
                                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                                         },
@@ -22200,7 +22204,7 @@
                                                             "While trying to retrieve the implicit argument 'syscall_ptr' in:"
                                                         ],
                                                         "start_col": 25,
-                                                        "start_line": 69
+                                                        "start_line": 78
                                                     },
                                                     "While expanding the reference 'syscall_ptr' in:"
                                                 ],
@@ -22210,7 +22214,7 @@
                                             "While trying to update the implicit return value 'syscall_ptr' in:"
                                         ],
                                         "start_col": 29,
-                                        "start_line": 62
+                                        "start_line": 71
                                     },
                                     "While auto generating local variable for 'syscall_ptr'."
                                 ],
@@ -22220,7 +22224,7 @@
                             "While trying to update the implicit return value 'syscall_ptr' in:"
                         ],
                         "start_col": 29,
-                        "start_line": 62
+                        "start_line": 71
                     }
                 },
                 "841": {
@@ -22233,7 +22237,7 @@
                     "hints": [],
                     "inst": {
                         "end_col": 75,
-                        "end_line": 62,
+                        "end_line": 71,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
@@ -22247,7 +22251,7 @@
                                 "parent_location": [
                                     {
                                         "end_col": 75,
-                                        "end_line": 62,
+                                        "end_line": 71,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
@@ -22261,7 +22265,7 @@
                                                 "parent_location": [
                                                     {
                                                         "end_col": 71,
-                                                        "end_line": 69,
+                                                        "end_line": 78,
                                                         "input_file": {
                                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                                         },
@@ -22278,7 +22282,7 @@
                                                             "While trying to retrieve the implicit argument 'pedersen_ptr' in:"
                                                         ],
                                                         "start_col": 45,
-                                                        "start_line": 69
+                                                        "start_line": 78
                                                     },
                                                     "While expanding the reference 'pedersen_ptr' in:"
                                                 ],
@@ -22288,7 +22292,7 @@
                                             "While trying to update the implicit return value 'pedersen_ptr' in:"
                                         ],
                                         "start_col": 49,
-                                        "start_line": 62
+                                        "start_line": 71
                                     },
                                     "While auto generating local variable for 'pedersen_ptr'."
                                 ],
@@ -22298,7 +22302,7 @@
                             "While trying to update the implicit return value 'pedersen_ptr' in:"
                         ],
                         "start_col": 49,
-                        "start_line": 62
+                        "start_line": 71
                     }
                 },
                 "842": {
@@ -22325,7 +22329,7 @@
                                 "parent_location": [
                                     {
                                         "end_col": 88,
-                                        "end_line": 69,
+                                        "end_line": 78,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
@@ -22342,7 +22346,7 @@
                                             "While trying to retrieve the implicit argument 'range_check_ptr' in:"
                                         ],
                                         "start_col": 73,
-                                        "start_line": 69
+                                        "start_line": 78
                                     },
                                     "While expanding the reference 'range_check_ptr' in:"
                                 ],
@@ -23646,7 +23650,7 @@
                                 "parent_location": [
                                     {
                                         "end_col": 45,
-                                        "end_line": 82,
+                                        "end_line": 98,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
@@ -23663,7 +23667,7 @@
                                             "While trying to retrieve the implicit argument 'syscall_ptr' in:"
                                         ],
                                         "start_col": 27,
-                                        "start_line": 82
+                                        "start_line": 98
                                     },
                                     "While expanding the reference 'syscall_ptr' in:"
                                 ],
@@ -23693,7 +23697,7 @@
                         "parent_location": [
                             {
                                 "end_col": 73,
-                                "end_line": 82,
+                                "end_line": 98,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
@@ -23710,7 +23714,7 @@
                                     "While trying to retrieve the implicit argument 'pedersen_ptr' in:"
                                 ],
                                 "start_col": 47,
-                                "start_line": 82
+                                "start_line": 98
                             },
                             "While expanding the reference 'pedersen_ptr' in:"
                         ],
@@ -23735,7 +23739,7 @@
                         "parent_location": [
                             {
                                 "end_col": 90,
-                                "end_line": 82,
+                                "end_line": 98,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
@@ -23752,7 +23756,7 @@
                                     "While trying to retrieve the implicit argument 'range_check_ptr' in:"
                                 ],
                                 "start_col": 75,
-                                "start_line": 82
+                                "start_line": 98
                             },
                             "While expanding the reference 'range_check_ptr' in:"
                         ],
@@ -24706,7 +24710,7 @@
                                 "parent_location": [
                                     {
                                         "end_col": 56,
-                                        "end_line": 104,
+                                        "end_line": 120,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
@@ -24723,7 +24727,7 @@
                                             "While trying to retrieve the implicit argument 'syscall_ptr' in:"
                                         ],
                                         "start_col": 38,
-                                        "start_line": 104
+                                        "start_line": 120
                                     },
                                     "While expanding the reference 'syscall_ptr' in:"
                                 ],
@@ -24753,7 +24757,7 @@
                         "parent_location": [
                             {
                                 "end_col": 84,
-                                "end_line": 104,
+                                "end_line": 120,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
@@ -24770,7 +24774,7 @@
                                     "While trying to retrieve the implicit argument 'pedersen_ptr' in:"
                                 ],
                                 "start_col": 58,
-                                "start_line": 104
+                                "start_line": 120
                             },
                             "While expanding the reference 'pedersen_ptr' in:"
                         ],
@@ -24795,7 +24799,7 @@
                         "parent_location": [
                             {
                                 "end_col": 101,
-                                "end_line": 104,
+                                "end_line": 120,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
@@ -24812,7 +24816,7 @@
                                     "While trying to retrieve the implicit argument 'range_check_ptr' in:"
                                 ],
                                 "start_col": 86,
-                                "start_line": 104
+                                "start_line": 120
                             },
                             "While expanding the reference 'range_check_ptr' in:"
                         ],
@@ -25814,7 +25818,7 @@
                                 "parent_location": [
                                     {
                                         "end_col": 44,
-                                        "end_line": 41,
+                                        "end_line": 50,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
@@ -25831,7 +25835,7 @@
                                             "While trying to retrieve the implicit argument 'syscall_ptr' in:"
                                         ],
                                         "start_col": 26,
-                                        "start_line": 41
+                                        "start_line": 50
                                     },
                                     "While expanding the reference 'syscall_ptr' in:"
                                 ],
@@ -25861,7 +25865,7 @@
                         "parent_location": [
                             {
                                 "end_col": 72,
-                                "end_line": 41,
+                                "end_line": 50,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
@@ -25878,7 +25882,7 @@
                                     "While trying to retrieve the implicit argument 'pedersen_ptr' in:"
                                 ],
                                 "start_col": 46,
-                                "start_line": 41
+                                "start_line": 50
                             },
                             "While expanding the reference 'pedersen_ptr' in:"
                         ],
@@ -25903,7 +25907,7 @@
                         "parent_location": [
                             {
                                 "end_col": 89,
-                                "end_line": 41,
+                                "end_line": 50,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
@@ -25920,7 +25924,7 @@
                                     "While trying to retrieve the implicit argument 'range_check_ptr' in:"
                                 ],
                                 "start_col": 74,
-                                "start_line": 41
+                                "start_line": 50
                             },
                             "While expanding the reference 'range_check_ptr' in:"
                         ],
@@ -26028,7 +26032,7 @@
                     "hints": [],
                     "inst": {
                         "end_col": 44,
-                        "end_line": 41,
+                        "end_line": 50,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
@@ -26042,7 +26046,7 @@
                                 "parent_location": [
                                     {
                                         "end_col": 44,
-                                        "end_line": 41,
+                                        "end_line": 50,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
@@ -26059,7 +26063,7 @@
                                             "While trying to update the implicit return value 'syscall_ptr' in:"
                                         ],
                                         "start_col": 26,
-                                        "start_line": 41
+                                        "start_line": 50
                                     },
                                     "While auto generating local variable for 'syscall_ptr'."
                                 ],
@@ -26069,7 +26073,7 @@
                             "While trying to update the implicit return value 'syscall_ptr' in:"
                         ],
                         "start_col": 26,
-                        "start_line": 41
+                        "start_line": 50
                     }
                 },
                 "950": {
@@ -26082,7 +26086,7 @@
                     "hints": [],
                     "inst": {
                         "end_col": 89,
-                        "end_line": 41,
+                        "end_line": 50,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
@@ -26096,7 +26100,7 @@
                                 "parent_location": [
                                     {
                                         "end_col": 89,
-                                        "end_line": 41,
+                                        "end_line": 50,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
@@ -26113,7 +26117,7 @@
                                             "While trying to update the implicit return value 'range_check_ptr' in:"
                                         ],
                                         "start_col": 74,
-                                        "start_line": 41
+                                        "start_line": 50
                                     },
                                     "While auto generating local variable for 'range_check_ptr'."
                                 ],
@@ -26123,7 +26127,7 @@
                             "While trying to update the implicit return value 'range_check_ptr' in:"
                         ],
                         "start_col": 74,
-                        "start_line": 41
+                        "start_line": 50
                     }
                 },
                 "951": {
@@ -26154,7 +26158,7 @@
                     "hints": [],
                     "inst": {
                         "end_col": 72,
-                        "end_line": 41,
+                        "end_line": 50,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
@@ -26195,7 +26199,7 @@
                             "While trying to update the implicit return value 'pedersen_ptr' in:"
                         ],
                         "start_col": 46,
-                        "start_line": 41
+                        "start_line": 50
                     }
                 },
                 "954": {
@@ -26304,7 +26308,7 @@
                     "hints": [],
                     "inst": {
                         "end_col": 44,
-                        "end_line": 41,
+                        "end_line": 50,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
@@ -26318,7 +26322,7 @@
                                 "parent_location": [
                                     {
                                         "end_col": 44,
-                                        "end_line": 41,
+                                        "end_line": 50,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
@@ -26332,7 +26336,7 @@
                                                 "parent_location": [
                                                     {
                                                         "end_col": 49,
-                                                        "end_line": 90,
+                                                        "end_line": 106,
                                                         "input_file": {
                                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                                         },
@@ -26349,7 +26353,7 @@
                                                             "While trying to retrieve the implicit argument 'syscall_ptr' in:"
                                                         ],
                                                         "start_col": 31,
-                                                        "start_line": 90
+                                                        "start_line": 106
                                                     },
                                                     "While expanding the reference 'syscall_ptr' in:"
                                                 ],
@@ -26359,7 +26363,7 @@
                                             "While trying to update the implicit return value 'syscall_ptr' in:"
                                         ],
                                         "start_col": 26,
-                                        "start_line": 41
+                                        "start_line": 50
                                     },
                                     "While auto generating local variable for 'syscall_ptr'."
                                 ],
@@ -26369,7 +26373,7 @@
                             "While trying to update the implicit return value 'syscall_ptr' in:"
                         ],
                         "start_col": 26,
-                        "start_line": 41
+                        "start_line": 50
                     }
                 },
                 "960": {
@@ -26396,7 +26400,7 @@
                                 "parent_location": [
                                     {
                                         "end_col": 77,
-                                        "end_line": 90,
+                                        "end_line": 106,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
@@ -26413,7 +26417,7 @@
                                             "While trying to retrieve the implicit argument 'pedersen_ptr' in:"
                                         ],
                                         "start_col": 51,
-                                        "start_line": 90
+                                        "start_line": 106
                                     },
                                     "While expanding the reference 'pedersen_ptr' in:"
                                 ],
@@ -26436,7 +26440,7 @@
                     "hints": [],
                     "inst": {
                         "end_col": 89,
-                        "end_line": 41,
+                        "end_line": 50,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
@@ -26450,7 +26454,7 @@
                                 "parent_location": [
                                     {
                                         "end_col": 89,
-                                        "end_line": 41,
+                                        "end_line": 50,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
@@ -26464,7 +26468,7 @@
                                                 "parent_location": [
                                                     {
                                                         "end_col": 94,
-                                                        "end_line": 90,
+                                                        "end_line": 106,
                                                         "input_file": {
                                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                                         },
@@ -26481,7 +26485,7 @@
                                                             "While trying to retrieve the implicit argument 'range_check_ptr' in:"
                                                         ],
                                                         "start_col": 79,
-                                                        "start_line": 90
+                                                        "start_line": 106
                                                     },
                                                     "While expanding the reference 'range_check_ptr' in:"
                                                 ],
@@ -26491,7 +26495,7 @@
                                             "While trying to update the implicit return value 'range_check_ptr' in:"
                                         ],
                                         "start_col": 74,
-                                        "start_line": 41
+                                        "start_line": 50
                                     },
                                     "While auto generating local variable for 'range_check_ptr'."
                                 ],
@@ -26501,7 +26505,7 @@
                             "While trying to update the implicit return value 'range_check_ptr' in:"
                         ],
                         "start_col": 74,
-                        "start_line": 41
+                        "start_line": 50
                     }
                 },
                 "962": {
@@ -28163,7 +28167,7 @@
                         "parent_location": [
                             {
                                 "end_col": 45,
-                                "end_line": 97,
+                                "end_line": 113,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
@@ -28180,7 +28184,7 @@
                                     "While trying to retrieve the implicit argument 'syscall_ptr' in:"
                                 ],
                                 "start_col": 27,
-                                "start_line": 97
+                                "start_line": 113
                             },
                             "While expanding the reference 'syscall_ptr' in:"
                         ],
@@ -28204,7 +28208,7 @@
                         "parent_location": [
                             {
                                 "end_col": 73,
-                                "end_line": 97,
+                                "end_line": 113,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
@@ -28221,7 +28225,7 @@
                                     "While trying to retrieve the implicit argument 'pedersen_ptr' in:"
                                 ],
                                 "start_col": 47,
-                                "start_line": 97
+                                "start_line": 113
                             },
                             "While expanding the reference 'pedersen_ptr' in:"
                         ],
@@ -28245,7 +28249,7 @@
                         "parent_location": [
                             {
                                 "end_col": 90,
-                                "end_line": 97,
+                                "end_line": 113,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
@@ -28262,7 +28266,7 @@
                                     "While trying to retrieve the implicit argument 'range_check_ptr' in:"
                                 ],
                                 "start_col": 75,
-                                "start_line": 97
+                                "start_line": 113
                             },
                             "While expanding the reference 'range_check_ptr' in:"
                         ],
@@ -28602,7 +28606,7 @@
                                 "parent_location": [
                                     {
                                         "end_col": 55,
-                                        "end_line": 55,
+                                        "end_line": 64,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
@@ -28619,7 +28623,7 @@
                                             "While trying to retrieve the implicit argument 'syscall_ptr' in:"
                                         ],
                                         "start_col": 37,
-                                        "start_line": 55
+                                        "start_line": 64
                                     },
                                     "While expanding the reference 'syscall_ptr' in:"
                                 ],
@@ -28649,7 +28653,7 @@
                         "parent_location": [
                             {
                                 "end_col": 83,
-                                "end_line": 55,
+                                "end_line": 64,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
@@ -28666,7 +28670,7 @@
                                     "While trying to retrieve the implicit argument 'pedersen_ptr' in:"
                                 ],
                                 "start_col": 57,
-                                "start_line": 55
+                                "start_line": 64
                             },
                             "While expanding the reference 'pedersen_ptr' in:"
                         ],
@@ -28691,7 +28695,7 @@
                         "parent_location": [
                             {
                                 "end_col": 100,
-                                "end_line": 55,
+                                "end_line": 64,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
@@ -28708,7 +28712,7 @@
                                     "While trying to retrieve the implicit argument 'range_check_ptr' in:"
                                 ],
                                 "start_col": 85,
-                                "start_line": 55
+                                "start_line": 64
                             },
                             "While expanding the reference 'range_check_ptr' in:"
                         ],
@@ -28810,7 +28814,7 @@
                     "hints": [],
                     "inst": {
                         "end_col": 55,
-                        "end_line": 55,
+                        "end_line": 64,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
@@ -28824,7 +28828,7 @@
                                 "parent_location": [
                                     {
                                         "end_col": 48,
-                                        "end_line": 119,
+                                        "end_line": 135,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
@@ -28841,7 +28845,7 @@
                                             "While trying to retrieve the implicit argument 'syscall_ptr' in:"
                                         ],
                                         "start_col": 30,
-                                        "start_line": 119
+                                        "start_line": 135
                                     },
                                     "While expanding the reference 'syscall_ptr' in:"
                                 ],
@@ -28851,7 +28855,7 @@
                             "While trying to update the implicit return value 'syscall_ptr' in:"
                         ],
                         "start_col": 37,
-                        "start_line": 55
+                        "start_line": 64
                     }
                 },
                 "1043": {
@@ -28864,7 +28868,7 @@
                     "hints": [],
                     "inst": {
                         "end_col": 83,
-                        "end_line": 55,
+                        "end_line": 64,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
@@ -28878,7 +28882,7 @@
                                 "parent_location": [
                                     {
                                         "end_col": 76,
-                                        "end_line": 119,
+                                        "end_line": 135,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
@@ -28895,7 +28899,7 @@
                                             "While trying to retrieve the implicit argument 'pedersen_ptr' in:"
                                         ],
                                         "start_col": 50,
-                                        "start_line": 119
+                                        "start_line": 135
                                     },
                                     "While expanding the reference 'pedersen_ptr' in:"
                                 ],
@@ -28905,7 +28909,7 @@
                             "While trying to update the implicit return value 'pedersen_ptr' in:"
                         ],
                         "start_col": 57,
-                        "start_line": 55
+                        "start_line": 64
                     }
                 },
                 "1044": {
@@ -28918,7 +28922,7 @@
                     "hints": [],
                     "inst": {
                         "end_col": 100,
-                        "end_line": 55,
+                        "end_line": 64,
                         "input_file": {
                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                         },
@@ -28932,7 +28936,7 @@
                                 "parent_location": [
                                     {
                                         "end_col": 93,
-                                        "end_line": 119,
+                                        "end_line": 135,
                                         "input_file": {
                                             "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                         },
@@ -28949,7 +28953,7 @@
                                             "While trying to retrieve the implicit argument 'range_check_ptr' in:"
                                         ],
                                         "start_col": 78,
-                                        "start_line": 119
+                                        "start_line": 135
                                     },
                                     "While expanding the reference 'range_check_ptr' in:"
                                 ],
@@ -28959,7 +28963,7 @@
                             "While trying to update the implicit return value 'range_check_ptr' in:"
                         ],
                         "start_col": 85,
-                        "start_line": 55
+                        "start_line": 64
                     }
                 },
                 "1045": {
@@ -30712,7 +30716,7 @@
                         "parent_location": [
                             {
                                 "end_col": 44,
-                                "end_line": 111,
+                                "end_line": 127,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
@@ -30729,7 +30733,7 @@
                                     "While trying to retrieve the implicit argument 'syscall_ptr' in:"
                                 ],
                                 "start_col": 26,
-                                "start_line": 111
+                                "start_line": 127
                             },
                             "While expanding the reference 'syscall_ptr' in:"
                         ],
@@ -30753,7 +30757,7 @@
                         "parent_location": [
                             {
                                 "end_col": 72,
-                                "end_line": 111,
+                                "end_line": 127,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
@@ -30770,7 +30774,7 @@
                                     "While trying to retrieve the implicit argument 'pedersen_ptr' in:"
                                 ],
                                 "start_col": 46,
-                                "start_line": 111
+                                "start_line": 127
                             },
                             "While expanding the reference 'pedersen_ptr' in:"
                         ],
@@ -30794,7 +30798,7 @@
                         "parent_location": [
                             {
                                 "end_col": 89,
-                                "end_line": 111,
+                                "end_line": 127,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
@@ -30811,7 +30815,7 @@
                                     "While trying to retrieve the implicit argument 'range_check_ptr' in:"
                                 ],
                                 "start_col": 74,
-                                "start_line": 111
+                                "start_line": 127
                             },
                             "While expanding the reference 'range_check_ptr' in:"
                         ],
@@ -31000,7 +31004,7 @@
                         "parent_location": [
                             {
                                 "end_col": 44,
-                                "end_line": 111,
+                                "end_line": 127,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
@@ -31017,7 +31021,7 @@
                                     "While trying to retrieve the implicit argument 'syscall_ptr' in:"
                                 ],
                                 "start_col": 26,
-                                "start_line": 111
+                                "start_line": 127
                             },
                             "While expanding the reference 'syscall_ptr' in:"
                         ],
@@ -31041,7 +31045,7 @@
                         "parent_location": [
                             {
                                 "end_col": 72,
-                                "end_line": 111,
+                                "end_line": 127,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
@@ -31058,7 +31062,7 @@
                                     "While trying to retrieve the implicit argument 'pedersen_ptr' in:"
                                 ],
                                 "start_col": 46,
-                                "start_line": 111
+                                "start_line": 127
                             },
                             "While expanding the reference 'pedersen_ptr' in:"
                         ],
@@ -31082,7 +31086,7 @@
                         "parent_location": [
                             {
                                 "end_col": 89,
-                                "end_line": 111,
+                                "end_line": 127,
                                 "input_file": {
                                     "filename": "/Users/nvtrang/code/ml-starknet/linear-regression-starknet/contracts/contract_storage.cairo"
                                 },
@@ -31099,7 +31103,7 @@
                                     "While trying to retrieve the implicit argument 'range_check_ptr' in:"
                                 ],
                                 "start_col": 74,
-                                "start_line": 111
+                                "start_line": 127
                             },
                             "While expanding the reference 'range_check_ptr' in:"
                         ],
@@ -31282,6 +31286,146 @@
                         },
                         "start_col": 5,
                         "start_line": 142
+                    }
+                },
+                "1125": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__.evaluation"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 35,
+                        "end_line": 146,
+                        "input_file": {
+                            "filename": "contracts/contract.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 35,
+                                "end_line": 146,
+                                "input_file": {
+                                    "filename": "contracts/contract.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 14,
+                                        "end_line": 158,
+                                        "input_file": {
+                                            "filename": "contracts/contract.cairo"
+                                        },
+                                        "start_col": 5,
+                                        "start_line": 158
+                                    },
+                                    "While trying to retrieve the implicit argument 'syscall_ptr' in:"
+                                ],
+                                "start_col": 17,
+                                "start_line": 146
+                            },
+                            "While expanding the reference 'syscall_ptr' in:"
+                        ],
+                        "start_col": 17,
+                        "start_line": 146
+                    }
+                },
+                "1126": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__.evaluation"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 63,
+                        "end_line": 146,
+                        "input_file": {
+                            "filename": "contracts/contract.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 63,
+                                "end_line": 146,
+                                "input_file": {
+                                    "filename": "contracts/contract.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 14,
+                                        "end_line": 158,
+                                        "input_file": {
+                                            "filename": "contracts/contract.cairo"
+                                        },
+                                        "start_col": 5,
+                                        "start_line": 158
+                                    },
+                                    "While trying to retrieve the implicit argument 'pedersen_ptr' in:"
+                                ],
+                                "start_col": 37,
+                                "start_line": 146
+                            },
+                            "While expanding the reference 'pedersen_ptr' in:"
+                        ],
+                        "start_col": 37,
+                        "start_line": 146
+                    }
+                },
+                "1127": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__.evaluation"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 80,
+                        "end_line": 146,
+                        "input_file": {
+                            "filename": "contracts/contract.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 80,
+                                "end_line": 146,
+                                "input_file": {
+                                    "filename": "contracts/contract.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 14,
+                                        "end_line": 158,
+                                        "input_file": {
+                                            "filename": "contracts/contract.cairo"
+                                        },
+                                        "start_col": 5,
+                                        "start_line": 158
+                                    },
+                                    "While trying to retrieve the implicit argument 'range_check_ptr' in:"
+                                ],
+                                "start_col": 65,
+                                "start_line": 146
+                            },
+                            "While expanding the reference 'range_check_ptr' in:"
+                        ],
+                        "start_col": 65,
+                        "start_line": 146
+                    }
+                },
+                "1128": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__.evaluation"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 14,
+                        "end_line": 158,
+                        "input_file": {
+                            "filename": "contracts/contract.cairo"
+                        },
+                        "start_col": 5,
+                        "start_line": 158
                     }
                 }
             }
@@ -31829,6 +31973,44 @@
                 "type": "type_definition"
             },
             "__main__.commit_model_hash.SIZEOF_LOCALS": {
+                "type": "const",
+                "value": 0
+            },
+            "__main__.evaluation": {
+                "decorators": [],
+                "pc": 1125,
+                "type": "function"
+            },
+            "__main__.evaluation.Args": {
+                "full_name": "__main__.evaluation.Args",
+                "members": {},
+                "size": 0,
+                "type": "struct"
+            },
+            "__main__.evaluation.ImplicitArgs": {
+                "full_name": "__main__.evaluation.ImplicitArgs",
+                "members": {
+                    "pedersen_ptr": {
+                        "cairo_type": "starkware.cairo.common.cairo_builtins.HashBuiltin*",
+                        "offset": 1
+                    },
+                    "range_check_ptr": {
+                        "cairo_type": "felt",
+                        "offset": 2
+                    },
+                    "syscall_ptr": {
+                        "cairo_type": "felt*",
+                        "offset": 0
+                    }
+                },
+                "size": 3,
+                "type": "struct"
+            },
+            "__main__.evaluation.Return": {
+                "cairo_type": "()",
+                "type": "type_definition"
+            },
+            "__main__.evaluation.SIZEOF_LOCALS": {
                 "type": "const",
                 "value": 0
             },
@@ -33122,6 +33304,92 @@
             "contracts.contract_storage.ContractStorage.test_data_write.SIZEOF_LOCALS": {
                 "type": "const",
                 "value": 0
+            },
+            "contracts.contract_storage.ContractStorage_competitors_count": {
+                "type": "namespace"
+            },
+            "contracts.contract_storage.ContractStorage_competitors_count.Args": {
+                "full_name": "contracts.contract_storage.ContractStorage_competitors_count.Args",
+                "members": {},
+                "size": 0,
+                "type": "struct"
+            },
+            "contracts.contract_storage.ContractStorage_competitors_count.HashBuiltin": {
+                "destination": "starkware.cairo.common.cairo_builtins.HashBuiltin",
+                "type": "alias"
+            },
+            "contracts.contract_storage.ContractStorage_competitors_count.ImplicitArgs": {
+                "full_name": "contracts.contract_storage.ContractStorage_competitors_count.ImplicitArgs",
+                "members": {},
+                "size": 0,
+                "type": "struct"
+            },
+            "contracts.contract_storage.ContractStorage_competitors_count.Return": {
+                "cairo_type": "()",
+                "type": "type_definition"
+            },
+            "contracts.contract_storage.ContractStorage_competitors_count.SIZEOF_LOCALS": {
+                "type": "const",
+                "value": 0
+            },
+            "contracts.contract_storage.ContractStorage_competitors_count.hash2": {
+                "destination": "starkware.cairo.common.hash.hash2",
+                "type": "alias"
+            },
+            "contracts.contract_storage.ContractStorage_competitors_count.normalize_address": {
+                "destination": "starkware.starknet.common.storage.normalize_address",
+                "type": "alias"
+            },
+            "contracts.contract_storage.ContractStorage_competitors_count.storage_read": {
+                "destination": "starkware.starknet.common.syscalls.storage_read",
+                "type": "alias"
+            },
+            "contracts.contract_storage.ContractStorage_competitors_count.storage_write": {
+                "destination": "starkware.starknet.common.syscalls.storage_write",
+                "type": "alias"
+            },
+            "contracts.contract_storage.ContractStorage_competitors_list": {
+                "type": "namespace"
+            },
+            "contracts.contract_storage.ContractStorage_competitors_list.Args": {
+                "full_name": "contracts.contract_storage.ContractStorage_competitors_list.Args",
+                "members": {},
+                "size": 0,
+                "type": "struct"
+            },
+            "contracts.contract_storage.ContractStorage_competitors_list.HashBuiltin": {
+                "destination": "starkware.cairo.common.cairo_builtins.HashBuiltin",
+                "type": "alias"
+            },
+            "contracts.contract_storage.ContractStorage_competitors_list.ImplicitArgs": {
+                "full_name": "contracts.contract_storage.ContractStorage_competitors_list.ImplicitArgs",
+                "members": {},
+                "size": 0,
+                "type": "struct"
+            },
+            "contracts.contract_storage.ContractStorage_competitors_list.Return": {
+                "cairo_type": "()",
+                "type": "type_definition"
+            },
+            "contracts.contract_storage.ContractStorage_competitors_list.SIZEOF_LOCALS": {
+                "type": "const",
+                "value": 0
+            },
+            "contracts.contract_storage.ContractStorage_competitors_list.hash2": {
+                "destination": "starkware.cairo.common.hash.hash2",
+                "type": "alias"
+            },
+            "contracts.contract_storage.ContractStorage_competitors_list.normalize_address": {
+                "destination": "starkware.starknet.common.storage.normalize_address",
+                "type": "alias"
+            },
+            "contracts.contract_storage.ContractStorage_competitors_list.storage_read": {
+                "destination": "starkware.starknet.common.syscalls.storage_read",
+                "type": "alias"
+            },
+            "contracts.contract_storage.ContractStorage_competitors_list.storage_write": {
+                "destination": "starkware.starknet.common.syscalls.storage_write",
+                "type": "alias"
             },
             "contracts.contract_storage.ContractStorage_merkle_root_test_data": {
                 "type": "namespace"
