@@ -6,9 +6,6 @@ from starkware.cairo.common.hash import hash2
 from starkware.cairo.common.bool import TRUE
 
 
-
-
-
 func cal_merkle_root{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
     leafs_len: felt, leafs: felt*
 ) -> (res: felt) {

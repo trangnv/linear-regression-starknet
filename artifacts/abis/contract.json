@@ -10,7 +10,7 @@
                 "type": "felt*"
             }
         ],
-        "name": "view_pedersen_hash",
+        "name": "view_pedersen_hash_chain",
         "outputs": [
             {
                 "name": "hashed_value",

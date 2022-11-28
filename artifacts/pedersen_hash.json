@@ -187,297 +187,297 @@
                 "6": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._compute_pedersen_hash_chain"
+                        "__main__.cal_pedersen_hash_chain"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
                         "end_col": 18,
-                        "end_line": 31,
+                        "end_line": 8,
                         "input_file": {
                             "filename": "contracts/crypto/pedersen_hash.cairo"
                         },
                         "start_col": 5,
-                        "start_line": 31
+                        "start_line": 8
                     }
                 },
                 "8": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._compute_pedersen_hash_chain"
+                        "__main__.cal_pedersen_hash_chain"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
                         "end_col": 20,
-                        "end_line": 33,
+                        "end_line": 10,
                         "input_file": {
                             "filename": "contracts/crypto/pedersen_hash.cairo"
                         },
                         "start_col": 9,
-                        "start_line": 33
+                        "start_line": 10
                     }
                 },
                 "10": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._compute_pedersen_hash_chain"
+                        "__main__.cal_pedersen_hash_chain"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
                         "end_col": 7,
-                        "end_line": 33,
+                        "end_line": 10,
                         "input_file": {
                             "filename": "contracts/crypto/pedersen_hash.cairo"
                         },
                         "start_col": 5,
-                        "start_line": 33
+                        "start_line": 10
                     }
                 },
                 "12": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._compute_pedersen_hash_chain"
+                        "__main__.cal_pedersen_hash_chain"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 61,
-                        "end_line": 28,
+                        "end_col": 56,
+                        "end_line": 5,
                         "input_file": {
                             "filename": "contracts/crypto/pedersen_hash.cairo"
                         },
                         "parent_location": [
                             {
                                 "end_col": 48,
-                                "end_line": 34,
+                                "end_line": 11,
                                 "input_file": {
                                     "filename": "contracts/crypto/pedersen_hash.cairo"
                                 },
                                 "start_col": 36,
-                                "start_line": 34
+                                "start_line": 11
                             },
                             "While expanding the reference 'pedersen_ptr' in:"
                         ],
-                        "start_col": 35,
-                        "start_line": 28
+                        "start_col": 30,
+                        "start_line": 5
                     }
                 },
                 "13": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._compute_pedersen_hash_chain"
+                        "__main__.cal_pedersen_hash_chain"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
                         "end_col": 62,
-                        "end_line": 34,
+                        "end_line": 11,
                         "input_file": {
                             "filename": "contracts/crypto/pedersen_hash.cairo"
                         },
                         "start_col": 52,
-                        "start_line": 34
+                        "start_line": 11
                     }
                 },
                 "14": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._compute_pedersen_hash_chain"
+                        "__main__.cal_pedersen_hash_chain"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
                         "end_col": 80,
-                        "end_line": 34,
+                        "end_line": 11,
                         "input_file": {
                             "filename": "contracts/crypto/pedersen_hash.cairo"
                         },
                         "start_col": 66,
-                        "start_line": 34
+                        "start_line": 11
                     }
                 },
                 "15": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._compute_pedersen_hash_chain"
+                        "__main__.cal_pedersen_hash_chain"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
                         "end_col": 81,
-                        "end_line": 34,
+                        "end_line": 11,
                         "input_file": {
                             "filename": "contracts/crypto/pedersen_hash.cairo"
                         },
                         "start_col": 21,
-                        "start_line": 34
+                        "start_line": 11
                     }
                 },
                 "17": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._compute_pedersen_hash_chain"
+                        "__main__.cal_pedersen_hash_chain"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
                         "end_col": 26,
-                        "end_line": 35,
+                        "end_line": 12,
                         "input_file": {
                             "filename": "contracts/crypto/pedersen_hash.cairo"
                         },
                         "start_col": 9,
-                        "start_line": 35
+                        "start_line": 12
                     }
                 },
                 "18": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._compute_pedersen_hash_chain"
+                        "__main__.cal_pedersen_hash_chain"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 61,
-                        "end_line": 28,
+                        "end_col": 56,
+                        "end_line": 5,
                         "input_file": {
                             "filename": "contracts/crypto/pedersen_hash.cairo"
                         },
                         "parent_location": [
                             {
                                 "end_col": 52,
-                                "end_line": 37,
+                                "end_line": 14,
                                 "input_file": {
                                     "filename": "contracts/crypto/pedersen_hash.cairo"
                                 },
                                 "start_col": 40,
-                                "start_line": 37
+                                "start_line": 14
                             },
                             "While expanding the reference 'pedersen_ptr' in:"
                         ],
-                        "start_col": 35,
-                        "start_line": 28
+                        "start_col": 30,
+                        "start_line": 5
                     }
                 },
                 "19": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._compute_pedersen_hash_chain"
+                        "__main__.cal_pedersen_hash_chain"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
                         "end_col": 66,
-                        "end_line": 37,
+                        "end_line": 14,
                         "input_file": {
                             "filename": "contracts/crypto/pedersen_hash.cairo"
                         },
                         "start_col": 56,
-                        "start_line": 37
+                        "start_line": 14
                     }
                 },
                 "20": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._compute_pedersen_hash_chain"
+                        "__main__.cal_pedersen_hash_chain"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
                         "end_col": 84,
-                        "end_line": 37,
+                        "end_line": 14,
                         "input_file": {
                             "filename": "contracts/crypto/pedersen_hash.cairo"
                         },
                         "start_col": 70,
-                        "start_line": 37
+                        "start_line": 14
                     }
                 },
                 "21": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._compute_pedersen_hash_chain"
+                        "__main__.cal_pedersen_hash_chain"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
                         "end_col": 85,
-                        "end_line": 37,
+                        "end_line": 14,
                         "input_file": {
                             "filename": "contracts/crypto/pedersen_hash.cairo"
                         },
                         "start_col": 25,
-                        "start_line": 37
+                        "start_line": 14
                     }
                 },
                 "23": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._compute_pedersen_hash_chain"
+                        "__main__.cal_pedersen_hash_chain"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
                         "end_col": 73,
-                        "end_line": 38,
+                        "end_line": 15,
                         "input_file": {
                             "filename": "contracts/crypto/pedersen_hash.cairo"
                         },
                         "start_col": 61,
-                        "start_line": 38
+                        "start_line": 15
                     }
                 },
                 "25": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._compute_pedersen_hash_chain"
+                        "__main__.cal_pedersen_hash_chain"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
                         "end_col": 92,
-                        "end_line": 38,
+                        "end_line": 15,
                         "input_file": {
                             "filename": "contracts/crypto/pedersen_hash.cairo"
                         },
                         "start_col": 82,
-                        "start_line": 38
+                        "start_line": 15
                     }
                 },
                 "27": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._compute_pedersen_hash_chain"
+                        "__main__.cal_pedersen_hash_chain"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
                         "end_col": 93,
-                        "end_line": 38,
+                        "end_line": 15,
                         "input_file": {
                             "filename": "contracts/crypto/pedersen_hash.cairo"
                         },
                         "start_col": 21,
-                        "start_line": 38
+                        "start_line": 15
                     }
                 },
                 "29": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._compute_pedersen_hash_chain"
+                        "__main__.cal_pedersen_hash_chain"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
                         "end_col": 26,
-                        "end_line": 39,
+                        "end_line": 16,
                         "input_file": {
                             "filename": "contracts/crypto/pedersen_hash.cairo"
                         },
                         "start_col": 9,
-                        "start_line": 39
+                        "start_line": 16
                     }
                 },
                 "30": {
@@ -489,12 +489,12 @@
                     "hints": [],
                     "inst": {
                         "end_col": 7,
-                        "end_line": 46,
+                        "end_line": 23,
                         "input_file": {
                             "filename": "contracts/crypto/pedersen_hash.cairo"
                         },
                         "start_col": 5,
-                        "start_line": 46
+                        "start_line": 23
                     }
                 },
                 "32": {
@@ -506,36 +506,36 @@
                     "hints": [],
                     "inst": {
                         "end_col": 46,
-                        "end_line": 43,
+                        "end_line": 20,
                         "input_file": {
                             "filename": "contracts/crypto/pedersen_hash.cairo"
                         },
                         "parent_location": [
                             {
                                 "end_col": 46,
-                                "end_line": 43,
+                                "end_line": 20,
                                 "input_file": {
                                     "filename": "contracts/crypto/pedersen_hash.cairo"
                                 },
                                 "parent_location": [
                                     {
                                         "end_col": 30,
-                                        "end_line": 47,
+                                        "end_line": 24,
                                         "input_file": {
                                             "filename": "contracts/crypto/pedersen_hash.cairo"
                                         },
                                         "start_col": 9,
-                                        "start_line": 47
+                                        "start_line": 24
                                     },
                                     "While trying to retrieve the implicit argument 'pedersen_ptr' in:"
                                 ],
                                 "start_col": 20,
-                                "start_line": 43
+                                "start_line": 20
                             },
                             "While expanding the reference 'pedersen_ptr' in:"
                         ],
                         "start_col": 20,
-                        "start_line": 43
+                        "start_line": 20
                     }
                 },
                 "33": {
@@ -547,24 +547,24 @@
                     "hints": [],
                     "inst": {
                         "end_col": 61,
-                        "end_line": 43,
+                        "end_line": 20,
                         "input_file": {
                             "filename": "contracts/crypto/pedersen_hash.cairo"
                         },
                         "parent_location": [
                             {
                                 "end_col": 28,
-                                "end_line": 47,
+                                "end_line": 24,
                                 "input_file": {
                                     "filename": "contracts/crypto/pedersen_hash.cairo"
                                 },
                                 "start_col": 21,
-                                "start_line": 47
+                                "start_line": 24
                             },
                             "While expanding the reference 'res_int' in:"
                         ],
                         "start_col": 48,
-                        "start_line": 43
+                        "start_line": 20
                     }
                 },
                 "34": {
@@ -576,12 +576,12 @@
                     "hints": [],
                     "inst": {
                         "end_col": 30,
-                        "end_line": 47,
+                        "end_line": 24,
                         "input_file": {
                             "filename": "contracts/crypto/pedersen_hash.cairo"
                         },
                         "start_col": 9,
-                        "start_line": 47
+                        "start_line": 24
                     }
                 },
                 "35": {
@@ -593,24 +593,24 @@
                     "hints": [],
                     "inst": {
                         "end_col": 46,
-                        "end_line": 43,
+                        "end_line": 20,
                         "input_file": {
                             "filename": "contracts/crypto/pedersen_hash.cairo"
                         },
                         "parent_location": [
                             {
                                 "end_col": 53,
-                                "end_line": 49,
+                                "end_line": 26,
                                 "input_file": {
                                     "filename": "contracts/crypto/pedersen_hash.cairo"
                                 },
                                 "start_col": 41,
-                                "start_line": 49
+                                "start_line": 26
                             },
                             "While expanding the reference 'pedersen_ptr' in:"
                         ],
                         "start_col": 20,
-                        "start_line": 43
+                        "start_line": 20
                     }
                 },
                 "36": {
@@ -622,24 +622,24 @@
                     "hints": [],
                     "inst": {
                         "end_col": 61,
-                        "end_line": 43,
+                        "end_line": 20,
                         "input_file": {
                             "filename": "contracts/crypto/pedersen_hash.cairo"
                         },
                         "parent_location": [
                             {
                                 "end_col": 64,
-                                "end_line": 49,
+                                "end_line": 26,
                                 "input_file": {
                                     "filename": "contracts/crypto/pedersen_hash.cairo"
                                 },
                                 "start_col": 57,
-                                "start_line": 49
+                                "start_line": 26
                             },
                             "While expanding the reference 'res_int' in:"
                         ],
                         "start_col": 48,
-                        "start_line": 43
+                        "start_line": 20
                     }
                 },
                 "37": {
@@ -651,12 +651,12 @@
                     "hints": [],
                     "inst": {
                         "end_col": 78,
-                        "end_line": 49,
+                        "end_line": 26,
                         "input_file": {
                             "filename": "contracts/crypto/pedersen_hash.cairo"
                         },
                         "start_col": 68,
-                        "start_line": 49
+                        "start_line": 26
                     }
                 },
                 "38": {
@@ -668,12 +668,12 @@
                     "hints": [],
                     "inst": {
                         "end_col": 79,
-                        "end_line": 49,
+                        "end_line": 26,
                         "input_file": {
                             "filename": "contracts/crypto/pedersen_hash.cairo"
                         },
                         "start_col": 26,
-                        "start_line": 49
+                        "start_line": 26
                     }
                 },
                 "40": {
@@ -685,12 +685,12 @@
                     "hints": [],
                     "inst": {
                         "end_col": 74,
-                        "end_line": 50,
+                        "end_line": 27,
                         "input_file": {
                             "filename": "contracts/crypto/pedersen_hash.cairo"
                         },
                         "start_col": 62,
-                        "start_line": 50
+                        "start_line": 27
                     }
                 },
                 "42": {
@@ -702,12 +702,12 @@
                     "hints": [],
                     "inst": {
                         "end_col": 93,
-                        "end_line": 50,
+                        "end_line": 27,
                         "input_file": {
                             "filename": "contracts/crypto/pedersen_hash.cairo"
                         },
                         "start_col": 83,
-                        "start_line": 50
+                        "start_line": 27
                     }
                 },
                 "44": {
@@ -719,12 +719,12 @@
                     "hints": [],
                     "inst": {
                         "end_col": 94,
-                        "end_line": 50,
+                        "end_line": 27,
                         "input_file": {
                             "filename": "contracts/crypto/pedersen_hash.cairo"
                         },
                         "start_col": 21,
-                        "start_line": 50
+                        "start_line": 27
                     }
                 },
                 "46": {
@@ -736,12 +736,12 @@
                     "hints": [],
                     "inst": {
                         "end_col": 26,
-                        "end_line": 51,
+                        "end_line": 28,
                         "input_file": {
                             "filename": "contracts/crypto/pedersen_hash.cairo"
                         },
                         "start_col": 9,
-                        "start_line": 51
+                        "start_line": 28
                     }
                 }
             }
@@ -795,13 +795,13 @@
                 "type": "const",
                 "value": 0
             },
-            "__main__._compute_pedersen_hash_chain": {
+            "__main__.cal_pedersen_hash_chain": {
                 "decorators": [],
                 "pc": 6,
                 "type": "function"
             },
-            "__main__._compute_pedersen_hash_chain.Args": {
-                "full_name": "__main__._compute_pedersen_hash_chain.Args",
+            "__main__.cal_pedersen_hash_chain.Args": {
+                "full_name": "__main__.cal_pedersen_hash_chain.Args",
                 "members": {
                     "data_ptr": {
                         "cairo_type": "felt*",
@@ -815,8 +815,8 @@
                 "size": 2,
                 "type": "struct"
             },
-            "__main__._compute_pedersen_hash_chain.ImplicitArgs": {
-                "full_name": "__main__._compute_pedersen_hash_chain.ImplicitArgs",
+            "__main__.cal_pedersen_hash_chain.ImplicitArgs": {
+                "full_name": "__main__.cal_pedersen_hash_chain.ImplicitArgs",
                 "members": {
                     "pedersen_ptr": {
                         "cairo_type": "starkware.cairo.common.cairo_builtins.HashBuiltin*",
@@ -826,11 +826,11 @@
                 "size": 1,
                 "type": "struct"
             },
-            "__main__._compute_pedersen_hash_chain.Return": {
+            "__main__.cal_pedersen_hash_chain.Return": {
                 "cairo_type": "(res: felt)",
                 "type": "type_definition"
             },
-            "__main__._compute_pedersen_hash_chain.SIZEOF_LOCALS": {
+            "__main__.cal_pedersen_hash_chain.SIZEOF_LOCALS": {
                 "type": "const",
                 "value": 0
             },

@@ -1,6 +1,5 @@
 %lang starknet
 from starkware.cairo.common.cairo_builtins import HashBuiltin
-// from contracts.libraries.types.data_types import DataTypes
 
 
 // store the hash of user model
@@ -32,10 +31,6 @@ func ContractStorage_x(i: felt) -> (res: felt) {
 @storage_var
 func ContractStorage_y(i: felt) -> (res: felt) {
 }
-
-
-
-
 
 
 namespace ContractStorage {

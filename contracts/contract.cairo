@@ -4,20 +4,13 @@ from starkware.cairo.common.cairo_builtins import BitwiseBuiltin, HashBuiltin
 from starkware.cairo.common.alloc import alloc
 from starkware.cairo.common.hash import hash2
 from starkware.cairo.common.bool import TRUE, FALSE
-from starkware.cairo.common.math_cmp import is_le_felt
 from starkware.starknet.common.syscalls import get_caller_address
 
 from contracts.contract_storage import ContractStorage
 from contracts.crypto.pedersen_hash import cal_pedersen_hash_chain
 from contracts.crypto.merkle import cal_merkle_root
 
-// from contracts.libraries.types.data_types import DataTypes
-func _is_lt_felt{range_check_ptr}(a: felt, b: felt) -> felt {
-    if (a == b) {
-        return FALSE;
-    }
-    return is_le_felt(a, b);
-}
+from contracts.math.math_cmp import _is_lt_felt
 
 // return perdersen hash with input is model which is an array of felt
 @view
@@ -122,6 +115,14 @@ func save_model{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr,
 func reveal_test_data{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
     x_len: felt, x: felt*, y_len: felt, y: felt*
 ) {
+
+    alloc_locals;
+    let (caller_address) = get_caller_address();
+    let (committed_merkle_root) = ContractStorage.merkle_root_test_data_read(caller_address);
+
+    with_attr error_message("You should first commit something") {
+        assert committed_merkle_root = 0;
+    }
     with_attr error_message("X and Y array need to have same size") {
         assert x_len = y_len;
     }
