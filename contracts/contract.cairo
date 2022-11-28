@@ -90,6 +90,12 @@ func reveal_model{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_pt
         assert current_hash = committed_hash;
     }
 
+    // save competitor, increase competitors_count
+    // ContractStorage.competitors_count_write ++
+    let (local competitors_count) = ContractStorage.competitors_count_read();
+    ContractStorage.competitors_count_write(competitors_count+1);
+    // ContractStorage.polynomial_len_write: naming is bad here, need to change
+
     // save model len
     ContractStorage.polynomial_len_write(caller_address, mononomial_len);
 
