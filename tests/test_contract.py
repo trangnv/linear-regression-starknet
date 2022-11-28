@@ -4,7 +4,13 @@ import os
 import pytest
 from starkware.starknet.testing.starknet import Starknet
 
-from scripts.utils import pedersen_hash_chain
+from scripts.utils import (
+    pedersen_hash_chain,
+    # merkle,
+    # get_merkle_root,
+    generate_merkle_root,
+    generate_merkle_proof,
+)
 
 
 # The path to the contract source code.
@@ -33,21 +39,26 @@ async def test_pedersen_hash_chain():
     ), "Something is wrong with pedersen hash chain"
 
 
-# @pytest.mark.asyncio
-# async def test_merkle_root():
-#     starknet = await Starknet.empty()
+@pytest.mark.asyncio
+async def test_merkle_root():
+    starknet = await Starknet.empty()
 
-#     # Deploy the contract.
-#     contract = await starknet.deploy(
-#         source=CONTRACT_FILE,
-#     )
-#     hashing_array = [2, 1, 2]  # first element is lenght
+    # Deploy the contract.
+    contract = await starknet.deploy(
+        source=CONTRACT_FILE,
+    )
+    hashing_array = [1, 2, 3, 4]  # first element is lenght
 
-#     # get result from contract
-#     execution_info = await contract.view_merkle_root(hashing_array).call()
+    # get result from contract
+    execution_info = await contract.view_merkle_root(hashing_array).call()
 
-#     # get result from script
-#     # assertion
+    # get result from script
+    root = generate_merkle_root(hashing_array)
+
+    # assertion
+    assert (
+        execution_info.result.res == root
+    ), "Something is wrong with merkle root calculation"
 
 
 # @pytest.mark.asyncio

@@ -8,8 +8,8 @@ from starkware.cairo.common.math_cmp import is_le_felt
 from starkware.starknet.common.syscalls import get_caller_address
 
 from contracts.contract_storage import ContractStorage
-from contracts.crypto.pedersen_hash import _compute_pedersen_hash_chain
-from contracts.crypto.merkle_root import cal_merkle_root
+from contracts.crypto.pedersen_hash import cal_pedersen_hash_chain
+from contracts.crypto.merkle import cal_merkle_root
 
 // from contracts.libraries.types.data_types import DataTypes
 func _is_lt_felt{range_check_ptr}(a: felt, b: felt) -> felt {
@@ -25,7 +25,7 @@ func view_pedersen_hash_chain{pedersen_ptr: HashBuiltin*}(
     mononomial_len: felt, mononomial: felt*,
 ) -> (hashed_value: felt) {
     alloc_locals;
-    let (hashed_value) = _compute_pedersen_hash_chain(mononomial, mononomial_len);
+    let (hashed_value) = cal_pedersen_hash_chain(mononomial, mononomial_len);
     return (hashed_value=hashed_value);
 }
 
