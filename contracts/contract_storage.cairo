@@ -143,6 +143,7 @@ namespace ContractStorage {
         count: felt
     ) {
         ContractStorage_competitors_count.write(count);
+        return();
     }
     
 
