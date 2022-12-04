@@ -1,42 +1,39 @@
 %lang starknet
 from starkware.cairo.common.cairo_builtins import HashBuiltin
+from contracts.libraries.types.data_types import DataTypes
 
-
-// store the hash of user model
 @storage_var
-func ContractStorage_model_hash(address: felt) -> (model_hash: felt) {
-}
-
-// store the number of term, real model
-@storage_var
-func ContractStorage_polynomial_len(address: felt) -> (res: felt) {
+func ContractStorage_model_commit(address: felt) -> (commit: felt) {
 }
 
 @storage_var
-func ContractStorage_mononomial(address, exponent) -> (res: felt) {
-}
-
-// store root hash of markle root of test data submission
-@storage_var
-func ContractStorage_merkle_root_test_data(address: felt) -> (root: felt) {
+func ContractStorage_model_len(address: felt) -> (len: felt) {
 }
 
 @storage_var
-func ContractStorage_test_data_len() -> (res: felt) {
+func ContractStorage_model(address, exponent) -> (weight: felt) {
+}
+
+@storage_var
+func ContractStorage_test_data_commit(address: felt) -> (commit: felt) {
+}
+
+@storage_var
+func ContractStorage_test_data_len() -> (len: felt) {
 }
 @storage_var
-func ContractStorage_x(i: felt) -> (res: felt) {
+func ContractStorage_test_data(i: felt) -> (data: DataTypes.DataPoint) {
 }
-@storage_var
-func ContractStorage_y(i: felt) -> (res: felt) {
-}
+// @storage_var
+// func ContractStorage_test_data_Y(i: felt) -> (y: felt) {
+// }
 
 @storage_var
 func ContractStorage_competitors_count() -> (count: felt) {
 }
 
 @storage_var
-func ContractStorage_competitors_list(competitor_id) -> (address: felt) {
+func ContractStorage_competitors_list(competitor_id: felt) -> (address: felt) {
 }
 
 
@@ -47,40 +44,48 @@ namespace ContractStorage {
     // Reads
     //
 
-    func model_hash_read{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+    func model_commit_read{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
         address: felt
-    ) -> (res: felt) {
-        let (res) = ContractStorage_model_hash.read(address);
-        return(res,);
+    ) -> (model_commit: felt) {
+        let (model_commit) = ContractStorage_model_commit.read(address);
+        return (model_commit=model_commit);
     }
 
-    func polynomial_len_read{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+    func model_len_read{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
         address: felt
-    ) -> (number_of_term: felt) {
-        let (term_len, term) = ContractStorage_polynomial_len.read(address);
-        return (term_len);
+    ) -> (model_len: felt) {
+        let (model_len) = ContractStorage_model_len.read(address);
+        return model_len;
     }
 
-    func merkle_root_test_data_read{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+    func model_read{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+        address: felt, exponent: felt
+    ) -> (weight: felt) {
+        let (weight) = ContractStorage_model.read(address, exponent);
+        return weight;
+    }
+
+
+    func test_data_commit_read{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
         address: felt
-    ) -> (root: felt) {
-        let (root) = ContractStorage_merkle_root_test_data.read(address);
-        return(root,);
+    ) -> (test_data_commit: felt) {
+        let (test_data_commit) = ContractStorage_test_data_commit.read(address);
+        return (test_data_commit=test_data_commit);
     }
 
     func test_data_len_read{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}() -> (
-         res: felt
+         len: felt
     ){
-        let (res) = ContractStorage_test_data_len.read();
-        return(res=res);
+        let (len) = ContractStorage_test_data_len.read();
+        return(len=len);
     }
 
     func test_data_read{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
         i: felt
-    ) -> (x_i: felt, y_i: felt) {
-        let (x_i) = ContractStorage_x.read(i);
-        let (y_i) = ContractStorage_y.read(i);
-        return (x_i=x_i, y_i=y_i);
+    ) -> (data: DataTypes.DataPoint) {
+        let (data) = ContractStorage_test_data.read(i);
+
+        return (data=data);
     }
 
     func competitors_count_read{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}() -> (
@@ -90,45 +95,44 @@ namespace ContractStorage {
         return (count=count);
     }
 
+    func competitors_list_read{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+        competitor_id: felt
+    ) -> (competitor: felt){
+        let (competitor) = ContractStorage_competitors_list.read(competitor_id);
+        return (competitor=competitor);
+    }
+
 
     //
     // Writes
     //
 
-    func model_hash_write{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
-        address: felt, hash_value: felt
+    func model_commit_write{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+        address: felt, model_commit: felt
     ) {
-        ContractStorage_model_hash.write(address, hash_value);
+        ContractStorage_model_commit.write(address, model_commit);
         return();
     }
 
 
-    func polynomial_len_write{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
-        address: felt, len: felt
+    func model_len_write{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+        address: felt, model_len: felt
     ) {
-        ContractStorage_polynomial_len.write(address, len);
+        ContractStorage_model_len.write(address, model_len);
         return();
     }
 
-    func mononomial_write{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
-        address: felt, exponent: felt, res: felt
+    func model_write{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+        address: felt, exponent: felt, weight: felt
     ) {
-        ContractStorage_mononomial.write(address, exponent, res);
+        ContractStorage_model.write(address, exponent, weight);
         return();
     }
 
-    func merkle_root_test_data_write{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
-        address: felt, root: felt
+    func test_data_commit_write{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+        address: felt, test_data_commit: felt
     ) {
-        ContractStorage_merkle_root_test_data.write(address, root);
-        return();
-    }
-
-    func test_data_write{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
-        i: felt, x: felt, y: felt
-    ) {
-        ContractStorage_x.write(i,x);
-        ContractStorage_y.write(i,y);
+        ContractStorage_test_data_commit.write(address, test_data_commit);
         return();
     }
 
@@ -139,18 +143,25 @@ namespace ContractStorage {
         return();
     }
 
+    func test_data_write{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+        i: felt, x: felt, y: felt
+    ) {
+        // ContractStorage_x.write(i,x);
+        // ContractStorage_y.write(i,y);
+        ContractStorage_test_data.write(i, DataTypes.DataPoint(x,y));
+        return();
+    }
+
     func competitors_count_write{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
         count: felt
     ) {
         ContractStorage_competitors_count.write(count);
         return();
     }
-    
 
-    // func y_write{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
-    //     i: felt, res: felt
-    // ) {
-    //     ContractStorage_y.write(i,res);
-    //     return();
-    // }
+    func competitors_list_write{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+        competitor_id: felt, address: felt
+    ) {
+        ContractStorage_competitors_list.write(competitor_id, address);
+    }
 }

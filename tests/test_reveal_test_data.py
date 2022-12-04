@@ -79,7 +79,11 @@ async def test_reveal_test_data():
     X = [1, 2, 3, 4, 5]
     Y = [4, 5, 6, 7, 8]
 
+    # account send commit
     root = generate_merkle_root(X + Y)
     await signer.send_transaction(
         account, contract.contract_address, "commit_merkle_root_test_data", [root]
     )
+
+    # check test data commit
+    execution_info = await contract.get_balance().call()

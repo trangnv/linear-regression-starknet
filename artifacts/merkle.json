@@ -2441,7 +2441,7 @@
                                 },
                                 "parent_location": [
                                     {
-                                        "end_col": 76,
+                                        "end_col": 75,
                                         "end_line": 17,
                                         "input_file": {
                                             "filename": "contracts/crypto/merkle.cairo"
@@ -2482,7 +2482,7 @@
                                 },
                                 "parent_location": [
                                     {
-                                        "end_col": 76,
+                                        "end_col": 75,
                                         "end_line": 17,
                                         "input_file": {
                                             "filename": "contracts/crypto/merkle.cairo"
@@ -2523,7 +2523,7 @@
                                 },
                                 "parent_location": [
                                     {
-                                        "end_col": 76,
+                                        "end_col": 75,
                                         "end_line": 17,
                                         "input_file": {
                                             "filename": "contracts/crypto/merkle.cairo"
@@ -2557,12 +2557,12 @@
                         },
                         "parent_location": [
                             {
-                                "end_col": 43,
+                                "end_col": 42,
                                 "end_line": 17,
                                 "input_file": {
                                     "filename": "contracts/crypto/merkle.cairo"
                                 },
-                                "start_col": 34,
+                                "start_col": 33,
                                 "start_line": 17
                             },
                             "While expanding the reference 'new_leafs' in:"
@@ -2586,12 +2586,12 @@
                         },
                         "parent_location": [
                             {
-                                "end_col": 56,
+                                "end_col": 55,
                                 "end_line": 17,
                                 "input_file": {
                                     "filename": "contracts/crypto/merkle.cairo"
                                 },
-                                "start_col": 51,
+                                "start_col": 50,
                                 "start_line": 17
                             },
                             "While expanding the reference 'leafs' in:"
@@ -2615,12 +2615,12 @@
                         },
                         "parent_location": [
                             {
-                                "end_col": 72,
+                                "end_col": 71,
                                 "end_line": 17,
                                 "input_file": {
                                     "filename": "contracts/crypto/merkle.cairo"
                                 },
-                                "start_col": 63,
+                                "start_col": 62,
                                 "start_line": 17
                             },
                             "While expanding the reference 'leafs_len' in:"
@@ -2637,12 +2637,12 @@
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 75,
+                        "end_col": 74,
                         "end_line": 17,
                         "input_file": {
                             "filename": "contracts/crypto/merkle.cairo"
                         },
-                        "start_col": 74,
+                        "start_col": 73,
                         "start_line": 17
                     }
                 },
@@ -2654,7 +2654,7 @@
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 76,
+                        "end_col": 75,
                         "end_line": 17,
                         "input_file": {
                             "filename": "contracts/crypto/merkle.cairo"
@@ -2678,7 +2678,7 @@
                         },
                         "parent_location": [
                             {
-                                "end_col": 76,
+                                "end_col": 75,
                                 "end_line": 17,
                                 "input_file": {
                                     "filename": "contracts/crypto/merkle.cairo"
@@ -2724,7 +2724,7 @@
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 72,
+                        "end_col": 71,
                         "end_line": 17,
                         "input_file": {
                             "filename": "contracts/crypto/merkle.cairo"
@@ -2741,7 +2741,7 @@
                             },
                             "While expanding the reference 'leafs_len' in:"
                         ],
-                        "start_col": 63,
+                        "start_col": 62,
                         "start_line": 17
                     }
                 },
@@ -2794,7 +2794,7 @@
                         },
                         "parent_location": [
                             {
-                                "end_col": 76,
+                                "end_col": 75,
                                 "end_line": 17,
                                 "input_file": {
                                     "filename": "contracts/crypto/merkle.cairo"
@@ -2847,7 +2847,7 @@
                         },
                         "parent_location": [
                             {
-                                "end_col": 76,
+                                "end_col": 75,
                                 "end_line": 17,
                                 "input_file": {
                                     "filename": "contracts/crypto/merkle.cairo"
@@ -2963,7 +2963,7 @@
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 43,
+                        "end_col": 42,
                         "end_line": 17,
                         "input_file": {
                             "filename": "contracts/crypto/merkle.cairo"
@@ -2980,7 +2980,7 @@
                             },
                             "While expanding the reference 'new_leafs' in:"
                         ],
-                        "start_col": 34,
+                        "start_col": 33,
                         "start_line": 17
                     }
                 },
@@ -3021,7 +3021,7 @@
                 "147": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -3062,7 +3062,7 @@
                 "148": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -3091,7 +3091,7 @@
                 "149": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -3120,7 +3120,7 @@
                 "150": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -3137,7 +3137,7 @@
                 "152": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -3154,7 +3154,7 @@
                 "154": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -3171,7 +3171,7 @@
                 "156": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -3212,7 +3212,7 @@
                 "157": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -3253,7 +3253,7 @@
                 "158": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -3306,7 +3306,7 @@
                 "159": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -3347,7 +3347,7 @@
                 "160": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -3388,7 +3388,7 @@
                 "161": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -3429,7 +3429,7 @@
                 "162": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -3446,7 +3446,7 @@
                 "163": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -3463,7 +3463,7 @@
                 "165": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -3480,7 +3480,7 @@
                 "166": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -3497,41 +3497,41 @@
                 "168": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 65,
+                        "end_col": 64,
                         "end_line": 36,
                         "input_file": {
                             "filename": "contracts/crypto/merkle.cairo"
                         },
-                        "start_col": 56,
+                        "start_col": 55,
                         "start_line": 36
                     }
                 },
                 "169": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 78,
+                        "end_col": 77,
                         "end_line": 36,
                         "input_file": {
                             "filename": "contracts/crypto/merkle.cairo"
                         },
-                        "start_col": 69,
+                        "start_col": 68,
                         "start_line": 36
                     }
                 },
                 "170": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -3543,12 +3543,12 @@
                         },
                         "parent_location": [
                             {
-                                "end_col": 53,
+                                "end_col": 52,
                                 "end_line": 36,
                                 "input_file": {
                                     "filename": "contracts/crypto/merkle.cairo"
                                 },
-                                "start_col": 41,
+                                "start_col": 40,
                                 "start_line": 36
                             },
                             "While expanding the reference 'pedersen_ptr' in:"
@@ -3560,7 +3560,7 @@
                 "171": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -3579,14 +3579,14 @@
                                 },
                                 "parent_location": [
                                     {
-                                        "end_col": 58,
+                                        "end_col": 57,
                                         "end_line": 46,
                                         "input_file": {
                                             "filename": "contracts/crypto/merkle.cairo"
                                         },
                                         "parent_location": [
                                             {
-                                                "end_col": 80,
+                                                "end_col": 79,
                                                 "end_line": 36,
                                                 "input_file": {
                                                     "filename": "contracts/crypto/merkle.cairo"
@@ -3596,7 +3596,7 @@
                                             },
                                             "While trying to retrieve the implicit argument 'range_check_ptr' in:"
                                         ],
-                                        "start_col": 43,
+                                        "start_col": 42,
                                         "start_line": 46
                                     },
                                     "While expanding the reference 'range_check_ptr' in:"
@@ -3613,46 +3613,46 @@
                 "172": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 66,
+                        "end_col": 65,
                         "end_line": 36,
                         "input_file": {
                             "filename": "contracts/crypto/merkle.cairo"
                         },
-                        "start_col": 55,
+                        "start_col": 54,
                         "start_line": 36
                     }
                 },
                 "173": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 79,
+                        "end_col": 78,
                         "end_line": 36,
                         "input_file": {
                             "filename": "contracts/crypto/merkle.cairo"
                         },
-                        "start_col": 68,
+                        "start_col": 67,
                         "start_line": 36
                     }
                 },
                 "174": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 80,
+                        "end_col": 79,
                         "end_line": 36,
                         "input_file": {
                             "filename": "contracts/crypto/merkle.cairo"
@@ -3664,19 +3664,19 @@
                 "176": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 58,
+                        "end_col": 57,
                         "end_line": 46,
                         "input_file": {
                             "filename": "contracts/crypto/merkle.cairo"
                         },
                         "parent_location": [
                             {
-                                "end_col": 80,
+                                "end_col": 79,
                                 "end_line": 36,
                                 "input_file": {
                                     "filename": "contracts/crypto/merkle.cairo"
@@ -3698,14 +3698,14 @@
                             },
                             "While trying to update the implicit return value 'range_check_ptr' in:"
                         ],
-                        "start_col": 43,
+                        "start_col": 42,
                         "start_line": 46
                     }
                 },
                 "177": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -3722,58 +3722,58 @@
                 "179": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 65,
+                        "end_col": 64,
                         "end_line": 39,
                         "input_file": {
                             "filename": "contracts/crypto/merkle.cairo"
                         },
-                        "start_col": 56,
+                        "start_col": 55,
                         "start_line": 39
                     }
                 },
                 "180": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 82,
+                        "end_col": 81,
                         "end_line": 39,
                         "input_file": {
                             "filename": "contracts/crypto/merkle.cairo"
                         },
-                        "start_col": 69,
+                        "start_col": 68,
                         "start_line": 39
                     }
                 },
                 "182": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 82,
+                        "end_col": 81,
                         "end_line": 39,
                         "input_file": {
                             "filename": "contracts/crypto/merkle.cairo"
                         },
-                        "start_col": 69,
+                        "start_col": 68,
                         "start_line": 39
                     }
                 },
                 "183": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -3785,12 +3785,12 @@
                         },
                         "parent_location": [
                             {
-                                "end_col": 53,
+                                "end_col": 52,
                                 "end_line": 39,
                                 "input_file": {
                                     "filename": "contracts/crypto/merkle.cairo"
                                 },
-                                "start_col": 41,
+                                "start_col": 40,
                                 "start_line": 39
                             },
                             "While expanding the reference 'pedersen_ptr' in:"
@@ -3802,7 +3802,7 @@
                 "184": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -3821,14 +3821,14 @@
                                 },
                                 "parent_location": [
                                     {
-                                        "end_col": 58,
+                                        "end_col": 57,
                                         "end_line": 46,
                                         "input_file": {
                                             "filename": "contracts/crypto/merkle.cairo"
                                         },
                                         "parent_location": [
                                             {
-                                                "end_col": 84,
+                                                "end_col": 83,
                                                 "end_line": 39,
                                                 "input_file": {
                                                     "filename": "contracts/crypto/merkle.cairo"
@@ -3838,7 +3838,7 @@
                                             },
                                             "While trying to retrieve the implicit argument 'range_check_ptr' in:"
                                         ],
-                                        "start_col": 43,
+                                        "start_col": 42,
                                         "start_line": 46
                                     },
                                     "While expanding the reference 'range_check_ptr' in:"
@@ -3855,46 +3855,46 @@
                 "185": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 66,
+                        "end_col": 65,
                         "end_line": 39,
                         "input_file": {
                             "filename": "contracts/crypto/merkle.cairo"
                         },
-                        "start_col": 55,
+                        "start_col": 54,
                         "start_line": 39
                     }
                 },
                 "186": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 83,
+                        "end_col": 82,
                         "end_line": 39,
                         "input_file": {
                             "filename": "contracts/crypto/merkle.cairo"
                         },
-                        "start_col": 68,
+                        "start_col": 67,
                         "start_line": 39
                     }
                 },
                 "187": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 84,
+                        "end_col": 83,
                         "end_line": 39,
                         "input_file": {
                             "filename": "contracts/crypto/merkle.cairo"
@@ -3906,19 +3906,19 @@
                 "189": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 58,
+                        "end_col": 57,
                         "end_line": 46,
                         "input_file": {
                             "filename": "contracts/crypto/merkle.cairo"
                         },
                         "parent_location": [
                             {
-                                "end_col": 84,
+                                "end_col": 83,
                                 "end_line": 39,
                                 "input_file": {
                                     "filename": "contracts/crypto/merkle.cairo"
@@ -3940,14 +3940,14 @@
                             },
                             "While trying to update the implicit return value 'range_check_ptr' in:"
                         ],
-                        "start_col": 43,
+                        "start_col": 42,
                         "start_line": 46
                     }
                 },
                 "190": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -3964,7 +3964,7 @@
                 "192": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -3981,7 +3981,7 @@
                 "193": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -3998,7 +3998,7 @@
                 "194": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -4017,7 +4017,7 @@
                                 },
                                 "parent_location": [
                                     {
-                                        "end_col": 37,
+                                        "end_col": 36,
                                         "end_line": 43,
                                         "input_file": {
                                             "filename": "contracts/crypto/merkle.cairo"
@@ -4039,12 +4039,12 @@
                 "195": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 53,
+                        "end_col": 52,
                         "end_line": 39,
                         "input_file": {
                             "filename": "contracts/crypto/merkle.cairo"
@@ -4058,7 +4058,7 @@
                                 },
                                 "parent_location": [
                                     {
-                                        "end_col": 37,
+                                        "end_col": 36,
                                         "end_line": 43,
                                         "input_file": {
                                             "filename": "contracts/crypto/merkle.cairo"
@@ -4073,14 +4073,14 @@
                             },
                             "While expanding the reference 'pedersen_ptr' in:"
                         ],
-                        "start_col": 41,
+                        "start_col": 40,
                         "start_line": 39
                     }
                 },
                 "196": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -4099,7 +4099,7 @@
                                 },
                                 "parent_location": [
                                     {
-                                        "end_col": 37,
+                                        "end_col": 36,
                                         "end_line": 43,
                                         "input_file": {
                                             "filename": "contracts/crypto/merkle.cairo"
@@ -4121,7 +4121,7 @@
                 "197": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -4140,7 +4140,7 @@
                                 },
                                 "parent_location": [
                                     {
-                                        "end_col": 37,
+                                        "end_col": 36,
                                         "end_line": 43,
                                         "input_file": {
                                             "filename": "contracts/crypto/merkle.cairo"
@@ -4162,7 +4162,7 @@
                 "198": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -4181,7 +4181,7 @@
                                 },
                                 "parent_location": [
                                     {
-                                        "end_col": 37,
+                                        "end_col": 36,
                                         "end_line": 43,
                                         "input_file": {
                                             "filename": "contracts/crypto/merkle.cairo"
@@ -4203,7 +4203,7 @@
                 "199": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -4222,7 +4222,7 @@
                                 },
                                 "parent_location": [
                                     {
-                                        "end_col": 37,
+                                        "end_col": 36,
                                         "end_line": 43,
                                         "input_file": {
                                             "filename": "contracts/crypto/merkle.cairo"
@@ -4244,29 +4244,29 @@
                 "200": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 36,
+                        "end_col": 35,
                         "end_line": 43,
                         "input_file": {
                             "filename": "contracts/crypto/merkle.cairo"
                         },
-                        "start_col": 31,
+                        "start_col": 30,
                         "start_line": 43
                     }
                 },
                 "202": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 37,
+                        "end_col": 36,
                         "end_line": 43,
                         "input_file": {
                             "filename": "contracts/crypto/merkle.cairo"
@@ -4278,12 +4278,12 @@
                 "204": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._merkle_build_body"
+                        "__main__.merkle_build_body"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 38,
+                        "end_col": 37,
                         "end_line": 43,
                         "input_file": {
                             "filename": "contracts/crypto/merkle.cairo"
@@ -4295,12 +4295,12 @@
                 "205": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._hash_sorted"
+                        "__main__.hash_sorted"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 58,
+                        "end_col": 57,
                         "end_line": 46,
                         "input_file": {
                             "filename": "contracts/crypto/merkle.cairo"
@@ -4329,19 +4329,19 @@
                             },
                             "While expanding the reference 'range_check_ptr' in:"
                         ],
-                        "start_col": 43,
+                        "start_col": 42,
                         "start_line": 46
                     }
                 },
                 "206": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._hash_sorted"
+                        "__main__.hash_sorted"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 61,
+                        "end_col": 60,
                         "end_line": 46,
                         "input_file": {
                             "filename": "contracts/crypto/merkle.cairo"
@@ -4358,19 +4358,19 @@
                             },
                             "While expanding the reference 'a' in:"
                         ],
-                        "start_col": 60,
+                        "start_col": 59,
                         "start_line": 46
                     }
                 },
                 "207": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._hash_sorted"
+                        "__main__.hash_sorted"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 64,
+                        "end_col": 63,
                         "end_line": 46,
                         "input_file": {
                             "filename": "contracts/crypto/merkle.cairo"
@@ -4387,14 +4387,14 @@
                             },
                             "While expanding the reference 'b' in:"
                         ],
-                        "start_col": 63,
+                        "start_col": 62,
                         "start_line": 46
                     }
                 },
                 "208": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._hash_sorted"
+                        "__main__.hash_sorted"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -4411,7 +4411,7 @@
                 "210": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._hash_sorted"
+                        "__main__.hash_sorted"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -4428,7 +4428,7 @@
                 "212": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._hash_sorted"
+                        "__main__.hash_sorted"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -4445,12 +4445,12 @@
                 "214": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._hash_sorted"
+                        "__main__.hash_sorted"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 41,
+                        "end_col": 40,
                         "end_line": 46,
                         "input_file": {
                             "filename": "contracts/crypto/merkle.cairo"
@@ -4467,19 +4467,19 @@
                             },
                             "While expanding the reference 'hash_ptr' in:"
                         ],
-                        "start_col": 19,
+                        "start_col": 18,
                         "start_line": 46
                     }
                 },
                 "215": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._hash_sorted"
+                        "__main__.hash_sorted"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 61,
+                        "end_col": 60,
                         "end_line": 46,
                         "input_file": {
                             "filename": "contracts/crypto/merkle.cairo"
@@ -4496,19 +4496,19 @@
                             },
                             "While expanding the reference 'a' in:"
                         ],
-                        "start_col": 60,
+                        "start_col": 59,
                         "start_line": 46
                     }
                 },
                 "216": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._hash_sorted"
+                        "__main__.hash_sorted"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 64,
+                        "end_col": 63,
                         "end_line": 46,
                         "input_file": {
                             "filename": "contracts/crypto/merkle.cairo"
@@ -4525,14 +4525,14 @@
                             },
                             "While expanding the reference 'b' in:"
                         ],
-                        "start_col": 63,
+                        "start_col": 62,
                         "start_line": 46
                     }
                 },
                 "217": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._hash_sorted"
+                        "__main__.hash_sorted"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -4549,7 +4549,7 @@
                 "219": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._hash_sorted"
+                        "__main__.hash_sorted"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -4566,12 +4566,12 @@
                 "221": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._hash_sorted"
+                        "__main__.hash_sorted"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 41,
+                        "end_col": 40,
                         "end_line": 46,
                         "input_file": {
                             "filename": "contracts/crypto/merkle.cairo"
@@ -4588,19 +4588,19 @@
                             },
                             "While expanding the reference 'hash_ptr' in:"
                         ],
-                        "start_col": 19,
+                        "start_col": 18,
                         "start_line": 46
                     }
                 },
                 "222": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._hash_sorted"
+                        "__main__.hash_sorted"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 64,
+                        "end_col": 63,
                         "end_line": 46,
                         "input_file": {
                             "filename": "contracts/crypto/merkle.cairo"
@@ -4617,19 +4617,19 @@
                             },
                             "While expanding the reference 'b' in:"
                         ],
-                        "start_col": 63,
+                        "start_col": 62,
                         "start_line": 46
                     }
                 },
                 "223": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._hash_sorted"
+                        "__main__.hash_sorted"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 61,
+                        "end_col": 60,
                         "end_line": 46,
                         "input_file": {
                             "filename": "contracts/crypto/merkle.cairo"
@@ -4646,14 +4646,14 @@
                             },
                             "While expanding the reference 'a' in:"
                         ],
-                        "start_col": 60,
+                        "start_col": 59,
                         "start_line": 46
                     }
                 },
                 "224": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._hash_sorted"
+                        "__main__.hash_sorted"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -4670,7 +4670,7 @@
                 "226": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._hash_sorted"
+                        "__main__.hash_sorted"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -4682,7 +4682,7 @@
                         },
                         "parent_location": [
                             {
-                                "end_col": 41,
+                                "end_col": 40,
                                 "end_line": 46,
                                 "input_file": {
                                     "filename": "contracts/crypto/merkle.cairo"
@@ -4699,7 +4699,7 @@
                                     },
                                     "While trying to retrieve the implicit argument 'hash_ptr' in:"
                                 ],
-                                "start_col": 19,
+                                "start_col": 18,
                                 "start_line": 46
                             },
                             "While expanding the reference 'hash_ptr' in:"
@@ -4711,7 +4711,7 @@
                 "227": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._hash_sorted"
+                        "__main__.hash_sorted"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -4730,7 +4730,7 @@
                                 },
                                 "parent_location": [
                                     {
-                                        "end_col": 58,
+                                        "end_col": 57,
                                         "end_line": 46,
                                         "input_file": {
                                             "filename": "contracts/crypto/merkle.cairo"
@@ -4747,7 +4747,7 @@
                                             },
                                             "While trying to retrieve the implicit argument 'range_check_ptr' in:"
                                         ],
-                                        "start_col": 43,
+                                        "start_col": 42,
                                         "start_line": 46
                                     },
                                     "While expanding the reference 'range_check_ptr' in:"
@@ -4764,7 +4764,7 @@
                 "228": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._hash_sorted"
+                        "__main__.hash_sorted"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -4793,7 +4793,7 @@
                 "229": {
                     "accessible_scopes": [
                         "__main__",
-                        "__main__._hash_sorted"
+                        "__main__.hash_sorted"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -4981,104 +4981,6 @@
                 "destination": "starkware.cairo.common.bool.TRUE",
                 "type": "alias"
             },
-            "__main__._hash_sorted": {
-                "decorators": [],
-                "pc": 205,
-                "type": "function"
-            },
-            "__main__._hash_sorted.Args": {
-                "full_name": "__main__._hash_sorted.Args",
-                "members": {
-                    "a": {
-                        "cairo_type": "felt",
-                        "offset": 0
-                    },
-                    "b": {
-                        "cairo_type": "felt",
-                        "offset": 1
-                    }
-                },
-                "size": 2,
-                "type": "struct"
-            },
-            "__main__._hash_sorted.ImplicitArgs": {
-                "full_name": "__main__._hash_sorted.ImplicitArgs",
-                "members": {
-                    "hash_ptr": {
-                        "cairo_type": "starkware.cairo.common.cairo_builtins.HashBuiltin*",
-                        "offset": 0
-                    },
-                    "range_check_ptr": {
-                        "cairo_type": "felt",
-                        "offset": 1
-                    }
-                },
-                "size": 2,
-                "type": "struct"
-            },
-            "__main__._hash_sorted.Return": {
-                "cairo_type": "(res: felt)",
-                "type": "type_definition"
-            },
-            "__main__._hash_sorted.SIZEOF_LOCALS": {
-                "type": "const",
-                "value": 0
-            },
-            "__main__._merkle_build_body": {
-                "decorators": [],
-                "pc": 147,
-                "type": "function"
-            },
-            "__main__._merkle_build_body.Args": {
-                "full_name": "__main__._merkle_build_body.Args",
-                "members": {
-                    "i": {
-                        "cairo_type": "felt",
-                        "offset": 0
-                    }
-                },
-                "size": 1,
-                "type": "struct"
-            },
-            "__main__._merkle_build_body.ImplicitArgs": {
-                "full_name": "__main__._merkle_build_body.ImplicitArgs",
-                "members": {
-                    "leafs": {
-                        "cairo_type": "felt*",
-                        "offset": 4
-                    },
-                    "new_leafs": {
-                        "cairo_type": "felt*",
-                        "offset": 3
-                    },
-                    "pedersen_ptr": {
-                        "cairo_type": "starkware.cairo.common.cairo_builtins.HashBuiltin*",
-                        "offset": 1
-                    },
-                    "range_check_ptr": {
-                        "cairo_type": "felt",
-                        "offset": 2
-                    },
-                    "stop": {
-                        "cairo_type": "felt",
-                        "offset": 5
-                    },
-                    "syscall_ptr": {
-                        "cairo_type": "felt*",
-                        "offset": 0
-                    }
-                },
-                "size": 6,
-                "type": "struct"
-            },
-            "__main__._merkle_build_body.Return": {
-                "cairo_type": "()",
-                "type": "type_definition"
-            },
-            "__main__._merkle_build_body.SIZEOF_LOCALS": {
-                "type": "const",
-                "value": 0
-            },
             "__main__.alloc": {
                 "destination": "starkware.cairo.common.alloc.alloc",
                 "type": "alias"
@@ -5134,9 +5036,107 @@
                 "destination": "starkware.cairo.common.hash.hash2",
                 "type": "alias"
             },
+            "__main__.hash_sorted": {
+                "decorators": [],
+                "pc": 205,
+                "type": "function"
+            },
+            "__main__.hash_sorted.Args": {
+                "full_name": "__main__.hash_sorted.Args",
+                "members": {
+                    "a": {
+                        "cairo_type": "felt",
+                        "offset": 0
+                    },
+                    "b": {
+                        "cairo_type": "felt",
+                        "offset": 1
+                    }
+                },
+                "size": 2,
+                "type": "struct"
+            },
+            "__main__.hash_sorted.ImplicitArgs": {
+                "full_name": "__main__.hash_sorted.ImplicitArgs",
+                "members": {
+                    "hash_ptr": {
+                        "cairo_type": "starkware.cairo.common.cairo_builtins.HashBuiltin*",
+                        "offset": 0
+                    },
+                    "range_check_ptr": {
+                        "cairo_type": "felt",
+                        "offset": 1
+                    }
+                },
+                "size": 2,
+                "type": "struct"
+            },
+            "__main__.hash_sorted.Return": {
+                "cairo_type": "(res: felt)",
+                "type": "type_definition"
+            },
+            "__main__.hash_sorted.SIZEOF_LOCALS": {
+                "type": "const",
+                "value": 0
+            },
             "__main__.is_le_felt": {
                 "destination": "starkware.cairo.common.math_cmp.is_le_felt",
                 "type": "alias"
+            },
+            "__main__.merkle_build_body": {
+                "decorators": [],
+                "pc": 147,
+                "type": "function"
+            },
+            "__main__.merkle_build_body.Args": {
+                "full_name": "__main__.merkle_build_body.Args",
+                "members": {
+                    "i": {
+                        "cairo_type": "felt",
+                        "offset": 0
+                    }
+                },
+                "size": 1,
+                "type": "struct"
+            },
+            "__main__.merkle_build_body.ImplicitArgs": {
+                "full_name": "__main__.merkle_build_body.ImplicitArgs",
+                "members": {
+                    "leafs": {
+                        "cairo_type": "felt*",
+                        "offset": 4
+                    },
+                    "new_leafs": {
+                        "cairo_type": "felt*",
+                        "offset": 3
+                    },
+                    "pedersen_ptr": {
+                        "cairo_type": "starkware.cairo.common.cairo_builtins.HashBuiltin*",
+                        "offset": 1
+                    },
+                    "range_check_ptr": {
+                        "cairo_type": "felt",
+                        "offset": 2
+                    },
+                    "stop": {
+                        "cairo_type": "felt",
+                        "offset": 5
+                    },
+                    "syscall_ptr": {
+                        "cairo_type": "felt*",
+                        "offset": 0
+                    }
+                },
+                "size": 6,
+                "type": "struct"
+            },
+            "__main__.merkle_build_body.Return": {
+                "cairo_type": "()",
+                "type": "type_definition"
+            },
+            "__main__.merkle_build_body.SIZEOF_LOCALS": {
+                "type": "const",
+                "value": 0
             },
             "__main__.unsigned_div_rem": {
                 "destination": "starkware.cairo.common.math.unsigned_div_rem",

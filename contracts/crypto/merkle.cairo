@@ -14,13 +14,13 @@ func cal_merkle_root{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check
         return (res=[leafs]);
     }
     let (local new_leafs) = alloc();
-    _merkle_build_body{new_leafs=new_leafs, leafs=leafs, stop=leafs_len}(0);
+    merkle_build_body{new_leafs=new_leafs, leafs=leafs, stop=leafs_len}(0);
 
     let (q, r) = unsigned_div_rem(leafs_len, 2);
     return cal_merkle_root(q + r, new_leafs);
 }
 
-func _merkle_build_body{
+func merkle_build_body{
     syscall_ptr: felt*,
     pedersen_ptr: HashBuiltin*,
     range_check_ptr,
@@ -33,17 +33,17 @@ func _merkle_build_body{
         return ();
     }
     if (i == stop - 1) {
-        let (n) = _hash_sorted{hash_ptr=pedersen_ptr}([leafs + i], [leafs + i]);
+        let (n) = hash_sorted{hash_ptr=pedersen_ptr}([leafs + i], [leafs + i]);
         tempvar range_check_ptr = range_check_ptr;
     } else {
-        let (n) = _hash_sorted{hash_ptr=pedersen_ptr}([leafs + i], [leafs + i + 1]);
+        let (n) = hash_sorted{hash_ptr=pedersen_ptr}([leafs + i], [leafs + i + 1]);
         tempvar range_check_ptr = range_check_ptr;
     }
     assert [new_leafs + i / 2] = n;
-    return _merkle_build_body(i + 2);
+    return merkle_build_body(i + 2);
 }
 
-func _hash_sorted{hash_ptr: HashBuiltin*, range_check_ptr}(a, b) -> (res: felt) {
+func hash_sorted{hash_ptr: HashBuiltin*, range_check_ptr}(a, b) -> (res: felt) {
     let le = is_le_felt(a, b);
 
     if (le == 1) {

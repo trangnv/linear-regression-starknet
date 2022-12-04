@@ -127,175 +127,218 @@
                 "destination": "starkware.starknet.common.syscalls.storage_write",
                 "type": "alias"
             },
-            "__main__.ContractStorage_merkle_root_test_data": {
+            "__main__.ContractStorage_model": {
                 "type": "namespace"
             },
-            "__main__.ContractStorage_merkle_root_test_data.Args": {
-                "full_name": "__main__.ContractStorage_merkle_root_test_data.Args",
+            "__main__.ContractStorage_model.Args": {
+                "full_name": "__main__.ContractStorage_model.Args",
                 "members": {},
                 "size": 0,
                 "type": "struct"
             },
-            "__main__.ContractStorage_merkle_root_test_data.HashBuiltin": {
+            "__main__.ContractStorage_model.HashBuiltin": {
                 "destination": "starkware.cairo.common.cairo_builtins.HashBuiltin",
                 "type": "alias"
             },
-            "__main__.ContractStorage_merkle_root_test_data.ImplicitArgs": {
-                "full_name": "__main__.ContractStorage_merkle_root_test_data.ImplicitArgs",
+            "__main__.ContractStorage_model.ImplicitArgs": {
+                "full_name": "__main__.ContractStorage_model.ImplicitArgs",
                 "members": {},
                 "size": 0,
                 "type": "struct"
             },
-            "__main__.ContractStorage_merkle_root_test_data.Return": {
+            "__main__.ContractStorage_model.Return": {
                 "cairo_type": "()",
                 "type": "type_definition"
             },
-            "__main__.ContractStorage_merkle_root_test_data.SIZEOF_LOCALS": {
+            "__main__.ContractStorage_model.SIZEOF_LOCALS": {
                 "type": "const",
                 "value": 0
             },
-            "__main__.ContractStorage_merkle_root_test_data.hash2": {
+            "__main__.ContractStorage_model.hash2": {
                 "destination": "starkware.cairo.common.hash.hash2",
                 "type": "alias"
             },
-            "__main__.ContractStorage_merkle_root_test_data.normalize_address": {
+            "__main__.ContractStorage_model.normalize_address": {
                 "destination": "starkware.starknet.common.storage.normalize_address",
                 "type": "alias"
             },
-            "__main__.ContractStorage_merkle_root_test_data.storage_read": {
+            "__main__.ContractStorage_model.storage_read": {
                 "destination": "starkware.starknet.common.syscalls.storage_read",
                 "type": "alias"
             },
-            "__main__.ContractStorage_merkle_root_test_data.storage_write": {
+            "__main__.ContractStorage_model.storage_write": {
                 "destination": "starkware.starknet.common.syscalls.storage_write",
                 "type": "alias"
             },
-            "__main__.ContractStorage_model_hash": {
+            "__main__.ContractStorage_model_commit": {
                 "type": "namespace"
             },
-            "__main__.ContractStorage_model_hash.Args": {
-                "full_name": "__main__.ContractStorage_model_hash.Args",
+            "__main__.ContractStorage_model_commit.Args": {
+                "full_name": "__main__.ContractStorage_model_commit.Args",
                 "members": {},
                 "size": 0,
                 "type": "struct"
             },
-            "__main__.ContractStorage_model_hash.HashBuiltin": {
+            "__main__.ContractStorage_model_commit.HashBuiltin": {
                 "destination": "starkware.cairo.common.cairo_builtins.HashBuiltin",
                 "type": "alias"
             },
-            "__main__.ContractStorage_model_hash.ImplicitArgs": {
-                "full_name": "__main__.ContractStorage_model_hash.ImplicitArgs",
+            "__main__.ContractStorage_model_commit.ImplicitArgs": {
+                "full_name": "__main__.ContractStorage_model_commit.ImplicitArgs",
                 "members": {},
                 "size": 0,
                 "type": "struct"
             },
-            "__main__.ContractStorage_model_hash.Return": {
+            "__main__.ContractStorage_model_commit.Return": {
                 "cairo_type": "()",
                 "type": "type_definition"
             },
-            "__main__.ContractStorage_model_hash.SIZEOF_LOCALS": {
+            "__main__.ContractStorage_model_commit.SIZEOF_LOCALS": {
                 "type": "const",
                 "value": 0
             },
-            "__main__.ContractStorage_model_hash.hash2": {
+            "__main__.ContractStorage_model_commit.hash2": {
                 "destination": "starkware.cairo.common.hash.hash2",
                 "type": "alias"
             },
-            "__main__.ContractStorage_model_hash.normalize_address": {
+            "__main__.ContractStorage_model_commit.normalize_address": {
                 "destination": "starkware.starknet.common.storage.normalize_address",
                 "type": "alias"
             },
-            "__main__.ContractStorage_model_hash.storage_read": {
+            "__main__.ContractStorage_model_commit.storage_read": {
                 "destination": "starkware.starknet.common.syscalls.storage_read",
                 "type": "alias"
             },
-            "__main__.ContractStorage_model_hash.storage_write": {
+            "__main__.ContractStorage_model_commit.storage_write": {
                 "destination": "starkware.starknet.common.syscalls.storage_write",
                 "type": "alias"
             },
-            "__main__.ContractStorage_mononomial": {
+            "__main__.ContractStorage_model_len": {
                 "type": "namespace"
             },
-            "__main__.ContractStorage_mononomial.Args": {
-                "full_name": "__main__.ContractStorage_mononomial.Args",
+            "__main__.ContractStorage_model_len.Args": {
+                "full_name": "__main__.ContractStorage_model_len.Args",
                 "members": {},
                 "size": 0,
                 "type": "struct"
             },
-            "__main__.ContractStorage_mononomial.HashBuiltin": {
+            "__main__.ContractStorage_model_len.HashBuiltin": {
                 "destination": "starkware.cairo.common.cairo_builtins.HashBuiltin",
                 "type": "alias"
             },
-            "__main__.ContractStorage_mononomial.ImplicitArgs": {
-                "full_name": "__main__.ContractStorage_mononomial.ImplicitArgs",
+            "__main__.ContractStorage_model_len.ImplicitArgs": {
+                "full_name": "__main__.ContractStorage_model_len.ImplicitArgs",
                 "members": {},
                 "size": 0,
                 "type": "struct"
             },
-            "__main__.ContractStorage_mononomial.Return": {
+            "__main__.ContractStorage_model_len.Return": {
                 "cairo_type": "()",
                 "type": "type_definition"
             },
-            "__main__.ContractStorage_mononomial.SIZEOF_LOCALS": {
+            "__main__.ContractStorage_model_len.SIZEOF_LOCALS": {
                 "type": "const",
                 "value": 0
             },
-            "__main__.ContractStorage_mononomial.hash2": {
+            "__main__.ContractStorage_model_len.hash2": {
                 "destination": "starkware.cairo.common.hash.hash2",
                 "type": "alias"
             },
-            "__main__.ContractStorage_mononomial.normalize_address": {
+            "__main__.ContractStorage_model_len.normalize_address": {
                 "destination": "starkware.starknet.common.storage.normalize_address",
                 "type": "alias"
             },
-            "__main__.ContractStorage_mononomial.storage_read": {
+            "__main__.ContractStorage_model_len.storage_read": {
                 "destination": "starkware.starknet.common.syscalls.storage_read",
                 "type": "alias"
             },
-            "__main__.ContractStorage_mononomial.storage_write": {
+            "__main__.ContractStorage_model_len.storage_write": {
                 "destination": "starkware.starknet.common.syscalls.storage_write",
                 "type": "alias"
             },
-            "__main__.ContractStorage_polynomial_len": {
+            "__main__.ContractStorage_test_data": {
                 "type": "namespace"
             },
-            "__main__.ContractStorage_polynomial_len.Args": {
-                "full_name": "__main__.ContractStorage_polynomial_len.Args",
+            "__main__.ContractStorage_test_data.Args": {
+                "full_name": "__main__.ContractStorage_test_data.Args",
                 "members": {},
                 "size": 0,
                 "type": "struct"
             },
-            "__main__.ContractStorage_polynomial_len.HashBuiltin": {
+            "__main__.ContractStorage_test_data.HashBuiltin": {
                 "destination": "starkware.cairo.common.cairo_builtins.HashBuiltin",
                 "type": "alias"
             },
-            "__main__.ContractStorage_polynomial_len.ImplicitArgs": {
-                "full_name": "__main__.ContractStorage_polynomial_len.ImplicitArgs",
+            "__main__.ContractStorage_test_data.ImplicitArgs": {
+                "full_name": "__main__.ContractStorage_test_data.ImplicitArgs",
                 "members": {},
                 "size": 0,
                 "type": "struct"
             },
-            "__main__.ContractStorage_polynomial_len.Return": {
+            "__main__.ContractStorage_test_data.Return": {
                 "cairo_type": "()",
                 "type": "type_definition"
             },
-            "__main__.ContractStorage_polynomial_len.SIZEOF_LOCALS": {
+            "__main__.ContractStorage_test_data.SIZEOF_LOCALS": {
                 "type": "const",
                 "value": 0
             },
-            "__main__.ContractStorage_polynomial_len.hash2": {
+            "__main__.ContractStorage_test_data.hash2": {
                 "destination": "starkware.cairo.common.hash.hash2",
                 "type": "alias"
             },
-            "__main__.ContractStorage_polynomial_len.normalize_address": {
+            "__main__.ContractStorage_test_data.normalize_address": {
                 "destination": "starkware.starknet.common.storage.normalize_address",
                 "type": "alias"
             },
-            "__main__.ContractStorage_polynomial_len.storage_read": {
+            "__main__.ContractStorage_test_data.storage_read": {
                 "destination": "starkware.starknet.common.syscalls.storage_read",
                 "type": "alias"
             },
-            "__main__.ContractStorage_polynomial_len.storage_write": {
+            "__main__.ContractStorage_test_data.storage_write": {
+                "destination": "starkware.starknet.common.syscalls.storage_write",
+                "type": "alias"
+            },
+            "__main__.ContractStorage_test_data_commit": {
+                "type": "namespace"
+            },
+            "__main__.ContractStorage_test_data_commit.Args": {
+                "full_name": "__main__.ContractStorage_test_data_commit.Args",
+                "members": {},
+                "size": 0,
+                "type": "struct"
+            },
+            "__main__.ContractStorage_test_data_commit.HashBuiltin": {
+                "destination": "starkware.cairo.common.cairo_builtins.HashBuiltin",
+                "type": "alias"
+            },
+            "__main__.ContractStorage_test_data_commit.ImplicitArgs": {
+                "full_name": "__main__.ContractStorage_test_data_commit.ImplicitArgs",
+                "members": {},
+                "size": 0,
+                "type": "struct"
+            },
+            "__main__.ContractStorage_test_data_commit.Return": {
+                "cairo_type": "()",
+                "type": "type_definition"
+            },
+            "__main__.ContractStorage_test_data_commit.SIZEOF_LOCALS": {
+                "type": "const",
+                "value": 0
+            },
+            "__main__.ContractStorage_test_data_commit.hash2": {
+                "destination": "starkware.cairo.common.hash.hash2",
+                "type": "alias"
+            },
+            "__main__.ContractStorage_test_data_commit.normalize_address": {
+                "destination": "starkware.starknet.common.storage.normalize_address",
+                "type": "alias"
+            },
+            "__main__.ContractStorage_test_data_commit.storage_read": {
+                "destination": "starkware.starknet.common.syscalls.storage_read",
+                "type": "alias"
+            },
+            "__main__.ContractStorage_test_data_commit.storage_write": {
                 "destination": "starkware.starknet.common.syscalls.storage_write",
                 "type": "alias"
             },
@@ -342,95 +385,51 @@
                 "destination": "starkware.starknet.common.syscalls.storage_write",
                 "type": "alias"
             },
-            "__main__.ContractStorage_x": {
-                "type": "namespace"
-            },
-            "__main__.ContractStorage_x.Args": {
-                "full_name": "__main__.ContractStorage_x.Args",
-                "members": {},
-                "size": 0,
-                "type": "struct"
-            },
-            "__main__.ContractStorage_x.HashBuiltin": {
-                "destination": "starkware.cairo.common.cairo_builtins.HashBuiltin",
-                "type": "alias"
-            },
-            "__main__.ContractStorage_x.ImplicitArgs": {
-                "full_name": "__main__.ContractStorage_x.ImplicitArgs",
-                "members": {},
-                "size": 0,
-                "type": "struct"
-            },
-            "__main__.ContractStorage_x.Return": {
-                "cairo_type": "()",
-                "type": "type_definition"
-            },
-            "__main__.ContractStorage_x.SIZEOF_LOCALS": {
-                "type": "const",
-                "value": 0
-            },
-            "__main__.ContractStorage_x.hash2": {
-                "destination": "starkware.cairo.common.hash.hash2",
-                "type": "alias"
-            },
-            "__main__.ContractStorage_x.normalize_address": {
-                "destination": "starkware.starknet.common.storage.normalize_address",
-                "type": "alias"
-            },
-            "__main__.ContractStorage_x.storage_read": {
-                "destination": "starkware.starknet.common.syscalls.storage_read",
-                "type": "alias"
-            },
-            "__main__.ContractStorage_x.storage_write": {
-                "destination": "starkware.starknet.common.syscalls.storage_write",
-                "type": "alias"
-            },
-            "__main__.ContractStorage_y": {
-                "type": "namespace"
-            },
-            "__main__.ContractStorage_y.Args": {
-                "full_name": "__main__.ContractStorage_y.Args",
-                "members": {},
-                "size": 0,
-                "type": "struct"
-            },
-            "__main__.ContractStorage_y.HashBuiltin": {
-                "destination": "starkware.cairo.common.cairo_builtins.HashBuiltin",
-                "type": "alias"
-            },
-            "__main__.ContractStorage_y.ImplicitArgs": {
-                "full_name": "__main__.ContractStorage_y.ImplicitArgs",
-                "members": {},
-                "size": 0,
-                "type": "struct"
-            },
-            "__main__.ContractStorage_y.Return": {
-                "cairo_type": "()",
-                "type": "type_definition"
-            },
-            "__main__.ContractStorage_y.SIZEOF_LOCALS": {
-                "type": "const",
-                "value": 0
-            },
-            "__main__.ContractStorage_y.hash2": {
-                "destination": "starkware.cairo.common.hash.hash2",
-                "type": "alias"
-            },
-            "__main__.ContractStorage_y.normalize_address": {
-                "destination": "starkware.starknet.common.storage.normalize_address",
-                "type": "alias"
-            },
-            "__main__.ContractStorage_y.storage_read": {
-                "destination": "starkware.starknet.common.syscalls.storage_read",
-                "type": "alias"
-            },
-            "__main__.ContractStorage_y.storage_write": {
-                "destination": "starkware.starknet.common.syscalls.storage_write",
+            "__main__.DataTypes": {
+                "destination": "contracts.libraries.types.data_types.DataTypes",
                 "type": "alias"
             },
             "__main__.HashBuiltin": {
                 "destination": "starkware.cairo.common.cairo_builtins.HashBuiltin",
                 "type": "alias"
+            },
+            "contracts.libraries.types.data_types.DataTypes": {
+                "type": "namespace"
+            },
+            "contracts.libraries.types.data_types.DataTypes.Args": {
+                "full_name": "contracts.libraries.types.data_types.DataTypes.Args",
+                "members": {},
+                "size": 0,
+                "type": "struct"
+            },
+            "contracts.libraries.types.data_types.DataTypes.DataPoint": {
+                "full_name": "contracts.libraries.types.data_types.DataTypes.DataPoint",
+                "members": {
+                    "x": {
+                        "cairo_type": "felt",
+                        "offset": 0
+                    },
+                    "y": {
+                        "cairo_type": "felt",
+                        "offset": 1
+                    }
+                },
+                "size": 2,
+                "type": "struct"
+            },
+            "contracts.libraries.types.data_types.DataTypes.ImplicitArgs": {
+                "full_name": "contracts.libraries.types.data_types.DataTypes.ImplicitArgs",
+                "members": {},
+                "size": 0,
+                "type": "struct"
+            },
+            "contracts.libraries.types.data_types.DataTypes.Return": {
+                "cairo_type": "()",
+                "type": "type_definition"
+            },
+            "contracts.libraries.types.data_types.DataTypes.SIZEOF_LOCALS": {
+                "type": "const",
+                "value": 0
             },
             "starkware.cairo.common.bool.FALSE": {
                 "type": "const",
