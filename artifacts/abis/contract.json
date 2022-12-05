@@ -1,0 +1,179 @@
+[
+    {
+        "members": [
+            {
+                "name": "x",
+                "offset": 0,
+                "type": "felt"
+            },
+            {
+                "name": "y",
+                "offset": 1,
+                "type": "felt"
+            }
+        ],
+        "name": "DataPoint",
+        "size": 2,
+        "type": "struct"
+    },
+    {
+        "inputs": [
+            {
+                "name": "address",
+                "type": "felt"
+            }
+        ],
+        "name": "view_model_commit",
+        "outputs": [
+            {
+                "name": "commit",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "address",
+                "type": "felt"
+            }
+        ],
+        "name": "view_test_data_commit",
+        "outputs": [
+            {
+                "name": "commit",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "view_test_data_len",
+        "outputs": [
+            {
+                "name": "len",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "i",
+                "type": "felt"
+            }
+        ],
+        "name": "view_test_data",
+        "outputs": [
+            {
+                "name": "data",
+                "type": "DataPoint"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "commit",
+                "type": "felt"
+            }
+        ],
+        "name": "commit_model",
+        "outputs": [],
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "commit",
+                "type": "felt"
+            }
+        ],
+        "name": "commit_test_data",
+        "outputs": [],
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "model_len",
+                "type": "felt"
+            },
+            {
+                "name": "model",
+                "type": "felt*"
+            }
+        ],
+        "name": "reveal_model",
+        "outputs": [],
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "x_len",
+                "type": "felt"
+            },
+            {
+                "name": "x",
+                "type": "felt*"
+            },
+            {
+                "name": "y_len",
+                "type": "felt"
+            },
+            {
+                "name": "y",
+                "type": "felt*"
+            }
+        ],
+        "name": "view_root",
+        "outputs": [
+            {
+                "name": "rootx",
+                "type": "felt"
+            },
+            {
+                "name": "rooty",
+                "type": "felt"
+            },
+            {
+                "name": "root",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "x_len",
+                "type": "felt"
+            },
+            {
+                "name": "x",
+                "type": "felt*"
+            },
+            {
+                "name": "y_len",
+                "type": "felt"
+            },
+            {
+                "name": "y",
+                "type": "felt*"
+            }
+        ],
+        "name": "reveal_test_data",
+        "outputs": [],
+        "type": "function"
+    }
+]

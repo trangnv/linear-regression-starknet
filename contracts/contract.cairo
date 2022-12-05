@@ -12,36 +12,29 @@ from contracts.crypto.merkle import cal_merkle_root, hash_sorted
 from contracts.libraries.types.data_types import DataTypes
 
 from contracts.math.math_cmp import _is_lt_felt
-
-// return perdersen hash with input is model which is an array of felt
-// @view
-// func view_pedersen_hash_chain{pedersen_ptr: HashBuiltin*}(
-//     mononomial_len: felt, mononomial: felt*,
-// ) -> (hashed_value: felt) {
-//     alloc_locals;
-//     let (hashed_value) = cal_pedersen_hash_chain(mononomial, mononomial_len);
-//     return (hashed_value=hashed_value);
-// }
-
-// // how test_data should be organized for merkle root hash?
-// // leafs len: has to be even
-// // n x, then n y
-// @view
-// func view_merkle_root{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
-//     leafs_len: felt, leafs: felt*
-// ) -> (res: felt) {
-//     alloc_locals;
-//     // check leafs_len even
-//     let (res) = cal_merkle_root(leafs_len, leafs);
-//     return (res=res);
-// }
-
+from starkware.cairo.common.math_cmp import is_not_zero
 
 
 @view
-func view_test_data_len{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}() -> (res: felt){
-    let (res) = ContractStorage.test_data_len_read();
-    return(res=res);
+func view_model_commit{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+    address: felt
+) -> (commit: felt){
+    let (commit) = ContractStorage.model_commit_read(address);
+    return(commit=commit);
+}
+
+@view
+func view_test_data_commit{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+    address: felt
+) -> (commit: felt){
+    let (commit) = ContractStorage.test_data_commit_read(address);
+    return(commit=commit);
+}
+
+@view
+func view_test_data_len{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}() -> (len: felt){
+    let (len) = ContractStorage.test_data_len_read();
+    return(len=len);
 }
 
 @view
@@ -119,8 +112,23 @@ func save_model{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr,
 
 }
 
+@view
+func view_root{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+    x_len: felt, x: felt*, y_len: felt, y: felt*
+) -> (rootx: felt, rooty: felt, root: felt) {
+    alloc_locals;
+    let (merkle_root_x) = cal_merkle_root(x_len, x);
+    let (merkle_root_y) = cal_merkle_root(y_len, y);
+
+    let (local array_tmp) = alloc();
+    assert [array_tmp] = merkle_root_x;
+    assert [array_tmp + 1] = merkle_root_y;
+
+    let (current_merkle_root) = cal_merkle_root(2, array_tmp);
+    return(rootx = merkle_root_x, rooty = merkle_root_y, root = current_merkle_root);
+}
 @external
-func reveal_test_data{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, hash_ptr: HashBuiltin*, range_check_ptr}(
+func reveal_test_data{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
     x_len: felt, x: felt*, y_len: felt, y: felt*
 ) {
     with_attr error_message("X and Y array need to have same size") {
@@ -129,13 +137,20 @@ func reveal_test_data{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, hash_ptr: 
     alloc_locals;
     let (caller_address) = get_caller_address();
     let (committed_merkle_root) = ContractStorage.test_data_commit_read(caller_address);
+    let is_eq_to_zero = is_not_zero(committed_merkle_root); // Returns 1 if value != 0. Returns 0 otherwise.
+    
     with_attr error_message("You should first commit something") {
-        assert committed_merkle_root = 0;
+        assert is_eq_to_zero = 1;
     }
 
     let (merkle_root_x) = cal_merkle_root(x_len, x);
     let (merkle_root_y) = cal_merkle_root(y_len, y);
-    let (current_merkle_root) = hash_sorted(merkle_root_x, merkle_root_y);
+
+    let (local array_tmp) = alloc();
+    assert [array_tmp] = merkle_root_x;
+    assert [array_tmp + 1] = merkle_root_y;
+
+    let (current_merkle_root) = cal_merkle_root(2, array_tmp);
 
     with_attr error_message("You are trying to cheat") {
         assert current_merkle_root = committed_merkle_root;

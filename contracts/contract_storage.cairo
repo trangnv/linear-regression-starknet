@@ -68,9 +68,9 @@ namespace ContractStorage {
 
     func test_data_commit_read{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
         address: felt
-    ) -> (test_data_commit: felt) {
+    ) -> (commit: felt) {
         let (test_data_commit) = ContractStorage_test_data_commit.read(address);
-        return (test_data_commit=test_data_commit);
+        return (commit=test_data_commit);
     }
 
     func test_data_len_read{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}() -> (

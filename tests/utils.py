@@ -180,7 +180,7 @@ def assert_events_emitted(tx_exec_info, events):
 
 def _get_path_from_name(name):
     """Return the contract path by contract name."""
-    dirs = ["src", "tests/mocks"]
+    dirs = ["src", "tests/mocks", "contracts/mocks"]
     for dir in dirs:
         for (dirpath, _, filenames) in os.walk(dir):
             for file in filenames:

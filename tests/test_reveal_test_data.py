@@ -1,14 +1,11 @@
 """contract.cairo test file."""
 import os
-from dataclasses import dataclass
-from scripts.utils import (
-    pedersen_hash_chain,
-    # merkle,
-    # get_merkle_root,
-    generate_merkle_root,
-    generate_merkle_proof,
-)
+
+# from dataclasses import dataclass
 import pytest
+
+from scripts.utils import merkle_root
+
 from tests.utils import (
     assert_events_emitted,
     assert_event_emitted,
@@ -19,9 +16,11 @@ from tests.utils import (
 )
 from tests.signers import MockSigner
 from starkware.starknet.testing.starknet import Starknet
+from starkware.starknet.services.api.contract_class import ContractClass
 
 CONTRACT_FILE = os.path.join("contracts", "contract.cairo")
-from nile.signer import Signer, from_call_to_call_array
+PRIVATE_KEY = 12345678987654321
+signer = MockSigner(PRIVATE_KEY)
 
 
 @pytest.fixture(scope="module")
@@ -30,12 +29,6 @@ def contract_classes():
     erc20_cls = get_contract_class("contract")
 
     return account_cls, erc20_cls
-
-
-PRIVATE_KEY = 12345678987654321
-
-signer = MockSigner(123456789987654321)
-# SIGNER = Signer(PRIVATE_KEY)
 
 
 @pytest.fixture
@@ -50,9 +43,6 @@ def contract_factory(contract_classes, erc20_init):
     return erc20, account1, account2
 
 
-from starkware.starknet.services.api.contract_class import ContractClass
-
-
 def get_account_definition():
     with open("artifacts/Account.json", "r") as fp:
         return ContractClass.loads(fp.read())
@@ -61,13 +51,8 @@ def get_account_definition():
 @pytest.mark.asyncio
 async def test_reveal_test_data():
     """Test reveal_test_data method."""
-    # Create a new Starknet class that simulates the StarkNet
-    # system.
-    # _, owner_account, signer_account = await contract_factory
-    # erc20, account, _ = contract_factory
     starknet = await Starknet.empty()
 
-    # Deploy the contract.
     contract = await starknet.deploy(
         source=CONTRACT_FILE,
     )
@@ -76,14 +61,30 @@ async def test_reveal_test_data():
         constructor_calldata=[signer.public_key],
     )
 
-    X = [1, 2, 3, 4, 5]
-    Y = [4, 5, 6, 7, 8]
+    X = [1, 2, 3]
+    Y = [2, 3, 4]
 
-    # account send commit
-    root = generate_merkle_root(X + Y)
+    rootx = merkle_root(X)
+    rooty = merkle_root(Y)
+    root = merkle_root([rootx, rooty])
+
     await signer.send_transaction(
-        account, contract.contract_address, "commit_merkle_root_test_data", [root]
+        account, contract.contract_address, "commit_test_data", [root]
     )
 
     # check test data commit
-    execution_info = await contract.get_balance().call()
+    execution_info = await contract.view_test_data_commit(
+        account.contract_address
+    ).call()
+    assert (
+        root == execution_info.result.commit
+    ), "Something is wrong with commit merkle root of test data"
+    # print(f"caller {account.contract_address} commit: {execution_info.result.commit}")
+
+    # reveal test data successully
+    await signer.send_transaction(
+        account,
+        contract.contract_address,
+        "reveal_test_data",
+        [len(X), *X, len(Y), *Y],
+    )
