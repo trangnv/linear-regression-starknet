@@ -55,14 +55,14 @@ namespace ContractStorage {
         address: felt
     ) -> (model_len: felt) {
         let (model_len) = ContractStorage_model_len.read(address);
-        return model_len;
+        return (model_len=model_len);
     }
 
     func model_read{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
         address: felt, exponent: felt
     ) -> (weight: felt) {
         let (weight) = ContractStorage_model.read(address, exponent);
-        return weight;
+        return (weight=weight);
     }
 
 

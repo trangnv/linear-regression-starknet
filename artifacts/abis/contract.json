@@ -82,6 +82,44 @@
     {
         "inputs": [
             {
+                "name": "address",
+                "type": "felt"
+            }
+        ],
+        "name": "view_model_len",
+        "outputs": [
+            {
+                "name": "len",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "address",
+                "type": "felt"
+            },
+            {
+                "name": "exponent",
+                "type": "felt"
+            }
+        ],
+        "name": "view_model",
+        "outputs": [
+            {
+                "name": "weight",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
                 "name": "commit",
                 "type": "felt"
             }
@@ -137,14 +175,6 @@
         ],
         "name": "view_root",
         "outputs": [
-            {
-                "name": "rootx",
-                "type": "felt"
-            },
-            {
-                "name": "rooty",
-                "type": "felt"
-            },
             {
                 "name": "root",
                 "type": "felt"

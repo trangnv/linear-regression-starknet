@@ -51,6 +51,21 @@ func view_test_data{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_
     let (data) = ContractStorage.test_data_read(i);
     return(data=data);
 }
+@view
+func view_model_len{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+    address: felt
+) -> (len: felt){
+    let (len) = ContractStorage.model_len_read(address);
+    return(len=len);
+}
+
+@view
+func view_model{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+    address: felt, exponent: felt
+) -> (weight: felt){
+    let (weight) = ContractStorage.model_read(address, exponent);
+    return(weight=weight);
+}
 
 @external
 func commit_model{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(commit: felt) {
@@ -74,16 +89,17 @@ func reveal_model{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_pt
 ) {
     alloc_locals;
     let (caller_address) = get_caller_address();
-    let (committed_hash) = ContractStorage.model_commit_read(caller_address);
-
+    let (committed_model) = ContractStorage.model_commit_read(caller_address);
+    let is_eq_to_zero = is_not_zero(committed_model); // Returns 1 if value != 0. Returns 0 otherwise.
+    
     with_attr error_message("You should first commit something") {
-        assert committed_hash = 0;
+        assert is_eq_to_zero = 1;
     }
 
     let (current_hash) = cal_pedersen_hash_chain(model, model_len);
 
     with_attr error_message("You are trying to cheat") {
-        assert current_hash = committed_hash;
+        assert current_hash = committed_model;
     }
 
     // save competitor, increase competitors_count
@@ -100,22 +116,24 @@ func reveal_model{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_pt
 }
 
 func save_model{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr, bitwise_ptr: BitwiseBuiltin*}(
-    address: felt, model_len: felt, model: felt*
+    address: felt, len: felt, weight: felt*
 ) {
     alloc_locals;
-    if (model_len==0) {
+    let (model_len) = ContractStorage.model_len_read(address);
+    if (len==0) {
         return ();
     }
-    ContractStorage.model_write(address, model_len, [model]);
+    ContractStorage.model_write(address, model_len - len, [weight]);
 
-    return save_model(address, model_len-1, model+1);
+    return save_model(address, len-1, weight+1);
 
 }
+
 
 @view
 func view_root{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
     x_len: felt, x: felt*, y_len: felt, y: felt*
-) -> (rootx: felt, rooty: felt, root: felt) {
+) -> (root: felt) {
     alloc_locals;
     let (merkle_root_x) = cal_merkle_root(x_len, x);
     let (merkle_root_y) = cal_merkle_root(y_len, y);
@@ -125,7 +143,7 @@ func view_root{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
     assert [array_tmp + 1] = merkle_root_y;
 
     let (current_merkle_root) = cal_merkle_root(2, array_tmp);
-    return(rootx = merkle_root_x, rooty = merkle_root_y, root = current_merkle_root);
+    return(root = current_merkle_root);
 }
 @external
 func reveal_test_data{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(

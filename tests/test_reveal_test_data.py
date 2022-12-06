@@ -4,7 +4,7 @@ import os
 # from dataclasses import dataclass
 import pytest
 
-from scripts.utils import merkle_root
+from scripts.utils import merkle_root, pedersen_hash_chain
 
 from tests.utils import (
     assert_events_emitted,
@@ -27,20 +27,20 @@ signer = MockSigner(PRIVATE_KEY)
 def contract_classes():
     account_cls = Account.get_class
     erc20_cls = get_contract_class("contract")
-
     return account_cls, erc20_cls
 
 
 @pytest.fixture
-def contract_factory(contract_classes, erc20_init):
-    account_cls, erc20_cls = contract_classes
-    state, account1, account2, erc20 = erc20_init
-    _state = state.copy()
-    account1 = cached_contract(_state, account_cls, account1)
-    account2 = cached_contract(_state, account_cls, account2)
-    erc20 = cached_contract(_state, erc20_cls, erc20)
-
-    return erc20, account1, account2
+async def contract_factory():
+    starknet = await Starknet.empty()
+    contract = await starknet.deploy(
+        source=CONTRACT_FILE,
+    )
+    account = await starknet.deploy(
+        contract_class=get_account_definition(),
+        constructor_calldata=[signer.public_key],
+    )
+    return contract, account
 
 
 def get_account_definition():
@@ -49,18 +49,9 @@ def get_account_definition():
 
 
 @pytest.mark.asyncio
-async def test_reveal_test_data():
+async def test_reveal_test_data(contract_factory):
     """Test reveal_test_data method."""
-    starknet = await Starknet.empty()
-
-    contract = await starknet.deploy(
-        source=CONTRACT_FILE,
-    )
-    account = await starknet.deploy(
-        contract_class=get_account_definition(),
-        constructor_calldata=[signer.public_key],
-    )
-
+    contract, account = await contract_factory
     X = [1, 2, 3]
     Y = [2, 3, 4]
 
@@ -79,7 +70,6 @@ async def test_reveal_test_data():
     assert (
         root == execution_info.result.commit
     ), "Something is wrong with commit merkle root of test data"
-    # print(f"caller {account.contract_address} commit: {execution_info.result.commit}")
 
     # reveal test data successully
     await signer.send_transaction(
@@ -88,3 +78,56 @@ async def test_reveal_test_data():
         "reveal_test_data",
         [len(X), *X, len(Y), *Y],
     )
+    # assertion
+    # view test data len
+    execution_info = await contract.view_test_data_len().call()
+    assert execution_info.result.len == len(
+        X
+    ), "Something is wrong with length of test dataset"
+    # view test data
+    for i in range(len(X)):
+        execution_info = await contract.view_test_data(i).call()
+        assert (
+            execution_info.result.data.x == X[i]
+        ), "Something is wrong with test data storage_var"
+        assert (
+            execution_info.result.data.y == Y[i]
+        ), "Something is wrong with test data storage_var"
+
+    # reveal fake data failed
+
+
+@pytest.mark.asyncio
+async def test_reveal_model(contract_factory):
+    """Test reveal_test_data method."""
+    contract, account = await contract_factory
+    model = [0, 1, 2, 3, 4, 5]
+
+    hashed_model = pedersen_hash_chain(*model)
+
+    # competitor commit model
+    await signer.send_transaction(
+        account, contract.contract_address, "commit_model", [hashed_model]
+    )
+    # check storage successful
+    execution_info = await contract.view_model_commit(account.contract_address).call()
+    assert execution_info.result.commit == hashed_model
+
+    # check reveal
+    await signer.send_transaction(
+        account,
+        contract.contract_address,
+        "reveal_model",
+        # [*model],
+        [len(model), *model],
+    )
+    # check model weight storage
+    execution_info = await contract.view_model_len(account.contract_address).call()
+    assert execution_info.result.len == len(
+        model
+    ), "Something is wrong with length of model"
+    for i in range(len(model)):
+        execution_info = await contract.view_model(account.contract_address, i).call()
+        assert (
+            execution_info.result.weight == model[i]
+        ), "Something is wrong with model storage_var"
