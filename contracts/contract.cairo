@@ -13,6 +13,16 @@ from contracts.libraries.types.data_types import DataTypes
 
 from contracts.math.math_cmp import _is_lt_felt
 from starkware.cairo.common.math_cmp import is_not_zero
+from starkware.cairo.common.pow import pow
+// from contracts.math.felt_math import pow
+// func pow(base: felt, exp: felt) -> (res: felt) {
+//     if (exp == 0) {
+//         return (res=1);
+//     }
+
+//     let (res) = pow(base=base, exp=exp - 1);
+//     return (res=res * base);
+// }
 
 
 @view
@@ -66,6 +76,13 @@ func view_model{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}
     let (weight) = ContractStorage.model_read(address, exponent);
     return(weight=weight);
 }
+@view
+func view_competitor{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+    competitor_id: felt
+) -> (competitor: felt){
+    let (competitor) = ContractStorage.competitors_list_read(competitor_id);
+    return(competitor=competitor);
+}
 
 @external
 func commit_model{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(commit: felt) {
@@ -104,7 +121,9 @@ func reveal_model{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_pt
 
     // save competitor, increase competitors_count
     let (local competitors_count) = ContractStorage.competitors_count_read();
+    ContractStorage.competitors_list_write(competitors_count, caller_address);
     ContractStorage.competitors_count_write(competitors_count+1);
+
 
 
     // save model len
@@ -205,3 +224,56 @@ func evaluation{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}
 
     return();
 }
+
+@view
+func cal_yhat{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+    competitor_id: felt, i: felt  // i: data point
+// ) -> (x: felt, model_len: felt) {
+) -> (yhat: felt) {
+
+    // yhat = X[i] * 
+    // for weight, exponent in enumerate(model)
+    // yhat += weight * x^exponent
+    alloc_locals;
+    let (data) = ContractStorage.test_data_read(i);
+    let x = data.x;
+    let (competitor_address) = ContractStorage.competitors_list_read(competitor_id);
+    let (model_len) = ContractStorage.model_len_read(competitor_address);
+    let (yhat) = cal_polynomial(competitor_address, x, model_len);
+    return(yhat=yhat);
+    // return(x=x, model_len=model_len);
+}
+
+func cal_polynomial{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+    competitor_address: felt, x: felt, len: felt
+) -> (res: felt) {
+    alloc_locals;
+    if (len==1) {
+        let (res)=ContractStorage.model_read(competitor_address,0);
+        return (res=res);
+    }
+
+    let (weight) = ContractStorage.model_read(competitor_address, len-1);
+    let (p) = pow(x, len-1);
+    let term = weight * p;
+
+    let (rest) = cal_polynomial(competitor_address,x,len-1);
+    return (res=term+rest);
+}
+
+// func cal_polynomial{output_ptr: felt*}(
+//     x: felt, len: felt, model: felt*
+// ) -> (res: felt) {
+//     alloc_locals;
+//     if (len==1) {
+//         let res=[model];
+//         return (res=res);
+//     }
+
+//     let weight = model[len-1];
+//     let (p) = pow(x, len-1);
+//     let term = weight * p;
+
+//     let (rest) = cal_polynomial(x,len-1, model);
+//     return (res=term+rest);
+// }

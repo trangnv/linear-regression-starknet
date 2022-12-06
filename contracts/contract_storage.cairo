@@ -163,5 +163,6 @@ namespace ContractStorage {
         competitor_id: felt, address: felt
     ) {
         ContractStorage_competitors_list.write(competitor_id, address);
+        return();
     }
 }

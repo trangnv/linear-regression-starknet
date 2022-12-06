@@ -120,6 +120,23 @@
     {
         "inputs": [
             {
+                "name": "competitor_id",
+                "type": "felt"
+            }
+        ],
+        "name": "view_competitor",
+        "outputs": [
+            {
+                "name": "competitor",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
                 "name": "commit",
                 "type": "felt"
             }
@@ -204,6 +221,31 @@
         ],
         "name": "reveal_test_data",
         "outputs": [],
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "competitor_id",
+                "type": "felt"
+            },
+            {
+                "name": "i",
+                "type": "felt"
+            }
+        ],
+        "name": "cal_yhat",
+        "outputs": [
+            {
+                "name": "x",
+                "type": "felt"
+            },
+            {
+                "name": "model_len",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
         "type": "function"
     }
 ]
