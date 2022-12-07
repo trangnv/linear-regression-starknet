@@ -9,7 +9,7 @@ from starkware.cairo.common.math_cmp import is_not_zero
 from starkware.cairo.common.pow import pow
 from contracts.math.math_cmp import _is_lt_felt
 
-from contracts.competition.polynomial_lr_storage import ContractStorage
+from contracts.competition.polynomial_lr_storage import PolyLinearRegressionStorage
 from contracts.crypto.pedersen_hash import cal_pedersen_hash_chain
 from contracts.crypto.merkle import cal_merkle_root, hash_sorted
 from contracts.libraries.types.data_types import DataTypes
@@ -19,7 +19,7 @@ from contracts.libraries.types.data_types import DataTypes
 func view_model_commit{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
     address: felt
 ) -> (commit: felt){
-    let (commit) = ContractStorage.model_commit_read(address);
+    let (commit) = PolyLinearRegressionStorage.model_commit_read(address);
     return(commit=commit);
 }
 
@@ -27,13 +27,13 @@ func view_model_commit{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_che
 func view_test_data_commit{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
     address: felt
 ) -> (commit: felt){
-    let (commit) = ContractStorage.test_data_commit_read(address);
+    let (commit) = PolyLinearRegressionStorage.test_data_commit_read(address);
     return(commit=commit);
 }
 
 @view
 func view_test_data_len{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}() -> (len: felt){
-    let (len) = ContractStorage.test_data_len_read();
+    let (len) = PolyLinearRegressionStorage.test_data_len_read();
     return(len=len);
 }
 
@@ -43,19 +43,19 @@ func view_test_data{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_
 ) -> (data: DataTypes.DataPoint){
     //check i < len
     alloc_locals;
-    let (len) = ContractStorage.test_data_len_read();
+    let (len) = PolyLinearRegressionStorage.test_data_len_read();
     let res_1 = _is_lt_felt(i, len);
     with_attr error_message("Out of range") {
         assert res_1 = TRUE;
     }
-    let (data) = ContractStorage.test_data_read(i);
+    let (data) = PolyLinearRegressionStorage.test_data_read(i);
     return(data=data);
 }
 @view
 func view_model_len{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
     address: felt
 ) -> (len: felt){
-    let (len) = ContractStorage.model_len_read(address);
+    let (len) = PolyLinearRegressionStorage.model_len_read(address);
     return(len=len);
 }
 
@@ -63,21 +63,21 @@ func view_model_len{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_
 func view_model{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
     address: felt, exponent: felt
 ) -> (weight: felt){
-    let (weight) = ContractStorage.model_read(address, exponent);
+    let (weight) = PolyLinearRegressionStorage.model_read(address, exponent);
     return(weight=weight);
 }
 @view
 func view_competitor{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
     competitor_id: felt
 ) -> (competitor: felt){
-    let (competitor) = ContractStorage.competitors_list_read(competitor_id);
+    let (competitor) = PolyLinearRegressionStorage.competitors_list_read(competitor_id);
     return(competitor=competitor);
 }
 
 @external
 func commit_model{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(commit: felt) {
     let (caller_address) = get_caller_address();
-    ContractStorage.model_commit_write(caller_address, commit);
+    PolyLinearRegressionStorage.model_commit_write(caller_address, commit);
     return ();
 }
 
@@ -86,7 +86,7 @@ func commit_test_data{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_chec
     commit: felt
 ) {
     let (caller_address) = get_caller_address();
-    ContractStorage.test_data_commit_write(caller_address, commit);
+    PolyLinearRegressionStorage.test_data_commit_write(caller_address, commit);
     return ();
 }
 
@@ -96,7 +96,7 @@ func reveal_model{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_pt
 ) {
     alloc_locals;
     let (caller_address) = get_caller_address();
-    let (committed_model) = ContractStorage.model_commit_read(caller_address);
+    let (committed_model) = PolyLinearRegressionStorage.model_commit_read(caller_address);
     let is_eq_to_zero = is_not_zero(committed_model); // Returns 1 if value != 0. Returns 0 otherwise.
     
     with_attr error_message("You should first commit something") {
@@ -110,14 +110,14 @@ func reveal_model{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_pt
     }
 
     // save competitor, increase competitors_count
-    let (local competitors_count) = ContractStorage.competitors_count_read();
-    ContractStorage.competitors_list_write(competitors_count, caller_address);
-    ContractStorage.competitors_count_write(competitors_count+1);
+    let (local competitors_count) = PolyLinearRegressionStorage.competitors_count_read();
+    PolyLinearRegressionStorage.competitors_list_write(competitors_count, caller_address);
+    PolyLinearRegressionStorage.competitors_count_write(competitors_count+1);
 
 
 
     // save model len
-    ContractStorage.model_len_write(caller_address, model_len);
+    PolyLinearRegressionStorage.model_len_write(caller_address, model_len);
 
     // save model
     save_model(caller_address, model_len, model);
@@ -128,11 +128,11 @@ func save_model{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr,
     address: felt, len: felt, weight: felt*
 ) {
     alloc_locals;
-    let (model_len) = ContractStorage.model_len_read(address);
+    let (model_len) = PolyLinearRegressionStorage.model_len_read(address);
     if (len==0) {
         return ();
     }
-    ContractStorage.model_write(address, model_len - len, [weight]);
+    PolyLinearRegressionStorage.model_write(address, model_len - len, [weight]);
 
     return save_model(address, len-1, weight+1);
 
@@ -163,7 +163,7 @@ func reveal_test_data{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_chec
     }
     alloc_locals;
     let (caller_address) = get_caller_address();
-    let (committed_merkle_root) = ContractStorage.test_data_commit_read(caller_address);
+    let (committed_merkle_root) = PolyLinearRegressionStorage.test_data_commit_read(caller_address);
     let is_eq_to_zero = is_not_zero(committed_merkle_root); // Returns 1 if value != 0. Returns 0 otherwise.
     
     with_attr error_message("You should first commit something") {
@@ -183,7 +183,7 @@ func reveal_test_data{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_chec
         assert current_merkle_root = committed_merkle_root;
     }
 
-    ContractStorage.test_data_len_write(x_len);
+    PolyLinearRegressionStorage.test_data_len_write(x_len);
     save_test_data(x_len, x, y);
     return();
 }
@@ -192,10 +192,10 @@ func save_test_data{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_
     array_len: felt, x: felt*, y: felt*
 ) {
     if (array_len==0) {
-        ContractStorage.test_data_write(array_len, x[0], y[0]);
+        PolyLinearRegressionStorage.test_data_write(array_len, x[0], y[0]);
         return ();
     }
-    ContractStorage.test_data_write(array_len-1, x[array_len-1], y[array_len-1]);
+    PolyLinearRegressionStorage.test_data_write(array_len-1, x[array_len-1], y[array_len-1]);
     return save_test_data(array_len-1, x, y);
 
 }
@@ -205,8 +205,8 @@ func evaluation{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}
     // _evaluation(address)
     // so need a competitors storage to store all competitors Storage_competitor(i) -> address
     // address = competitor(i)
-    // ContractStorage_polynomial_len(address)
-    // e = ContractStorage_mononomial(address, exponent)
+    // PolyLinearRegressionStorage_polynomial_len(address)
+    // e = PolyLinearRegressionStorage_mononomial(address, exponent)
     // x = X[]
     // PREDICTION[] = sum(e * x^exponent)
     // evaluation(address) = f(Y, PREDICTION)
@@ -224,10 +224,10 @@ func cal_yhat{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
     competitor_id: felt, i: felt  // i: data point
 ) -> (yhat: felt) {
     alloc_locals;
-    let (data) = ContractStorage.test_data_read(i);
+    let (data) = PolyLinearRegressionStorage.test_data_read(i);
     let x = data.x;
-    let (competitor_address) = ContractStorage.competitors_list_read(competitor_id);
-    let (model_len) = ContractStorage.model_len_read(competitor_address);
+    let (competitor_address) = PolyLinearRegressionStorage.competitors_list_read(competitor_id);
+    let (model_len) = PolyLinearRegressionStorage.model_len_read(competitor_address);
     let (yhat) = cal_polynomial(competitor_address, x, model_len);
     return(yhat=yhat);
 }
@@ -237,11 +237,11 @@ func cal_polynomial{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_
 ) -> (res: felt) {
     alloc_locals;
     if (len==1) {
-        let (res)=ContractStorage.model_read(competitor_address,0);
+        let (res)=PolyLinearRegressionStorage.model_read(competitor_address,0);
         return (res=res);
     }
 
-    let (weight) = ContractStorage.model_read(competitor_address, len-1);
+    let (weight) = PolyLinearRegressionStorage.model_read(competitor_address, len-1);
     let (p) = pow(x, len-1);
     let term = weight * p;
 
