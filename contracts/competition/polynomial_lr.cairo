@@ -9,7 +9,7 @@ from starkware.cairo.common.math_cmp import is_not_zero
 from starkware.cairo.common.pow import pow
 from contracts.math.math_cmp import _is_lt_felt
 
-from contracts.contract_storage import ContractStorage
+from contracts.competition.polynomial_lr_storage import ContractStorage
 from contracts.crypto.pedersen_hash import cal_pedersen_hash_chain
 from contracts.crypto.merkle import cal_merkle_root, hash_sorted
 from contracts.libraries.types.data_types import DataTypes

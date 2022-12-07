@@ -8,7 +8,7 @@ from scripts.utils import merkle_root, pedersen_hash_chain
 from scripts.utils import Account, get_contract_class
 from scripts.signers import MockSigner
 
-CONTRACT_FILE = os.path.join("contracts", "contract.cairo")
+CONTRACT_FILE = os.path.join("contracts/competition", "polynomial_lr.cairo")
 PRIVATE_KEY = 12345678987654321
 signer = MockSigner(PRIVATE_KEY)
 
