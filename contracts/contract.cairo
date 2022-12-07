@@ -1,28 +1,18 @@
 %lang starknet
 
+from starkware.starknet.common.syscalls import get_caller_address
 from starkware.cairo.common.cairo_builtins import BitwiseBuiltin, HashBuiltin
 from starkware.cairo.common.alloc import alloc
 from starkware.cairo.common.hash import hash2
 from starkware.cairo.common.bool import TRUE, FALSE
-from starkware.starknet.common.syscalls import get_caller_address
+from starkware.cairo.common.math_cmp import is_not_zero
+from starkware.cairo.common.pow import pow
+from contracts.math.math_cmp import _is_lt_felt
 
 from contracts.contract_storage import ContractStorage
 from contracts.crypto.pedersen_hash import cal_pedersen_hash_chain
 from contracts.crypto.merkle import cal_merkle_root, hash_sorted
 from contracts.libraries.types.data_types import DataTypes
-
-from contracts.math.math_cmp import _is_lt_felt
-from starkware.cairo.common.math_cmp import is_not_zero
-from starkware.cairo.common.pow import pow
-// from contracts.math.felt_math import pow
-// func pow(base: felt, exp: felt) -> (res: felt) {
-//     if (exp == 0) {
-//         return (res=1);
-//     }
-
-//     let (res) = pow(base=base, exp=exp - 1);
-//     return (res=res * base);
-// }
 
 
 @view
@@ -220,6 +210,10 @@ func evaluation{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}
     // x = X[]
     // PREDICTION[] = sum(e * x^exponent)
     // evaluation(address) = f(Y, PREDICTION)
+    // use several metrics, for suprise fun 
+    // max error
+    // mean_absolute_error
+    // mean_squared_error
 
 
     return();
@@ -228,12 +222,7 @@ func evaluation{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}
 @view
 func cal_yhat{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
     competitor_id: felt, i: felt  // i: data point
-// ) -> (x: felt, model_len: felt) {
 ) -> (yhat: felt) {
-
-    // yhat = X[i] * 
-    // for weight, exponent in enumerate(model)
-    // yhat += weight * x^exponent
     alloc_locals;
     let (data) = ContractStorage.test_data_read(i);
     let x = data.x;
@@ -241,7 +230,6 @@ func cal_yhat{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
     let (model_len) = ContractStorage.model_len_read(competitor_address);
     let (yhat) = cal_polynomial(competitor_address, x, model_len);
     return(yhat=yhat);
-    // return(x=x, model_len=model_len);
 }
 
 func cal_polynomial{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
@@ -260,20 +248,3 @@ func cal_polynomial{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_
     let (rest) = cal_polynomial(competitor_address,x,len-1);
     return (res=term+rest);
 }
-
-// func cal_polynomial{output_ptr: felt*}(
-//     x: felt, len: felt, model: felt*
-// ) -> (res: felt) {
-//     alloc_locals;
-//     if (len==1) {
-//         let res=[model];
-//         return (res=res);
-//     }
-
-//     let weight = model[len-1];
-//     let (p) = pow(x, len-1);
-//     let term = weight * p;
-
-//     let (rest) = cal_polynomial(x,len-1, model);
-//     return (res=term+rest);
-// }
