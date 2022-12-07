@@ -5,9 +5,8 @@ from starkware.starknet.testing.starknet import Starknet
 from starkware.starknet.services.api.contract_class import ContractClass
 from scripts.utils import merkle_root, pedersen_hash_chain
 
-from tests.utils import Account, get_contract_class
-from tests.signers import MockSigner
-
+from scripts.utils import Account, get_contract_class
+from scripts.signers import MockSigner
 
 CONTRACT_FILE = os.path.join("contracts", "contract.cairo")
 PRIVATE_KEY = 12345678987654321
