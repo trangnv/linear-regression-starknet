@@ -1,0 +1,3 @@
+const ORGANIZER_ROLE = 0x123;
+const STAGE_1_START = 0x456;
+const STAGE_1_TIME = 10000;

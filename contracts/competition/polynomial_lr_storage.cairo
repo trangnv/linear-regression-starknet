@@ -1,6 +1,6 @@
 %lang starknet
 from starkware.cairo.common.cairo_builtins import HashBuiltin
-from contracts.libraries.types.data_types import DataTypes
+from contracts.libraries.data_types import DataTypes
 
 @storage_var
 func PolyLinearRegressionStorage_model_commit(address: felt) -> (commit: felt) {
@@ -36,9 +36,14 @@ func PolyLinearRegressionStorage_competitors_count() -> (count: felt) {
 func PolyLinearRegressionStorage_competitors_list(competitor_id: felt) -> (address: felt) {
 }
 
-// @storage_var
-// func name() -> (res: felt) {
-// }
+@storage_var
+func PolyLinearRegressionStorage_stage() -> (stage: felt) {
+}
+
+@storage_var
+func PolyLinearRegressionStorage_stage1_timestamp() -> (timestamp: felt) {
+}
+
 
 
 
@@ -107,6 +112,18 @@ namespace PolyLinearRegressionStorage {
         return (competitor=competitor);
     }
 
+    func stage_read{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+    ) -> (stage: felt){
+        let (stage) = PolyLinearRegressionStorage_stage.read();
+        return(stage=stage);
+    }
+
+    func stage1_timestamp_read{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}() -> (
+        timestamp: felt
+    ){
+        let (timestamp) = PolyLinearRegressionStorage_stage1_timestamp.read();
+        return(timestamp=timestamp);
+    }
 
     //
     // Writes
@@ -151,8 +168,6 @@ namespace PolyLinearRegressionStorage {
     func test_data_write{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
         i: felt, x: felt, y: felt
     ) {
-        // PolyLinearRegressionStorage_x.write(i,x);
-        // PolyLinearRegressionStorage_y.write(i,y);
         PolyLinearRegressionStorage_test_data.write(i, DataTypes.DataPoint(x,y));
         return();
     }
@@ -168,6 +183,20 @@ namespace PolyLinearRegressionStorage {
         competitor_id: felt, address: felt
     ) {
         PolyLinearRegressionStorage_competitors_list.write(competitor_id, address);
+        return();
+    }
+
+    func stage_write{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+        stage: felt
+    ) {
+        PolyLinearRegressionStorage_stage.write(stage);
+        return();
+    }
+
+    func stage1_timestamp_write{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+        timestamp: felt
+    ) {
+        PolyLinearRegressionStorage_stage1_timestamp.write(timestamp);
         return();
     }
 }

@@ -1,18 +1,21 @@
 %lang starknet
 
-from starkware.starknet.common.syscalls import get_caller_address
 from starkware.cairo.common.cairo_builtins import BitwiseBuiltin, HashBuiltin
 from starkware.cairo.common.alloc import alloc
 from starkware.cairo.common.hash import hash2
 from starkware.cairo.common.bool import TRUE, FALSE
 from starkware.cairo.common.math_cmp import is_not_zero
 from starkware.cairo.common.pow import pow
-from contracts.math.math_cmp import _is_lt_felt
+from starkware.starknet.common.syscalls import get_caller_address, get_block_timestamp
 
+from openzeppelin.access.accesscontrol.library import AccessControl
+
+from contracts.math.math_cmp import _is_lt_felt
 from contracts.competition.polynomial_lr_storage import PolyLinearRegressionStorage
 from contracts.crypto.pedersen_hash import cal_pedersen_hash_chain
 from contracts.crypto.merkle import cal_merkle_root, hash_sorted
-from contracts.libraries.types.data_types import DataTypes
+from contracts.libraries.data_types import DataTypes
+from contracts.libraries.constants import ORGANIZER_ROLE, STAGE_1_TIME
 
 
 @view
@@ -44,9 +47,9 @@ func view_test_data{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_
     //check i < len
     alloc_locals;
     let (len) = PolyLinearRegressionStorage.test_data_len_read();
-    let res_1 = _is_lt_felt(i, len);
+    let cmp = _is_lt_felt(i, len);
     with_attr error_message("Out of range") {
-        assert res_1 = TRUE;
+        assert cmp = TRUE;
     }
     let (data) = PolyLinearRegressionStorage.test_data_read(i);
     return(data=data);
@@ -74,8 +77,25 @@ func view_competitor{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check
     return(competitor=competitor);
 }
 
+@constructor
+func constructor{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(){
+    PolyLinearRegressionStorage.stage_write(0);
+    let (caller_address) = get_caller_address();
+    AccessControl.initializer();
+    AccessControl._grant_role(ORGANIZER_ROLE, caller_address);
+    return();
+}
+
 @external
 func commit_model{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(commit: felt) {
+    // check timestamp
+    alloc_locals;
+    let (current_timestamp) = get_block_timestamp();
+    let (stage1_timestamp) = PolyLinearRegressionStorage.stage1_timestamp_read();
+    let cmp = _is_lt_felt(current_timestamp, stage1_timestamp);
+    with_attr error_message("Not in commit model stage") {
+        assert cmp = TRUE;
+    }
     let (caller_address) = get_caller_address();
     PolyLinearRegressionStorage.model_commit_write(caller_address, commit);
     return ();
@@ -85,8 +105,23 @@ func commit_model{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_pt
 func commit_test_data{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
     commit: felt
 ) {
+    // check role organizer
+    AccessControl.assert_only_role(ORGANIZER_ROLE);
+
+    // check stage == 0
+    let (stage) = PolyLinearRegressionStorage.stage_read();
+    with_attr error_message("Only in stage 0") {
+        assert stage = 1;
+    }
     let (caller_address) = get_caller_address();
     PolyLinearRegressionStorage.test_data_commit_write(caller_address, commit);
+
+    // change stage =1
+    PolyLinearRegressionStorage.stage_write(1);
+
+    // write stage1_timestamp (finishing commit time)
+    let (timestamp) = get_block_timestamp();
+    PolyLinearRegressionStorage.stage1_timestamp_write(timestamp + STAGE_1_TIME);
     return ();
 }
 
@@ -95,6 +130,12 @@ func reveal_model{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_pt
     model_len: felt, model: felt*
 ) {
     alloc_locals;
+    // check stage == 2
+    let (stage) = PolyLinearRegressionStorage.stage_read();
+    with_attr error_message("Only in stage 2") {
+        assert stage = 2;
+    }
+    
     let (caller_address) = get_caller_address();
     let (committed_model) = PolyLinearRegressionStorage.model_commit_read(caller_address);
     let is_eq_to_zero = is_not_zero(committed_model); // Returns 1 if value != 0. Returns 0 otherwise.
@@ -113,8 +154,6 @@ func reveal_model{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_pt
     let (local competitors_count) = PolyLinearRegressionStorage.competitors_count_read();
     PolyLinearRegressionStorage.competitors_list_write(competitors_count, caller_address);
     PolyLinearRegressionStorage.competitors_count_write(competitors_count+1);
-
-
 
     // save model len
     PolyLinearRegressionStorage.model_len_write(caller_address, model_len);
@@ -158,10 +197,21 @@ func view_root{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
 func reveal_test_data{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
     x_len: felt, x: felt*, y_len: felt, y: felt*
 ) {
+    alloc_locals;
+    // assert ORGANIZER_ROLE just to be safe
+    AccessControl.assert_only_role(ORGANIZER_ROLE);
+
+    // assert stage 1 ended
+    let (current_timestamp) = get_block_timestamp();
+    let (stage1_timestamp) = PolyLinearRegressionStorage.stage1_timestamp_read();
+    let cmp = _is_lt_felt(stage1_timestamp, current_timestamp);
+    with_attr error_message("Not in reveal test data stage, stage 1 not finished yet") {
+        assert cmp = TRUE;
+    }
+
     with_attr error_message("X and Y array need to have same size") {
         assert x_len = y_len;
     }
-    alloc_locals;
     let (caller_address) = get_caller_address();
     let (committed_merkle_root) = PolyLinearRegressionStorage.test_data_commit_read(caller_address);
     let is_eq_to_zero = is_not_zero(committed_merkle_root); // Returns 1 if value != 0. Returns 0 otherwise.
@@ -185,6 +235,9 @@ func reveal_test_data{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_chec
 
     PolyLinearRegressionStorage.test_data_len_write(x_len);
     save_test_data(x_len, x, y);
+
+    // change stage to 2
+    PolyLinearRegressionStorage.stage_write(2);
     return();
 }
 
