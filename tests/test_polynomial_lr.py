@@ -222,9 +222,8 @@ async def test_reveal_model(contract_factory):
 @pytest.mark.asyncio
 async def test_cal_yhat(contract_factory):
     """Test reveal_test_data method."""
-    contract, account = await contract_factory
+    starknet, contract, account1, account2 = await contract_factory
 
-    # commit test data
     X = [1, 2, 3]
     Y = [2, 3, 4]
 
@@ -232,47 +231,98 @@ async def test_cal_yhat(contract_factory):
     rooty = merkle_root(Y)
     root = merkle_root([rootx, rooty])
 
-    await signer.send_transaction(
-        account, contract.contract_address, "commit_test_data", [root]
+    # check stage
+    execution_info = await contract.view_stage().call()
+    # print(execution_info.result.stage)
+    assert execution_info.result.stage == 0
+
+    # account1 commit test data
+    await signer1.send_transaction(
+        account1, contract.contract_address, "commit_test_data", [root]
     )
-    # commit model
-    model = [1, 2]  # [1] doesnot work
+    # check stage
+    execution_info = await contract.view_stage().call()
+    assert execution_info.result.stage == 1
+
+    model = [0, 1, 2, 3, 4, 5]
     hashed_model = pedersen_hash_chain(*model)
-    # competitor commit model
-    await signer.send_transaction(
-        account, contract.contract_address, "commit_model", [hashed_model]
+
+    # account2 (competitor) commit model
+    await signer2.send_transaction(
+        account2, contract.contract_address, "commit_model", [hashed_model]
     )
-    # reveal model
-    await signer.send_transaction(
-        account,
-        contract.contract_address,
-        "reveal_model",
-        [len(model), *model],
+    # check storage successful
+    execution_info = await contract.view_model_commit(account2.contract_address).call()
+    assert execution_info.result.commit == hashed_model
+
+    # check reveal revert
+    await assert_revert(
+        signer2.send_transaction(
+            account2,
+            contract.contract_address,
+            "reveal_model",
+            [len(model), *model],
+        )
     )
-    # reveal test data
-    await signer.send_transaction(
-        account,
+
+    # # fast forward update block_info
+    block_timestamp = STAGE1_END_TIME + 1
+    update_starknet_block(starknet, block_number=1, block_timestamp=block_timestamp)
+    assert starknet.state.state.block_info.block_timestamp == block_timestamp
+
+    # check stage
+    execution_info = await contract.view_stage().call()
+    assert execution_info.result.stage == 1
+
+    # check commit model revert
+    await assert_revert(
+        signer2.send_transaction(
+            account2, contract.contract_address, "commit_model", [hashed_model]
+        )
+    )
+
+    # check reveal model revert
+    await assert_revert(
+        signer2.send_transaction(
+            account2,
+            contract.contract_address,
+            "reveal_model",
+            [len(model), *model],
+        )
+    )
+
+    # account1 reveal test data
+    await signer1.send_transaction(
+        account1,
         contract.contract_address,
         "reveal_test_data",
         [len(X), *X, len(Y), *Y],
     )
+    # check stage
+    execution_info = await contract.view_stage().call()
+    assert execution_info.result.stage == 2
+
+    # account2 reveal model
+    await signer2.send_transaction(
+        account2,
+        contract.contract_address,
+        "reveal_model",
+        [len(model), *model],
+    )
 
     # check model weight storage
-    execution_info = await contract.view_model_len(account.contract_address).call()
+    execution_info = await contract.view_model_len(account2.contract_address).call()
     assert execution_info.result.len == len(
         model
     ), "Something is wrong with length of model"
     for i in range(len(model)):
-        execution_info = await contract.view_model(account.contract_address, i).call()
+        execution_info = await contract.view_model(account2.contract_address, i).call()
         assert (
             execution_info.result.weight == model[i]
         ), "Something is wrong with model storage_var"
-
     # check competitor_id
     execution_info = await contract.view_competitor(0).call()
-    assert execution_info.result.competitor == account.contract_address
-
-    #
+    assert execution_info.result.competitor == account2.contract_address
 
     # test calculate yhat
     for i in range(len(X)):
