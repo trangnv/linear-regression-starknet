@@ -2,22 +2,20 @@ import os
 import pytest
 
 from starkware.starknet.testing.starknet import Starknet
-from starkware.starknet.services.api.contract_class import ContractClass
-from scripts.utils import merkle_root, pedersen_hash_chain
 
-from scripts.utils import Account, get_contract_class
+from tests.helpers import cal_yhat, get_account_definition
+from scripts.utils import merkle_root, pedersen_hash_chain
 from scripts.signers import MockSigner
 
+from scripts.utils import Account, get_contract_class
+
+
 CONTRACT_FILE = os.path.join("contracts/competition", "polynomial_lr.cairo")
-PRIVATE_KEY = 12345678987654321
-signer = MockSigner(PRIVATE_KEY)
+DEPLOYER_PRIVATE_KEY1 = 12345678987654321
+DEPLOYER_PRIVATE_KEY2 = 1234567898765
 
-
-@pytest.fixture(scope="module")
-def contract_classes():
-    account_cls = Account.get_class
-    erc20_cls = get_contract_class("contract")
-    return account_cls, erc20_cls
+signer1 = MockSigner(DEPLOYER_PRIVATE_KEY1)
+signer2 = MockSigner(DEPLOYER_PRIVATE_KEY2)
 
 
 @pytest.fixture
@@ -28,20 +26,36 @@ async def contract_factory():
     )
     account = await starknet.deploy(
         contract_class=get_account_definition(),
-        constructor_calldata=[signer.public_key],
+        constructor_calldata=[signer1.public_key],
     )
     return contract, account
 
 
-def get_account_definition():
-    with open("artifacts/Account.json", "r") as fp:
-        return ContractClass.loads(fp.read())
+@pytest.fixture(scope="module")
+def contract_classes():
+    # account_cls = Account.get_class
+    polynomial_lr_cls = get_contract_class("polynomial_lr")
+
+    return polynomial_lr_cls
 
 
 @pytest.mark.asyncio
 async def test_reveal_test_data(contract_factory):
     """Test reveal_test_data method."""
-    contract, account = await contract_factory
+    # contract, account = await contract_factory
+    starknet = await Starknet.empty()
+    account1 = await starknet.deploy(
+        contract_class=get_account_definition(),
+        constructor_calldata=[signer1.public_key],
+    )
+    account2 = await starknet.deploy(
+        contract_class=get_account_definition(),
+        constructor_calldata=[signer2.public_key],
+    )
+    contract = await starknet.deploy(
+        source=CONTRACT_FILE, constructor_calldata=[account1.contract_address]
+    )
+
     X = [1, 2, 3]
     Y = [2, 3, 4]
 
@@ -49,25 +63,28 @@ async def test_reveal_test_data(contract_factory):
     rooty = merkle_root(Y)
     root = merkle_root([rootx, rooty])
 
-    await signer.send_transaction(
-        account, contract.contract_address, "commit_test_data", [root]
+    await signer1.send_transaction(
+        account1, contract.contract_address, "commit_test_data", [root]
     )
 
     # check test data commit
     execution_info = await contract.view_test_data_commit(
-        account.contract_address
+        account1.contract_address
     ).call()
     assert (
         root == execution_info.result.commit
     ), "Something is wrong with commit merkle root of test data"
 
-    # reveal test data successully
-    await signer.send_transaction(
-        account,
+    # reveal test data unsuccessully
+    # expect revert
+    await signer1.send_transaction(
+        account1,
         contract.contract_address,
         "reveal_test_data",
         [len(X), *X, len(Y), *Y],
     )
+    # fast forward
+
     # assertion
     # view test data len
     execution_info = await contract.view_test_data_len().call()
@@ -182,10 +199,3 @@ async def test_cal_yhat(contract_factory):
         execution_info = await contract.cal_yhat(0, i).call()
         yhat = cal_yhat(X[i], model)
         assert execution_info.result.yhat == yhat
-
-
-def cal_yhat(x, model: list):
-    yhat = 0
-    for exponent, weight in enumerate(model):
-        yhat += weight * x**exponent
-    return yhat

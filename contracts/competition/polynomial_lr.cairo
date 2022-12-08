@@ -78,11 +78,12 @@ func view_competitor{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check
 }
 
 @constructor
-func constructor{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(){
+func constructor{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+    organizer: felt
+){
     PolyLinearRegressionStorage.stage_write(0);
-    let (caller_address) = get_caller_address();
     AccessControl.initializer();
-    AccessControl._grant_role(ORGANIZER_ROLE, caller_address);
+    AccessControl._grant_role(ORGANIZER_ROLE, organizer);
     return();
 }
 
@@ -111,7 +112,7 @@ func commit_test_data{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_chec
     // check stage == 0
     let (stage) = PolyLinearRegressionStorage.stage_read();
     with_attr error_message("Only in stage 0") {
-        assert stage = 1;
+        assert stage = 0;
     }
     let (caller_address) = get_caller_address();
     PolyLinearRegressionStorage.test_data_commit_write(caller_address, commit);

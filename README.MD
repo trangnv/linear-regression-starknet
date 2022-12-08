@@ -1,4 +1,4 @@
-# POC polynomial linear regression machine learning competition on StarkNet
+# POC machine learning competition on StarkNet
 First daap for implementation of Private Model, Public Input data science competitions
 For ideas, thesis discussion please head over to [Notion page](https://snml.notion.site/First-implementation-Private-Model-Public-Input-c556d39ee0b24268a8f2bdb845077d4f)
 
