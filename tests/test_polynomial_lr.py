@@ -4,13 +4,11 @@ import pytest
 from starkware.starknet.testing.starknet import Starknet
 from nile.utils import assert_revert
 
-
 from tests.helpers import cal_yhat, get_account_definition, update_starknet_block
 from scripts.utils import merkle_root, pedersen_hash_chain
 from scripts.signers import MockSigner
 
 from scripts.utils import Account, get_contract_class
-
 
 CONTRACT_FILE = os.path.join("contracts/competition", "polynomial_lr.cairo")
 DEPLOYER_PRIVATE_KEY1 = 12345678987654321
