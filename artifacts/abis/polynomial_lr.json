@@ -74,6 +74,18 @@
         "type": "event"
     },
     {
+        "inputs": [],
+        "name": "view_stage",
+        "outputs": [
+            {
+                "name": "stage",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
         "inputs": [
             {
                 "name": "address",

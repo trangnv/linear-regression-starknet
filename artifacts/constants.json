@@ -22,7 +22,7 @@
                 "type": "const",
                 "value": 291
             },
-            "__main__.STAGE_1_TIME": {
+            "__main__.STAGE1_END_TIME": {
                 "type": "const",
                 "value": 10000
             },

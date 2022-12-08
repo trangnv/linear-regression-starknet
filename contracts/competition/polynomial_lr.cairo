@@ -17,6 +17,13 @@ from contracts.crypto.merkle import cal_merkle_root, hash_sorted
 from contracts.libraries.data_types import DataTypes
 from contracts.libraries.constants import ORGANIZER_ROLE, STAGE1_END_TIME
 
+
+@view
+func view_stage{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+) -> (stage: felt){
+    let (stage) = PolyLinearRegressionStorage.stage_read();
+    return (stage=stage);
+}
 @view
 func view_model_commit{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
     address: felt
