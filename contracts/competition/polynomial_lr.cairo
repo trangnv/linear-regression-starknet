@@ -17,7 +17,6 @@ from contracts.crypto.merkle import cal_merkle_root, hash_sorted
 from contracts.libraries.data_types import DataTypes
 from contracts.libraries.constants import ORGANIZER_ROLE, STAGE_1_TIME
 
-
 @view
 func view_model_commit{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
     address: felt

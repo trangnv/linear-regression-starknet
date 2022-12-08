@@ -3,7 +3,8 @@ import pytest
 
 from starkware.starknet.testing.starknet import Starknet
 
-from tests.helpers import cal_yhat, get_account_definition
+
+from tests.helpers import cal_yhat, get_account_definition, update_starknet_block
 from scripts.utils import merkle_root, pedersen_hash_chain
 from scripts.signers import MockSigner
 
@@ -75,31 +76,35 @@ async def test_reveal_test_data(contract_factory):
         root == execution_info.result.commit
     ), "Something is wrong with commit merkle root of test data"
 
+    # view block_timestamp
+    execution_info = await contract.view_block_timestamp().call()
+    update_starknet_block(starknet, block_number=1, block_timestamp=1234)
+    execution_info = await contract.view_block_timestamp().call()
     # reveal test data unsuccessully
     # expect revert
-    await signer1.send_transaction(
-        account1,
-        contract.contract_address,
-        "reveal_test_data",
-        [len(X), *X, len(Y), *Y],
-    )
-    # fast forward
+    # await signer1.send_transaction(
+    #     account1,
+    #     contract.contract_address,
+    #     "reveal_test_data",
+    #     [len(X), *X, len(Y), *Y],
+    # )
+    # # fast forward
 
-    # assertion
-    # view test data len
-    execution_info = await contract.view_test_data_len().call()
-    assert execution_info.result.len == len(
-        X
-    ), "Something is wrong with length of test dataset"
-    # view test data
-    for i in range(len(X)):
-        execution_info = await contract.view_test_data(i).call()
-        assert (
-            execution_info.result.data.x == X[i]
-        ), "Something is wrong with test data storage_var"
-        assert (
-            execution_info.result.data.y == Y[i]
-        ), "Something is wrong with test data storage_var"
+    # # assertion
+    # # view test data len
+    # execution_info = await contract.view_test_data_len().call()
+    # assert execution_info.result.len == len(
+    #     X
+    # ), "Something is wrong with length of test dataset"
+    # # view test data
+    # for i in range(len(X)):
+    #     execution_info = await contract.view_test_data(i).call()
+    #     assert (
+    #         execution_info.result.data.x == X[i]
+    #     ), "Something is wrong with test data storage_var"
+    #     assert (
+    #         execution_info.result.data.y == Y[i]
+    #     ), "Something is wrong with test data storage_var"
 
     # reveal fake data failed
 
