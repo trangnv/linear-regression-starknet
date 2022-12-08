@@ -22,10 +22,6 @@
                 "type": "const",
                 "value": 291
             },
-            "__main__.STAGE_1_START": {
-                "type": "const",
-                "value": 1110
-            },
             "__main__.STAGE_1_TIME": {
                 "type": "const",
                 "value": 10000

@@ -15,7 +15,7 @@ from contracts.competition.polynomial_lr_storage import PolyLinearRegressionStor
 from contracts.crypto.pedersen_hash import cal_pedersen_hash_chain
 from contracts.crypto.merkle import cal_merkle_root, hash_sorted
 from contracts.libraries.data_types import DataTypes
-from contracts.libraries.constants import ORGANIZER_ROLE, STAGE_1_TIME
+from contracts.libraries.constants import ORGANIZER_ROLE, STAGE1_END_TIME
 
 @view
 func view_model_commit{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
@@ -121,7 +121,7 @@ func commit_test_data{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_chec
 
     // write stage1_timestamp (finishing commit time)
     let (timestamp) = get_block_timestamp();
-    PolyLinearRegressionStorage.stage1_timestamp_write(timestamp + STAGE_1_TIME);
+    PolyLinearRegressionStorage.stage1_timestamp_write(timestamp + STAGE1_END_TIME);
     return ();
 }
 
