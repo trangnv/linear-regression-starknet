@@ -1,6 +1,11 @@
 # POC machine learning competition on StarkNet
 First daap for implementation of Private Model, Public Input data science competitions
+
+[Kanban board tasks](https://github.com/users/trangnv/projects/2)
+
 For ideas, thesis discussion please head over to [Notion page](https://snml.notion.site/First-implementation-Private-Model-Public-Input-c556d39ee0b24268a8f2bdb845077d4f)
+
+
 
 ## Data competition flow
 
