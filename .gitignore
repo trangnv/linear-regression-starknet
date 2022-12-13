@@ -135,3 +135,4 @@ dmypy.json
 .vscode/
 ml_workflow
 node.json
+notes.md
