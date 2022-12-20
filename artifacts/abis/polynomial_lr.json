@@ -270,36 +270,13 @@
                 "type": "felt*"
             }
         ],
-        "name": "view_root",
-        "outputs": [
-            {
-                "name": "root",
-                "type": "felt"
-            }
-        ],
-        "stateMutability": "view",
+        "name": "reveal_test_data",
+        "outputs": [],
         "type": "function"
     },
     {
-        "inputs": [
-            {
-                "name": "x_len",
-                "type": "felt"
-            },
-            {
-                "name": "x",
-                "type": "felt*"
-            },
-            {
-                "name": "y_len",
-                "type": "felt"
-            },
-            {
-                "name": "y",
-                "type": "felt*"
-            }
-        ],
-        "name": "reveal_test_data",
+        "inputs": [],
+        "name": "evaluation",
         "outputs": [],
         "type": "function"
     },

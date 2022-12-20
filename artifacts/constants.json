@@ -22,9 +22,9 @@
                 "type": "const",
                 "value": 291
             },
-            "__main__.STAGE1_END_TIME": {
+            "__main__.STAGE1_TIME": {
                 "type": "const",
-                "value": 10000
+                "value": 604800
             },
             "starkware.cairo.common.bool.FALSE": {
                 "type": "const",

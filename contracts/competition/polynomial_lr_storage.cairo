@@ -44,6 +44,11 @@ func PolyLinearRegressionStorage_stage() -> (stage: felt) {
 func PolyLinearRegressionStorage_stage1_timestamp() -> (timestamp: felt) {
 }
 
+@storage_var
+func PolyLinearRegressionStorage_max_error(address: felt) -> (max_error: felt) {
+}
+
+
 
 
 
@@ -125,6 +130,14 @@ namespace PolyLinearRegressionStorage {
         return(timestamp=timestamp);
     }
 
+    func max_error_read{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+        address: felt
+    ) -> (max_error: felt){
+        let (max_error) = PolyLinearRegressionStorage_max_error.read(address);
+        return(max_error=max_error);
+    }
+
+
     //
     // Writes
     //
@@ -197,6 +210,13 @@ namespace PolyLinearRegressionStorage {
         timestamp: felt
     ) {
         PolyLinearRegressionStorage_stage1_timestamp.write(timestamp);
+        return();
+    }
+
+    func max_error_write{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+        address: felt, max_error: felt
+    ) {
+        PolyLinearRegressionStorage_max_error.write(address, max_error);
         return();
     }
 }

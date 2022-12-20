@@ -7,6 +7,7 @@ from starkware.cairo.common.bool import TRUE, FALSE
 from starkware.cairo.common.math_cmp import is_not_zero
 from starkware.cairo.common.pow import pow
 from starkware.starknet.common.syscalls import get_caller_address, get_block_timestamp
+from starkware.cairo.common.math import abs_value
 
 from openzeppelin.access.accesscontrol.library import AccessControl
 
@@ -15,7 +16,7 @@ from contracts.competition.polynomial_lr_storage import PolyLinearRegressionStor
 from contracts.crypto.pedersen_hash import cal_pedersen_hash_chain
 from contracts.crypto.merkle import cal_merkle_root, hash_sorted
 from contracts.libraries.data_types import DataTypes
-from contracts.libraries.constants import ORGANIZER_ROLE, STAGE1_END_TIME
+from contracts.libraries.constants import ORGANIZER_ROLE, STAGE1_TIME
 
 
 @view
@@ -82,6 +83,13 @@ func view_competitor{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check
     let (competitor) = PolyLinearRegressionStorage.competitors_list_read(competitor_id);
     return(competitor=competitor);
 }
+@view
+func view_max_error{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+    competitor_address: felt
+) -> (max_error: felt) {
+    let (max_error) = PolyLinearRegressionStorage.max_error_read(competitor_address);
+    return(max_error=max_error);
+}
 
 @constructor
 func constructor{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
@@ -128,7 +136,7 @@ func commit_test_data{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_chec
 
     // write stage1_timestamp (finishing commit time)
     let (timestamp) = get_block_timestamp();
-    PolyLinearRegressionStorage.stage1_timestamp_write(timestamp + STAGE1_END_TIME);
+    PolyLinearRegressionStorage.stage1_timestamp_write(timestamp + STAGE1_TIME);
     return ();
 }
 
@@ -185,21 +193,21 @@ func save_model{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr,
 }
 
 
-@view
-func view_root{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
-    x_len: felt, x: felt*, y_len: felt, y: felt*
-) -> (root: felt) {
-    alloc_locals;
-    let (merkle_root_x) = cal_merkle_root(x_len, x);
-    let (merkle_root_y) = cal_merkle_root(y_len, y);
+// @view
+// func view_root{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+//     x_len: felt, x: felt*, y_len: felt, y: felt*
+// ) -> (root: felt) {
+//     alloc_locals;
+//     let (merkle_root_x) = cal_merkle_root(x_len, x);
+//     let (merkle_root_y) = cal_merkle_root(y_len, y);
 
-    let (local array_tmp) = alloc();
-    assert [array_tmp] = merkle_root_x;
-    assert [array_tmp + 1] = merkle_root_y;
+//     let (local array_tmp) = alloc();
+//     assert [array_tmp] = merkle_root_x;
+//     assert [array_tmp + 1] = merkle_root_y;
 
-    let (current_merkle_root) = cal_merkle_root(2, array_tmp);
-    return(root = current_merkle_root);
-}
+//     let (current_merkle_root) = cal_merkle_root(2, array_tmp);
+//     return(root = current_merkle_root);
+// }
 @external
 func reveal_test_data{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
     x_len: felt, x: felt*, y_len: felt, y: felt*
@@ -260,23 +268,58 @@ func save_test_data{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_
 
 }
 
-func evaluation{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(){
-    // 
-    // _evaluation(address)
-    // so need a competitors storage to store all competitors Storage_competitor(i) -> address
-    // address = competitor(i)
-    // PolyLinearRegressionStorage_polynomial_len(address)
-    // e = PolyLinearRegressionStorage_mononomial(address, exponent)
-    // x = X[]
-    // PREDICTION[] = sum(e * x^exponent)
-    // evaluation(address) = f(Y, PREDICTION)
-    // use several metrics, for suprise fun 
-    // max error
-    // mean_absolute_error
-    // mean_squared_error
-
-
+@external
+func evaluation{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+) {
+    alloc_locals;
+    let (local competitors_count) = PolyLinearRegressionStorage.competitors_count_read();
+    save_competitors_max_error(competitors_count-1);
     return();
+}
+func save_competitors_max_error{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+    competitor_len: felt
+){
+ // save all competitors max_error in the array
+    alloc_locals;
+    let (data_len) = PolyLinearRegressionStorage.test_data_len_read();
+    if (competitor_len==0){
+        //save contract storage
+        let (max_error) = cal_max_error(0, data_len);
+        let (competitor_address) = PolyLinearRegressionStorage.competitors_list_read(0);
+        PolyLinearRegressionStorage.max_error_write(competitor_address, max_error);
+        return();
+    }
+    let (max_error) = cal_max_error(competitor_len, data_len);
+    let (competitor_address) = PolyLinearRegressionStorage.competitors_list_read(competitor_len);
+    PolyLinearRegressionStorage.max_error_write(competitor_address, max_error);
+    save_competitors_max_error(competitor_len-1);
+    return();
+}
+
+func cal_max_error{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+    competitor_id: felt, data_len: felt
+) -> (max_error: felt) {
+    alloc_locals;
+    if (data_len==0) {
+        let(current_data) = PolyLinearRegressionStorage.test_data_read(0);
+        let y = current_data.y;
+        let (yhat) = cal_yhat(competitor_id, 0);
+        let _current_error = y - yhat;
+        let current_error = abs_value(_current_error);
+        return(max_error=current_error);
+    }
+    let(current_data) = PolyLinearRegressionStorage.test_data_read(data_len);
+    let y = current_data.y;
+    let (yhat) = cal_yhat(competitor_id, data_len);
+    let _current_error = y - yhat;
+    let current_error = abs_value(_current_error);
+    let (rest_error) = cal_max_error(competitor_id, data_len - 1);
+    let cmp = _is_lt_felt(current_error, rest_error);
+    if (cmp == TRUE) {
+        return(max_error=rest_error);
+    } else {
+        return(max_error=current_error);
+    }
 }
 
 @view

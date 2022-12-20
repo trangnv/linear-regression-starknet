@@ -135,6 +135,49 @@
                 "destination": "starkware.starknet.common.syscalls.storage_write",
                 "type": "alias"
             },
+            "__main__.PolyLinearRegressionStorage_max_error": {
+                "type": "namespace"
+            },
+            "__main__.PolyLinearRegressionStorage_max_error.Args": {
+                "full_name": "__main__.PolyLinearRegressionStorage_max_error.Args",
+                "members": {},
+                "size": 0,
+                "type": "struct"
+            },
+            "__main__.PolyLinearRegressionStorage_max_error.HashBuiltin": {
+                "destination": "starkware.cairo.common.cairo_builtins.HashBuiltin",
+                "type": "alias"
+            },
+            "__main__.PolyLinearRegressionStorage_max_error.ImplicitArgs": {
+                "full_name": "__main__.PolyLinearRegressionStorage_max_error.ImplicitArgs",
+                "members": {},
+                "size": 0,
+                "type": "struct"
+            },
+            "__main__.PolyLinearRegressionStorage_max_error.Return": {
+                "cairo_type": "()",
+                "type": "type_definition"
+            },
+            "__main__.PolyLinearRegressionStorage_max_error.SIZEOF_LOCALS": {
+                "type": "const",
+                "value": 0
+            },
+            "__main__.PolyLinearRegressionStorage_max_error.hash2": {
+                "destination": "starkware.cairo.common.hash.hash2",
+                "type": "alias"
+            },
+            "__main__.PolyLinearRegressionStorage_max_error.normalize_address": {
+                "destination": "starkware.starknet.common.storage.normalize_address",
+                "type": "alias"
+            },
+            "__main__.PolyLinearRegressionStorage_max_error.storage_read": {
+                "destination": "starkware.starknet.common.syscalls.storage_read",
+                "type": "alias"
+            },
+            "__main__.PolyLinearRegressionStorage_max_error.storage_write": {
+                "destination": "starkware.starknet.common.syscalls.storage_write",
+                "type": "alias"
+            },
             "__main__.PolyLinearRegressionStorage_model": {
                 "type": "namespace"
             },
