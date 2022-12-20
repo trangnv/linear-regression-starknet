@@ -206,6 +206,23 @@
     {
         "inputs": [
             {
+                "name": "competitor_address",
+                "type": "felt"
+            }
+        ],
+        "name": "view_max_error",
+        "outputs": [
+            {
+                "name": "max_error",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
                 "name": "organizer",
                 "type": "felt"
             }
@@ -277,7 +294,12 @@
     {
         "inputs": [],
         "name": "evaluation",
-        "outputs": [],
+        "outputs": [
+            {
+                "name": "first_ranked_address",
+                "type": "felt"
+            }
+        ],
         "type": "function"
     },
     {

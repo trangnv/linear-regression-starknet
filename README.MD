@@ -3,8 +3,7 @@ First daap for implementation of Private Model, Public Input data science compet
 
 [Kanban board tasks](https://github.com/users/trangnv/projects/2)
 
-For ideas, thesis discussion please head over to [Notion page](https://snml.notion.site/First-implementation-Private-Model-Public-Input-c556d39ee0b24268a8f2bdb845077d4f)
-
+[Notion page](https://snml.notion.site/First-implementation-Private-Model-Public-Input-c556d39ee0b24268a8f2bdb845077d4f)
 
 
 ## Data competition flow
@@ -43,6 +42,8 @@ The Jupyter notebooks mentioned above also support these functions invocation
 ### Stage 3
 Now all submission models and testing data are available onchain
 *Anyone* can call evaluation function calculate all competitors evaluation metrics and rank them.
+
+## Contract on StarkScan
 
 
 
