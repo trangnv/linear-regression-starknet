@@ -24,9 +24,6 @@ func PolyLinearRegressionStorage_test_data_len() -> (len: felt) {
 @storage_var
 func PolyLinearRegressionStorage_test_data(i: felt) -> (data: DataTypes.DataPoint) {
 }
-// @storage_var
-// func PolyLinearRegressionStorage_test_data_Y(i: felt) -> (y: felt) {
-// }
 
 @storage_var
 func PolyLinearRegressionStorage_competitors_count() -> (count: felt) {
@@ -53,8 +50,9 @@ func PolyLinearRegressionStorage_first_ranked() -> (first_ranked_address: felt) 
 }
 
 
-
-
+@storage_var
+func PolyLinearRegressionStorage_organizer() -> (organizer_address: felt) {
+}
 
 
 
@@ -147,6 +145,12 @@ namespace PolyLinearRegressionStorage {
         return (first_ranked_address=first_ranked_address);
     }
 
+    func organizer_address_read{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+    ) -> (organizer_address: felt){
+        let (organizer_address) = PolyLinearRegressionStorage_organizer.read();
+        return(organizer_address=organizer_address);
+    }
+
 
     //
     // Writes
@@ -233,6 +237,12 @@ namespace PolyLinearRegressionStorage {
         first_ranked_address: felt
     ) {
         PolyLinearRegressionStorage_first_ranked.write(first_ranked_address);
+        return();
+    }
+    func organizer_address_write{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+        organizer_address: felt
+    ) {
+        PolyLinearRegressionStorage_organizer.write(organizer_address);
         return();
     }
 }
