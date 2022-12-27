@@ -1,7 +1,0 @@
-starknet deploy --inputs 1229073761830977310806015286805273044683593556279522383158989339708756980685 \n 
---class_hash 0x2265b5272fcab5bdd7ff8215dbc192212b091b96db43174f2621bbb9afc238c --account=tnv2
-
-Sending the transaction with max_fee: 0.000017 ETH (17455660298320 WEI).
-Invoke transaction for contract deployment was sent.
-Contract address: 0x02dcb80cc54f26c5c73d7b0e9cbab6d53e407bdee82e9fb8bf9d539ca76af201
-Transaction hash: 0x459db893bcd2366e176ef24d36cb3b20d7a0aa9d7b8c54852b92850eda817e
