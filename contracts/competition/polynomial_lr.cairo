@@ -92,6 +92,13 @@ func view_max_error{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_
     return(max_error=max_error);
 }
 
+@view
+func view_first_rank{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+) -> (first_ranked_address: felt) {
+    let (first_ranked_address) = PolyLinearRegressionStorage.first_ranked_read();
+    return(first_ranked_address=first_ranked_address);
+}
+
 @constructor
 func constructor{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
     organizer: felt
@@ -256,7 +263,7 @@ func save_test_data{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_
 
 @external
 func evaluation{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
-) ->(first_ranked_address: felt){
+) -> (first_ranked_address: felt){
     alloc_locals;
     let (local competitors_count) = PolyLinearRegressionStorage.competitors_count_read();
     save_competitors_max_error(competitors_count);

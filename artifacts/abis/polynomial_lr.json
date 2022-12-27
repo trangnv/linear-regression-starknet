@@ -221,6 +221,18 @@
         "type": "function"
     },
     {
+        "inputs": [],
+        "name": "view_first_rank",
+        "outputs": [
+            {
+                "name": "first_ranked_address",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
         "inputs": [
             {
                 "name": "organizer",

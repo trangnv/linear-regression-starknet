@@ -48,6 +48,10 @@ func PolyLinearRegressionStorage_stage1_timestamp() -> (timestamp: felt) {
 func PolyLinearRegressionStorage_max_error(address: felt) -> (max_error: felt) {
 }
 
+@storage_var
+func PolyLinearRegressionStorage_first_ranked() -> (first_ranked_address: felt) {
+}
+
 
 
 
@@ -137,6 +141,12 @@ namespace PolyLinearRegressionStorage {
         return(max_error=max_error);
     }
 
+    func first_ranked_read{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+    ) -> (first_ranked_address: felt){
+        let (first_ranked_address) = PolyLinearRegressionStorage_first_ranked.read();
+        return (first_ranked_address=first_ranked_address);
+    }
+
 
     //
     // Writes
@@ -217,6 +227,12 @@ namespace PolyLinearRegressionStorage {
         address: felt, max_error: felt
     ) {
         PolyLinearRegressionStorage_max_error.write(address, max_error);
+        return();
+    }
+    func first_ranked_write{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+        first_ranked_address: felt
+    ) {
+        PolyLinearRegressionStorage_first_ranked.write(first_ranked_address);
         return();
     }
 }
