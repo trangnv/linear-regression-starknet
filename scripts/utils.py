@@ -170,6 +170,10 @@ def get_contract_class(contract, is_path=False):
     return contract_class
 
 
+def hex_to_felt(val):
+    return int(val, 16)
+
+
 def cached_contract(state, _class, deployed):
     """Return the cached contract"""
     contract = StarknetContract(
