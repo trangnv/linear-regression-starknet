@@ -75,6 +75,18 @@
     },
     {
         "inputs": [],
+        "name": "view_organizer_address",
+        "outputs": [
+            {
+                "name": "organizer_address",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
         "name": "view_stage",
         "outputs": [
             {

@@ -19,6 +19,12 @@ from contracts.crypto.merkle import cal_merkle_root, hash_sorted
 from contracts.libraries.data_types import DataTypes
 from contracts.libraries.constants import ORGANIZER_ROLE, STAGE1_TIME
 
+@view
+func view_organizer_address{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+) -> (organizer_address: felt){
+    let (organizer_address) = PolyLinearRegressionStorage.organizer_address_read();
+    return (organizer_address=organizer_address);
+}
 
 @view
 func view_stage{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
@@ -106,6 +112,7 @@ func constructor{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr
     PolyLinearRegressionStorage.stage_write(0);
     AccessControl.initializer();
     AccessControl._grant_role(ORGANIZER_ROLE, organizer);
+    PolyLinearRegressionStorage.organizer_address_write(organizer);
     return();
 }
 
